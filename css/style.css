@@ -545,6 +545,13 @@ footer p {
   margin: 0.5rem 0;
 }
 
+/* Paywall notice style */
+.access {
+  font-style: italic;
+  color: var(--color-gray);
+}
+
+
 /*
  * Product detail pages
  * Styles for individual product pages showing images, descriptions, codes and prices.

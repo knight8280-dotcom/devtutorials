@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KnightGaming | Shop</title>
+    <!-- Fonts and Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fas fa-chess-knight"></i> KnightGaming
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn" href="community.html">Join Community</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Shop All Products</h1>
+        <p>Everything you need to build your world in one place.</p>
+        <a class="btn" href="#products">Browse</a>
+      </div>
+    </section>
+
+    <section id="products" class="featured" style="display:none;">
+      <div class="container">
+        <h2>All Products</h2>
+        <div class="grid">
+          <!-- Duplicate product cards as examples -->
+          <div class="product-card">
+            <img src="img/product1.jpg" alt="Product" />
+            <h3>Environment Pack</h3>
+            <p>Modular landscapes and foliage assets for UE5.</p>
+            <a href="#!" class="btn small">Details</a>
+          </div>
+          <div class="product-card">
+            <img src="img/product2.jpg" alt="Product" />
+            <h3>Weapon Pack</h3>
+            <p>High fidelity melee and ranged weapons.</p>
+            <a href="#!" class="btn small">Details</a>
+          </div>
+          <div class="product-card">
+            <img src="img/product3.jpg" alt="Product" />
+            <h3>UE5 Tutorial Series</h3>
+            <p>From basics to advanced systems in Unreal Engine 5.</p>
+            <a href="#!" class="btn small">Details</a>
+          </div>
+          <!-- Additional placeholders for demonstration -->
+          <div class="product-card">
+            <img src="img/product1.jpg" alt="Product" />
+            <h3>Character Pack</h3>
+            <p>Playable characters with armor variations.</p>
+            <a href="#!" class="btn small">Details</a>
+          </div>
+          <div class="product-card">
+            <img src="img/product2.jpg" alt="Product" />
+            <h3>UI / HUD Pack</h3>
+            <p>Health bars, minimaps and inventory elements.</p>
+            <a href="#!" class="btn small">Details</a>
+          </div>
+          <div class="product-card">
+            <img src="img/product3.jpg" alt="Product" />
+            <h3>Starter Bundle</h3>
+            <p>A curated starter kit of assets &amp; tutorials.</p>
+            <a href="#!" class="btn small">Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Store Sections -->
+    <section id="store" class="store-list">
+      <div class="container">
+        <h2>All Products</h2>
+
+        <h3>Asset Packs</h3>
+        <div class="grid">
+          <div class="pack-card">
+            <i class="fas fa-tree"></i>
+            <h3>Grasslands Biome Pack</h3>
+            <p>Rocks, trees, foliage and modular terrain for lush grasslands.</p>
+            <p class="code">Code: ENV-GL-001</p>
+            <p><strong>Includes:</strong> UE5 .uasset, .fbx and .png textures</p>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Light Armor Set</h3>
+            <p>Three variations of lightweight armor for agile characters.</p>
+            <p class="code">Code: CHR-LA-001</p>
+            <p><strong>Includes:</strong> Character meshes, textures and materials</p>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-sword"></i>
+            <h3>Melee Weapon Set</h3>
+            <p>Swords, axes and shields crafted with detailed PBR materials.</p>
+            <p class="code">Code: WPN-ML-001</p>
+            <p><strong>Includes:</strong> Weapon models, textures and animations</p>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Basic HUD Elements</h3>
+            <p>Health and mana bars, experience bars and status widgets.</p>
+            <p class="code">Code: UI-HUD-001</p>
+            <p><strong>Includes:</strong> Widget blueprints and textures</p>
+          </div>
+        </div>
+
+        <h3>System Templates</h3>
+        <div class="grid">
+          <div class="template-card">
+            <i class="fas fa-sitemap"></i>
+            <h3>Skill Tree System</h3>
+            <p>A flexible node‑based skill tree to add progression to your RPG.</p>
+            <p class="code">Code: SYS-ST-001</p>
+            <pre><code>{&#10;    \"nodeId\": \"root\",&#10;    \"name\": \"Warrior Skills\",&#10;    \"children\": [&#10;        {\"nodeId\": \"1\", \"name\": \"Slash\", \"cost\": 1},&#10;        {\"nodeId\": \"2\", \"name\": \"Block\", \"cost\": 1}&#10;    ]&#10;}</code></pre>
+          </div>
+          <div class="template-card">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Threat &amp; Aggro System</h3>
+            <p>Tank mechanics that keep enemies focused on defenders.</p>
+            <p class="code">Code: SYS-TA-002</p>
+            <pre><code>// Increase threat on an enemy&#10;void addThreat(Enemy enemy, float amount) {&#10;    enemy.threat += amount;&#10;    sortThreatList();&#10;}</code></pre>
+          </div>
+          <div class="template-card">
+            <i class="fas fa-user-friends"></i>
+            <h3>PvP Toggle &amp; Ranking</h3>
+            <p>Allow players to toggle PvP mode and track their rank.</p>
+            <p class="code">Code: SYS-PVP-003</p>
+            <pre><code>bool pvpEnabled = false;&#10;void togglePvP() {&#10;    pvpEnabled = !pvpEnabled;&#10;    updateRankings();&#10;}</code></pre>
+          </div>
+          <div class="template-card">
+            <i class="fas fa-dragon"></i>
+            <h3>Raid Encounter System</h3>
+            <p>Create multi‑phase boss fights with scripted phases.</p>
+            <p class="code">Code: SYS-RA-004</p>
+            <pre><code>void startPhase(int phase) {&#10;    switch (phase) {&#10;        case 1: spawnAdds(); break;&#10;        case 2: unleashBossAbility(); break;&#10;        case 3: triggerEnrage(); break;&#10;    }&#10;}</code></pre>
+          </div>
+        </div>
+
+        <h3>Tutorial Courses</h3>
+        <div class="grid">
+          <div class="tutorial-card">
+            <i class="fas fa-download"></i>
+            <h3>Installing &amp; Setup</h3>
+            <p>Learn how to download, install and configure Unreal Engine 5.</p>
+            <p class="code">Code: TUT-BG-001</p>
+            <pre><code>// Install Unreal Engine 5 via the Epic Games Launcher&#10;// and configure your first project settings.</code></pre>
+          </div>
+          <div class="tutorial-card">
+            <i class="fas fa-th-large"></i>
+            <h3>Modular Environments</h3>
+            <p>Design modular levels with reusable pieces and prefabs.</p>
+            <p class="code">Code: TUT-IM-002</p>
+            <pre><code>// Spawn modular pieces in a grid&#10;for(int x=0; x&lt;GridX; x++) {&#10;  for(int y=0; y&lt;GridY; y++) {&#10;    SpawnActor&lt;AStaticMeshActor&gt;(WallPiece, FVector(x*400, y*400, 0), FRotator::ZeroRotator);&#10;  }&#10;}</code></pre>
+          </div>
+          <div class="tutorial-card">
+            <i class="fas fa-dragon"></i>
+            <h3>Raids &amp; Boss Encounters</h3>
+            <p>Design multi‑phase encounters with cinematic mechanics.</p>
+            <p class="code">Code: TUT-AD-001</p>
+            <pre><code>// Boss AI phase switch pseudo-code&#10;if (BossHealth &lt; 0.5f) {&#10;  EnterPhase(2);&#10;}</code></pre>
+          </div>
+          <div class="tutorial-card">
+            <i class="fas fa-crosshairs"></i>
+            <h3>Weapon Setup &amp; Animations</h3>
+            <p>Create melee and ranged weapons with animation blueprints.</p>
+            <p class="code">Code: TUT-IM-003</p>
+            <pre><code>// Attach a weapon mesh to a character socket&#10;Weapon-&gt;AttachToComponent(Character-&gt;GetMesh(),&#10;  FAttachmentTransformRules::SnapToTargetIncludingScale,&#10;  TEXT(\"WeaponSocket\"));</code></pre>
+          </div>
+        </div>
+
+        <h3>Bundles</h3>
+        <div class="grid">
+          <div class="bundle-card">
+            <i class="fas fa-rocket"></i>
+            <h3>Starter Bundle</h3>
+            <p class="code">Code: BUN-START-001</p>
+            <p>Kick‑start your project with essential assets and beginner tutorials.</p>
+            <ul>
+              <li>Grasslands Biome Pack (ENV‑GL‑001)</li>
+              <li>Light Armor Set (CHR‑LA‑001)</li>
+              <li>Basic HUD Elements (UI‑HUD‑001)</li>
+              <li>Beginner UE5 Course Pack</li>
+            </ul>
+            <p><strong>Includes:</strong> Selected assets &amp; all four beginner courses</p>
+          </div>
+          <div class="bundle-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Action Bundle</h3>
+            <p class="code">Code: BUN-ACT-002</p>
+            <p>Build an action RPG with weapons, characters and combat systems.</p>
+            <ul>
+              <li>Melee Weapon Set (WPN‑ML‑001)</li>
+              <li>Ranged Weapon Set (WPN‑RN‑002)</li>
+              <li>Medium Armor Set (CHR‑MA‑002)</li>
+              <li>Threat &amp; Aggro System (SYS‑TA‑002)</li>
+              <li>PvP Toggle &amp; Ranking (SYS‑PVP‑003)</li>
+              <li>Weapon Setup &amp; Animations Tutorial</li>
+            </ul>
+            <p><strong>Includes:</strong> Assets, systems &amp; intermediate combat course</p>
+          </div>
+          <div class="bundle-card">
+            <i class="fas fa-globe"></i>
+            <h3>MMO Bundle</h3>
+            <p class="code">Code: BUN-MMO-003</p>
+            <p>Everything you need to build a multiplayer RPG with raids and systems.</p>
+            <ul>
+              <li>All Environment Packs (ENV‑GL‑001 to ENV‑FC‑004)</li>
+              <li>Heavy Armor &amp; NPC Civilians (CHR‑HA‑003, CHR‑NPC‑004)</li>
+              <li>Inventory &amp; Loot (SYS‑IN‑005)</li>
+              <li>Raid Encounter (SYS‑RA‑004)</li>
+              <li>Crafting &amp; Farming (SYS‑CR‑006)</li>
+              <li>Base Building, Quest &amp; Dialogue (SYS‑BB‑007, SYS‑QD‑008)</li>
+              <li>Advanced Courses: Raids, PvP/Mounts, Base Building &amp; Factions</li>
+            </ul>
+            <p><strong>Includes:</strong> Complete asset collection, systems &amp; all advanced courses</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-itch-io"></i></a>
+        </div>
+        <p>&copy; 2025 KnightGaming. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

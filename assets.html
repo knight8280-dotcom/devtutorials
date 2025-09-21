@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KnightGaming | Assets</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fas fa-chess-knight"></i> KnightGaming
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn" href="community.html">Join Community</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Asset Library</h1>
+        <p>Find the perfect assets to bring your game world to life.</p>
+      </div>
+    </section>
+
+    <!-- Asset Packs Section -->
+    <section class="asset-list">
+      <div class="container">
+        <h2>Available Asset Packs</h2>
+        <div class="grid">
+          <!-- Environment Packs -->
+          <div class="pack-card">
+            <i class="fas fa-tree"></i>
+            <h3>Grasslands Biome Pack</h3>
+            <p>Rocks, trees, foliage and modular terrain for lush grasslands.</p>
+            <p class="code">Code: ENV-GL-001</p>
+            <p><strong>Includes:</strong> UE5 .uasset, .fbx and .png textures</p>
+            <pre><code>// Spawn a grassland static mesh&#10;SpawnActor&lt;AStaticMeshActor&gt;(GrassMesh, FVector(0,0,0), FRotator::ZeroRotator);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-water"></i>
+            <h3>Desert Biome Pack</h3>
+            <p>Cacti, dunes, ruins and props for arid adventures.</p>
+            <p class="code">Code: ENV-DS-002</p>
+            <p><strong>Includes:</strong> UE5 .uasset, .fbx and .png textures</p>
+            <pre><code>// Spawn a cactus mesh in the desert&#10;SpawnActor&lt;AStaticMeshActor&gt;(CactusMesh, FVector(0,0,0), FRotator::ZeroRotator);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-fire"></i>
+            <h3>Volcanic Biome Pack</h3>
+            <p>Lava flows, basalt cliffs and smoke effects for volcanic scenes.</p>
+            <p class="code">Code: ENV-VC-003</p>
+            <p><strong>Includes:</strong> UE5 .uasset, .fbx and .png textures</p>
+            <pre><code>// Spawn a lava rock mesh&#10;SpawnActor&lt;AStaticMeshActor&gt;(LavaRockMesh, FVector(0,0,0), FRotator::ZeroRotator);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-city"></i>
+            <h3>Futuristic City Props Pack</h3>
+            <p>Neon signs, buildings and sci‑fi props for cyberpunk worlds.</p>
+            <p class="code">Code: ENV-FC-004</p>
+            <p><strong>Includes:</strong> UE5 .uasset, .fbx and .png textures</p>
+            <pre><code>// Spawn a neon sign prop&#10;SpawnActor&lt;AStaticMeshActor&gt;(NeonSignMesh, FVector(0,0,0), FRotator::ZeroRotator);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <!-- Character Packs -->
+          <div class="pack-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Light Armor Set</h3>
+            <p>Three variations of lightweight armor for agile characters.</p>
+            <p class="code">Code: CHR-LA-001</p>
+            <p><strong>Includes:</strong> Character meshes, textures and materials</p>
+            <pre><code>// Equip light armor on character&#10;Character-&gt;EquipArmor(LightArmorSet);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Medium Armor Set</h3>
+            <p>Balanced armor set providing protection without sacrificing speed.</p>
+            <p class="code">Code: CHR-MA-002</p>
+            <p><strong>Includes:</strong> Character meshes, textures and materials</p>
+            <pre><code>// Equip medium armor on character&#10;Character-&gt;EquipArmor(MediumArmorSet);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-helmet-battle"></i>
+            <h3>Heavy Armor Set</h3>
+            <p>Sturdy armor with three heavy variations for tanks.</p>
+            <p class="code">Code: CHR-HA-003</p>
+            <p><strong>Includes:</strong> Character meshes, textures and materials</p>
+            <pre><code>// Equip heavy armor on character&#10;Character-&gt;EquipArmor(HeavyArmorSet);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-users"></i>
+            <h3>NPC Civilian Pack</h3>
+            <p>Diverse civilians including workers, shopkeepers and guards.</p>
+            <p class="code">Code: CHR-NPC-004</p>
+            <p><strong>Includes:</strong> Character models, animations and voice lines</p>
+            <pre><code>// Spawn a civilian NPC&#10;SpawnActor&lt;ANPC&gt;(CivilianClass, SpawnLocation, SpawnRotation);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <!-- Weapon Packs -->
+          <div class="pack-card">
+            <i class="fas fa-sword"></i>
+            <h3>Melee Weapon Set</h3>
+            <p>Swords, axes and shields crafted with detailed PBR materials.</p>
+            <p class="code">Code: WPN-ML-001</p>
+            <p><strong>Includes:</strong> Weapon models, textures and animations</p>
+            <pre><code>// Equip a melee weapon&#10;Character-&gt;EquipWeapon(Sword);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Ranged Weapon Set</h3>
+            <p>Bows, crossbows and rifles for long‑distance combat.</p>
+            <p class="code">Code: WPN-RN-002</p>
+            <p><strong>Includes:</strong> Weapon models, textures and animations</p>
+            <pre><code>// Equip a ranged weapon&#10;Character-&gt;EquipWeapon(Bow);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Futuristic Weapon Set</h3>
+            <p>Energy rifles and plasma swords for sci‑fi battles.</p>
+            <p class="code">Code: WPN-FC-003</p>
+            <p><strong>Includes:</strong> Weapon models, textures and animations</p>
+            <pre><code>// Equip an energy rifle&#10;Character-&gt;EquipWeapon(EnergyRifle);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-robot"></i>
+            <h3>Sci‑fi Gadget Set</h3>
+            <p>Gadgets like grenades, drones and traps for futuristic gameplay.</p>
+            <p class="code">Code: WPN-SC-004</p>
+            <p><strong>Includes:</strong> Gadget models, textures and blueprints</p>
+            <pre><code>// Use a gadget like a drone&#10;Character-&gt;UseGadget(Drone);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <!-- UI / HUD Packs -->
+          <div class="pack-card">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Basic HUD Elements</h3>
+            <p>Health and mana bars, experience bars and status widgets.</p>
+            <p class="code">Code: UI-HUD-001</p>
+            <p><strong>Includes:</strong> Widget blueprints and textures</p>
+            <pre><code>// Add HUD to the viewport&#10;UUserWidget* HUD = CreateWidget&lt;UUserWidget&gt;(GetWorld(), HUDClass);&#10;HUD-&gt;AddToViewport();</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-th-large"></i>
+            <h3>Inventory Grid Template</h3>
+            <p>Inventory grid layouts and drag‑and‑drop functionality.</p>
+            <p class="code">Code: UI-INV-002</p>
+            <p><strong>Includes:</strong> Blueprint classes and UI textures</p>
+            <pre><code>// Add inventory UI to the screen&#10;UUserWidget* InventoryUI = CreateWidget&lt;UUserWidget&gt;(GetWorld(), InventoryClass);&#10;InventoryUI-&gt;AddToViewport();</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-map"></i>
+            <h3>Mini‑map Overlay</h3>
+            <p>Interactive minimap widget with player tracking.</p>
+            <p class="code">Code: UI-MAP-003</p>
+            <p><strong>Includes:</strong> Widget blueprints and textures</p>
+            <pre><code>// Display a minimap widget&#10;UUserWidget* Minimap = CreateWidget&lt;UUserWidget&gt;(GetWorld(), MinimapClass);&#10;Minimap-&gt;AddToViewport();</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+          <div class="pack-card">
+            <i class="fas fa-icons"></i>
+            <h3>Button &amp; Icon Set</h3>
+            <p>Stylish buttons and iconography for menus and HUDs.</p>
+            <p class="code">Code: UI-BTN-004</p>
+            <p><strong>Includes:</strong> Scalable vector icons and UI elements</p>
+            <pre><code>// Set your UI icons set&#10;UIManager-&gt;SetIcons(IconSet);</code></pre>
+            <a href="#" class="btn small">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <h2>Asset Categories</h2>
+        <div class="grid">
+          <div class="card">
+            <i class="fas fa-tree"></i>
+            <h3>Environments</h3>
+            <p>Biome packs, props and modular terrain for immersive worlds.</p>
+            <a href="#!">View Environments</a>
+          </div>
+          <div class="card">
+            <i class="fas fa-user-astronaut"></i>
+            <h3>Characters</h3>
+            <p>Playable characters, NPCs and armor sets.</p>
+            <a href="#!">View Characters</a>
+          </div>
+          <div class="card">
+            <i class="fas fa-crosshairs"></i>
+            <h3>Weapons</h3>
+            <p>Detailed melee and ranged weapon collections.</p>
+            <a href="#!">View Weapons</a>
+          </div>
+          <div class="card">
+            <i class="fas fa-layer-group"></i>
+            <h3>UI &amp; HUD</h3>
+            <p>Health bars, minimaps, icons and inventory grids.</p>
+            <a href="#!">View UI Packs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-itch-io"></i></a>
+        </div>
+        <p>&copy; 2025 KnightGaming. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -26,6 +26,7 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -49,6 +50,14 @@
         <h2>Futuristic Weapon Set</h2>
         <p class="code">Code: WPN-FC-003</p>
         <p class="price">$19.99</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="Knightgaming8280@gmail.com">
+          <input type="hidden" name="item_name" value="Futuristic Weapon Set">
+          <input type="hidden" name="amount" value="19.99">
+          <input type="hidden" name="currency_code" value="USD">
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
         <p>Energy rifles and plasma swords for sci‑fi battles.</p>
         <p><strong>Includes:</strong> Weapon models, textures and animations</p>
         <a href="shop.html" class="btn">Back to Shop</a>

@@ -1,0 +1,645 @@
+/*
+ * KnightGaming Website Stylesheet
+ *
+ * A modern, dark, futuristic theme built for the KnightGaming brand.
+ * Defines color variables, typography, layout, responsive navigation,
+ * and component styles for cards, grids and sections.
+ */
+
+/* Color palette */
+:root {
+  --color-primary: #00AEEF;   /* electric blue */
+  --color-secondary: #A020F0; /* neon purple */
+  --color-accent: #39FF14;    /* cyber green */
+  --color-dark: #121212;      /* dark base */
+  --color-light: #F4F4F4;     /* light neutral */
+  --color-gray: #8a8a8a;      /* muted gray */
+}
+
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.logo i {
+  margin-right: 0.5rem;
+  color: var(--color-accent);
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav .nav-links li a {
+  color: var(--color-light);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+  color: var(--color-accent);
+}
+
+nav .nav-links .btn {
+  background: var(--color-primary);
+  color: var(--color-dark);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+nav .nav-links .btn:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.mobile-menu {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-light);
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('../img/hero-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 64px; /* approximate nav height */
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-light);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-gray);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.btn.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Section styling */
+section {
+  padding: 4rem 0;
+}
+
+section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+/* Grid layout for categories, featured products, blog preview */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Cards styling */
+.categories .card,
+.featured .product-card,
+.blog-preview .blog-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categories .card:hover,
+.featured .product-card:hover,
+.blog-preview .blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Categories specific */
+.categories .card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+
+.categories .card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+
+.categories .card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--color-gray);
+}
+
+.categories .card a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Featured Products specific */
+.featured .product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.featured .product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+
+.featured .product-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--color-gray);
+}
+
+/* Blog Preview specific */
+.blog-preview .blog-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.blog-preview .blog-card .content {
+  text-align: left;
+}
+
+.blog-preview .blog-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+
+.blog-preview .blog-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-gray);
+}
+
+.blog-preview .blog-card .read-more {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Community CTA */
+.community-cta {
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.community-cta p {
+  margin: 1rem 0 2rem;
+  color: var(--color-gray);
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1.2rem 0;
+  text-align: center;
+}
+
+footer .social {
+  margin-bottom: 0.5rem;
+}
+
+footer .social a {
+  color: var(--color-primary);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+  color: var(--color-accent);
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav .nav-links {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 200px;
+    height: calc(100vh - 64px);
+    padding-top: 2rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+  }
+  nav .nav-links.active {
+    right: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  /* Reduce hero height on mobile */
+  .hero {
+    height: 60vh;
+    margin-top: 56px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  section {
+    padding: 3rem 0;
+  }
+}
+
+/* Asset pack listings */
+.asset-list .pack-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.asset-list .pack-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.asset-list .pack-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+
+.asset-list .pack-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+
+.asset-list .pack-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-gray);
+}
+
+.asset-list .pack-card .code {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+/* Code block styling for asset pack cards */
+.asset-list .pack-card pre {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #eee;
+}
+
+/* Image styling for pack cards on assets and store pages */
+.asset-list .pack-card img,
+.store-list .pack-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+/* Template system cards */
+.template-list .template-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.template-list .template-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.template-list .template-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+
+.template-list .template-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+
+.template-list .template-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-gray);
+}
+
+.template-list .template-card .code {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.template-list .template-card pre {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #eee;
+}
+
+/* Tutorial cards */
+.tutorial-list .tutorial-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tutorial-list .tutorial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.tutorial-list .tutorial-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+.tutorial-list .tutorial-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-gray);
+}
+.tutorial-list .tutorial-card .code {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.tutorial-list .tutorial-card pre {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #eee;
+}
+
+/* Bundle cards */
+.bundle-list .bundle-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bundle-list .bundle-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.bundle-list .bundle-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+.bundle-list .bundle-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray);
+}
+.bundle-list .bundle-card .code {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.bundle-list .bundle-card ul {
+  margin-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.bundle-list .bundle-card ul li {
+  list-style-type: disc;
+  color: var(--color-gray);
+  font-size: 0.85rem;
+}
+
+/* Price styles for cards */
+.pack-card .price,
+.bundle-card .price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0.5rem 0;
+}
+
+/* Notice displayed instead of code samples on product cards */
+.access {
+  font-style: italic;
+  color: var(--color-gray);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+/*
+ * Product detail pages
+ * Styles for individual product pages showing images, descriptions, codes and prices.
+ */
+.product-detail {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.product-detail img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 8px;
+}
+
+.product-detail h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.product-detail p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-gray);
+}
+
+.product-detail .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--color-accent);
+}
+
+/* Checkout page styles */
+.checkout {
+  padding: 4rem 0;
+}
+
+.checkout h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.checkout p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  color: var(--color-gray);
+}
+
+.checkout-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.checkout-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkout-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-light);
+}
+
+.checkout-list h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}

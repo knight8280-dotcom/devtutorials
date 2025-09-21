@@ -536,3 +536,49 @@ footer p {
   color: var(--color-gray);
   font-size: 0.85rem;
 }
+/* Price styles for cards */
+.pack-card .price,
+.bundle-card .price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0.5rem 0;
+}
+
+/*
+ * Product detail pages
+ * Styles for individual product pages showing images, descriptions, codes and prices.
+ */
+.product-detail {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.product-detail img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 8px;
+}
+
+.product-detail h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.product-detail p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-gray);
+}
+
+.product-detail .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--color-accent);
+}

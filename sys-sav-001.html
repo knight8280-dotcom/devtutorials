@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save/Load System Template | KnightGaming</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fas fa-chess-knight"></i> KnightGaming
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn" href="community.html">Join Community</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Save/Load System Template</h1>
+        <p>Robust game state persistence with multiple save slots.</p>
+      </div>
+    </section>
+
+    <section class="product-detail">
+      <div class="container">
+        <img src="img/hud_overlay.png" alt="Save/Load System Template" />
+        <h2>Save/Load System Template</h2>
+        <p class="code">Code: SYS-SAV-001</p>
+        <p class="price">$14.99</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="Knightgaming8280@gmail.com">
+          <input type="hidden" name="item_name" value="Save/Load System Template">
+          <input type="hidden" name="amount" value="14.99">
+          <input type="hidden" name="currency_code" value="USD">
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+        
+        <h3>Overview</h3>
+        <p>A complete save game system with multiple save slots, autosave functionality, and comprehensive game state serialization. This template handles everything from player data and inventory to world state and quest progress.</p>
+        
+        <h3>Problems This Solves</h3>
+        <ul>
+          <li><strong>State Persistence:</strong> Save and restore complete game state across sessions</li>
+          <li><strong>Multiple Saves:</strong> Manage multiple save slots with metadata (date, time, level)</li>
+          <li><strong>Autosave:</strong> Implement automatic saving at checkpoints or time intervals</li>
+          <li><strong>Data Serialization:</strong> Convert complex game objects to saveable format</li>
+          <li><strong>Save Corruption:</strong> Detect and handle corrupted save files gracefully</li>
+        </ul>
+
+        <h3>Technical Specifications</h3>
+        <ul>
+          <li><strong>Engine:</strong> Unreal Engine 5.0+ (Blueprint-based with C++ serialization)</li>
+          <li><strong>Serialization:</strong> Binary format with compression for efficient storage</li>
+          <li><strong>Platform Support:</strong> Works on Windows, Mac, Linux, consoles, and mobile</li>
+          <li><strong>Cloud Integration:</strong> Ready for Steam Cloud, Epic Cloud, and platform-specific saves</li>
+          <li><strong>Performance:</strong> Asynchronous save/load operations to prevent frame drops</li>
+          <li><strong>Security:</strong> Optional encryption for save file protection</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li>Multiple save slots with thumbnail screenshots</li>
+          <li>Comprehensive data serialization (player stats, inventory, quests, world state)</li>
+          <li>Autosave system with configurable triggers (time-based, checkpoint, area transition)</li>
+          <li>Quick save/quick load functionality</li>
+          <li>Save file metadata (save date, play time, character level, location)</li>
+          <li>Save/load UI with file management (copy, delete, rename)</li>
+          <li>Async loading with progress indicators</li>
+          <li>Save file versioning for compatibility across game updates</li>
+          <li>Selective saving (save specific systems independently)</li>
+          <li>Debug tools to inspect save file contents</li>
+        </ul>
+
+        <h3>What You'll Receive</h3>
+        <ul>
+          <li><strong>Source Code:</strong> Complete Blueprint and C++ save system</li>
+          <li><strong>SaveGame Class:</strong> Extensible save game object with common data structures</li>
+          <li><strong>Manager System:</strong> SaveGameManager subsystem for centralized save operations</li>
+          <li><strong>UMG Widgets:</strong> Save/load menu, save slot display, file management UI</li>
+          <li><strong>Integration Helpers:</strong> Interfaces for making custom classes saveable</li>
+          <li><strong>Documentation:</strong> 35-page guide with serialization best practices</li>
+          <li><strong>Example Project:</strong> Demo level demonstrating save/load across level transitions</li>
+          <li><strong>Video Tutorials:</strong> 75 minutes on implementing saves in your project</li>
+        </ul>
+
+        <h3>Technical Requirements</h3>
+        <ul>
+          <li>Unreal Engine 5.0 or later</li>
+          <li>Understanding of Unreal's SaveGame class</li>
+          <li>Basic knowledge of serialization concepts</li>
+        </ul>
+
+        <h3>Use Cases</h3>
+        <p>Essential for any game requiring progress persistence: RPGs, adventure games, strategy games, open-world titles, and story-driven experiences. Compatible with all other KnightGaming templates for complete game state saving.</p>
+
+        <p><strong>Includes:</strong> Blueprint & C++ source code, SaveGame classes, UMG widgets, documentation, example project, video tutorials</p>
+        <a href="shop.html" class="btn">Back to Shop</a>
+        <a href="templates.html" class="btn">View All Templates</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-itch-io"></i></a>
+        </div>
+        <p>&copy; 2025 KnightGaming. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

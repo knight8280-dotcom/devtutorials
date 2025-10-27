@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quest System Template | KnightGaming</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fas fa-chess-knight"></i> KnightGaming
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn" href="community.html">Join Community</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Quest System Template</h1>
+        <p>Full-featured quest management for RPGs and adventure games.</p>
+      </div>
+    </section>
+
+    <section class="product-detail">
+      <div class="container">
+        <img src="img/hud_overlay.png" alt="Quest System Template" />
+        <h2>Quest System Template</h2>
+        <p class="code">Code: SYS-QUE-001</p>
+        <p class="price">$19.99</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="Knightgaming8280@gmail.com">
+          <input type="hidden" name="item_name" value="Quest System Template">
+          <input type="hidden" name="amount" value="19.99">
+          <input type="hidden" name="currency_code" value="USD">
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+        
+        <h3>Overview</h3>
+        <p>A robust quest management system designed for RPGs, MMOs, and adventure games. This template provides a complete framework for creating, tracking, and completing quests with complex objectives, branching paths, and reward systems.</p>
+        
+        <h3>Problems This Solves</h3>
+        <ul>
+          <li><strong>Quest Tracking:</strong> Manage multiple active quests with dynamic objectives</li>
+          <li><strong>Objective Management:</strong> Handle various objective types (kill, collect, talk, explore)</li>
+          <li><strong>Progression Logic:</strong> Create sequential and branching quest chains</li>
+          <li><strong>State Management:</strong> Track quest states (not started, active, completed, failed)</li>
+          <li><strong>Reward Distribution:</strong> Automatically grant experience, items, and currency</li>
+        </ul>
+
+        <h3>Technical Specifications</h3>
+        <ul>
+          <li><strong>Engine:</strong> Unreal Engine 5.0+ (Blueprint-based with C++ extensions)</li>
+          <li><strong>Architecture:</strong> Event-driven quest state machine</li>
+          <li><strong>Data Storage:</strong> JSON-based quest definitions for easy content authoring</li>
+          <li><strong>Networking:</strong> Server-authoritative with client prediction</li>
+          <li><strong>UI Framework:</strong> Modular UMG quest journal and tracker widgets</li>
+          <li><strong>Integration:</strong> Hooks for dialogue systems, inventory, and gameplay events</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li>Quest journal with categorization (main, side, daily, repeatable)</li>
+          <li>On-screen objective tracker with progress bars</li>
+          <li>Multiple objective types: Kill Count, Item Collection, Dialogue, Location Discovery, Escort</li>
+          <li>Branching quest paths based on player choices</li>
+          <li>Quest prerequisites and level requirements</li>
+          <li>Time-limited quests with countdown timers</li>
+          <li>Quest markers and waypoint system</li>
+          <li>Automatic reward distribution (XP, gold, items, reputation)</li>
+          <li>Quest log with search and filtering</li>
+          <li>Failed quest handling and retry logic</li>
+        </ul>
+
+        <h3>What You'll Receive</h3>
+        <ul>
+          <li><strong>Source Code:</strong> Complete Blueprint system with modular components</li>
+          <li><strong>Component:</strong> AC_QuestComponent for player and NPC integration</li>
+          <li><strong>Quest Templates:</strong> 15 pre-built quest examples covering all objective types</li>
+          <li><strong>UMG Widgets:</strong> Quest journal, objective tracker, quest notification pop-ups</li>
+          <li><strong>Data Structures:</strong> Quest definition data tables and structures</li>
+          <li><strong>Documentation:</strong> 38-page integration guide with workflow diagrams</li>
+          <li><strong>Example Content:</strong> Demo level with functional quest NPCs</li>
+          <li><strong>Video Tutorials:</strong> 90 minutes covering setup and quest creation</li>
+        </ul>
+
+        <h3>Technical Requirements</h3>
+        <ul>
+          <li>Unreal Engine 5.0 or later</li>
+          <li>Understanding of Blueprint event dispatchers</li>
+          <li>Basic UMG knowledge for UI customization</li>
+        </ul>
+
+        <h3>Use Cases</h3>
+        <p>Ideal for RPGs, MMORPGs, action-adventure games, and open-world titles. Easily extensible for custom objective types and quest mechanics specific to your game design.</p>
+
+        <p><strong>Includes:</strong> Blueprint source code, quest templates, UMG widgets, documentation, example project, video tutorials</p>
+        <a href="shop.html" class="btn">Back to Shop</a>
+        <a href="templates.html" class="btn">View All Templates</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-itch-io"></i></a>
+        </div>
+        <p>&copy; 2025 KnightGaming. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

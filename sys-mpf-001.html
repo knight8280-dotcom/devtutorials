@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplayer Framework Template | KnightGaming</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fas fa-chess-knight"></i> KnightGaming
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn" href="community.html">Join Community</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Multiplayer Framework Template</h1>
+        <p>Complete multiplayer solution with networking, lobbies, and matchmaking.</p>
+      </div>
+    </section>
+
+    <section class="product-detail">
+      <div class="container">
+        <img src="img/hud_overlay.png" alt="Multiplayer Framework Template" />
+        <h2>Multiplayer Framework Template</h2>
+        <p class="code">Code: SYS-MPF-001</p>
+        <p class="price">$44.99</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="Knightgaming8280@gmail.com">
+          <input type="hidden" name="item_name" value="Multiplayer Framework Template">
+          <input type="hidden" name="amount" value="44.99">
+          <input type="hidden" name="currency_code" value="USD">
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+        
+        <h3>Overview</h3>
+        <p>A comprehensive multiplayer framework built on Unreal Engine's networking system with Steam integration, lobby management, matchmaking, and session handling. This template provides everything needed to create online multiplayer games with dedicated server support and peer-to-peer options.</p>
+        
+        <h3>Problems This Solves</h3>
+        <ul>
+          <li><strong>Session Management:</strong> Create, find, join, and host game sessions</li>
+          <li><strong>Lobby System:</strong> Pre-game lobbies with player lists, team selection, and ready status</li>
+          <li><strong>Matchmaking:</strong> Skill-based matchmaking with ELO rating support</li>
+          <li><strong>Replication:</strong> Properly replicate game state, players, and objects across network</li>
+          <li><strong>Lag Compensation:</strong> Client prediction and lag compensation for smooth gameplay</li>
+        </ul>
+
+        <h3>Technical Specifications</h3>
+        <ul>
+          <li><strong>Engine:</strong> Unreal Engine 5.0+ (Blueprint & C++ hybrid architecture)</li>
+          <li><strong>Networking:</strong> Client-server architecture with authority validation</li>
+          <li><strong>Platform Support:</strong> Steam, Epic Online Services (EOS), platform-native multiplayer</li>
+          <li><strong>Server Options:</strong> Dedicated server, listen server, peer-to-peer</li>
+          <li><strong>Player Count:</strong> Optimized for 2-64 players (scalable architecture)</li>
+          <li><strong>Performance:</strong> Bandwidth optimization with relevancy and priority systems</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li>Session browser with server list, filters, and sorting</li>
+          <li>Lobby system with team selection, player slots, and match settings</li>
+          <li>Quick match and skill-based matchmaking</li>
+          <li>Player connection handling (join, leave, disconnect, timeout)</li>
+          <li>Voice chat integration with push-to-talk and proximity chat</li>
+          <li>In-game player list with ping, score, and team display</li>
+          <li>Anti-cheat foundation with server authority validation</li>
+          <li>Network statistics display (ping, packet loss, bandwidth)</li>
+          <li>Seamless travel between multiplayer maps</li>
+          <li>Game state replication for scores, objectives, and timers</li>
+        </ul>
+
+        <h3>What You'll Receive</h3>
+        <ul>
+          <li><strong>Source Code:</strong> Complete Blueprint and C++ multiplayer framework</li>
+          <li><strong>GameMode & GameState:</strong> Multiplayer-ready game mode with replicated state</li>
+          <li><strong>PlayerController:</strong> Networked player controller with client-server communication</li>
+          <li><strong>Session System:</strong> Complete session creation, browsing, and joining logic</li>
+          <li><strong>Lobby System:</strong> Pre-game lobby with all essential features</li>
+          <li><strong>UMG Widgets:</strong> Main menu, server browser, lobby UI, in-game HUD</li>
+          <li><strong>Steam Integration:</strong> Steam Online Subsystem setup and configuration</li>
+          <li><strong>Documentation:</strong> 72-page comprehensive networking guide</li>
+          <li><strong>Example Project:</strong> Functional multiplayer demo with multiple game modes</li>
+          <li><strong>Video Tutorials:</strong> 4 hours covering networking fundamentals and implementation</li>
+        </ul>
+
+        <h3>Technical Requirements</h3>
+        <ul>
+          <li>Unreal Engine 5.0 or later</li>
+          <li>Understanding of client-server networking concepts</li>
+          <li>Steam account for Steam integration (optional, works with other platforms)</li>
+          <li>C++ knowledge recommended for advanced networking (Blueprint version fully functional)</li>
+        </ul>
+
+        <h3>Use Cases</h3>
+        <p>Perfect for multiplayer shooters, co-op games, competitive games, MMORPGs, battle royales, and any online multiplayer experience. Supports both casual and competitive multiplayer modes.</p>
+
+        <p><strong>Includes:</strong> Blueprint & C++ source code, GameMode & GameState, session system, lobby system, UMG widgets, Steam integration, documentation, example project, video tutorials</p>
+        <a href="shop.html" class="btn">Back to Shop</a>
+        <a href="templates.html" class="btn">View All Templates</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-itch-io"></i></a>
+        </div>
+        <p>&copy; 2025 KnightGaming. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

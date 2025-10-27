@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combat System Template | KnightGaming</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fas fa-chess-knight"></i> KnightGaming
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn" href="community.html">Join Community</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Combat System Template</h1>
+        <p>Complete combat framework with abilities, damage, and stats.</p>
+      </div>
+    </section>
+
+    <section class="product-detail">
+      <div class="container">
+        <img src="img/weapon_melee.png" alt="Combat System Template" />
+        <h2>Combat System Template</h2>
+        <p class="code">Code: SYS-CMB-001</p>
+        <p class="price">$34.99</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="Knightgaming8280@gmail.com">
+          <input type="hidden" name="item_name" value="Combat System Template">
+          <input type="hidden" name="amount" value="34.99">
+          <input type="hidden" name="currency_code" value="USD">
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+        
+        <h3>Overview</h3>
+        <p>A comprehensive combat system built on Unreal Engine 5's Gameplay Ability System (GAS). This production-ready template includes everything from basic attacks to complex ability combos, damage calculation, status effects, and combat stats management.</p>
+        
+        <h3>Problems This Solves</h3>
+        <ul>
+          <li><strong>Ability System:</strong> Implement special attacks, spells, and abilities with cooldowns</li>
+          <li><strong>Damage Calculation:</strong> Handle physical, magical, and elemental damage with armor/resistance</li>
+          <li><strong>Status Effects:</strong> Apply buffs, debuffs, DoT, and crowd control effects</li>
+          <li><strong>Combat Stats:</strong> Manage health, mana, stamina, and derived stats (crit, dodge, etc.)</li>
+          <li><strong>Targeting System:</strong> Implement lock-on, area targeting, and smart target selection</li>
+        </ul>
+
+        <h3>Technical Specifications</h3>
+        <ul>
+          <li><strong>Engine:</strong> Unreal Engine 5.0+ utilizing Gameplay Ability System (GAS)</li>
+          <li><strong>Architecture:</strong> Component-based with modular ability system</li>
+          <li><strong>Combat Model:</strong> Server-authoritative with client prediction for responsiveness</li>
+          <li><strong>Networking:</strong> Fully replicated for multiplayer with lag compensation</li>
+          <li><strong>Animation:</strong> Integrated with animation montages and root motion</li>
+          <li><strong>Performance:</strong> Optimized ability execution with object pooling</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li>Gameplay Ability System (GAS) integration for abilities and effects</li>
+          <li>Attribute system: Health, Mana, Stamina, Attack Power, Defense, Critical Chance</li>
+          <li>Damage types: Physical, Magical, Fire, Ice, Lightning, Poison</li>
+          <li>Status effects: Stun, Root, Slow, Silence, Bleed, Burn, Freeze</li>
+          <li>Combo system with input buffering and canceling</li>
+          <li>Ability cooldown and resource cost management</li>
+          <li>Hit detection with hitbox visualization tools</li>
+          <li>Lock-on targeting with soft and hard lock modes</li>
+          <li>Damage numbers and combat feedback system</li>
+          <li>Threat/aggro system for AI enemy targeting</li>
+        </ul>
+
+        <h3>What You'll Receive</h3>
+        <ul>
+          <li><strong>Source Code:</strong> Complete Blueprint and C++ combat system using GAS</li>
+          <li><strong>GAS Setup:</strong> Pre-configured Gameplay Ability System with 25+ sample abilities</li>
+          <li><strong>Components:</strong> AC_CombatComponent, AC_TargetingComponent, AC_StatusEffectComponent</li>
+          <li><strong>Ability Library:</strong> Melee attacks, ranged attacks, spells, AOE abilities, and buffs</li>
+          <li><strong>Data Tables:</strong> Ability definitions, damage formulas, status effects</li>
+          <li><strong>UMG Widgets:</strong> Health/mana bars, ability hotbar, damage numbers, status icons</li>
+          <li><strong>Documentation:</strong> 68-page comprehensive guide with GAS architecture overview</li>
+          <li><strong>Example Project:</strong> Combat arena demo with playable characters and enemies</li>
+          <li><strong>Video Tutorials:</strong> 3.5 hours covering GAS setup, ability creation, and customization</li>
+        </ul>
+
+        <h3>Technical Requirements</h3>
+        <ul>
+          <li>Unreal Engine 5.0 or later</li>
+          <li>Understanding of Gameplay Ability System concepts (tutorials provided)</li>
+          <li>Knowledge of animation blueprints and montages</li>
+          <li>C++ recommended for advanced customization (Blueprint version fully functional)</li>
+        </ul>
+
+        <h3>Use Cases</h3>
+        <p>Perfect for action RPGs, fighting games, hack-and-slash titles, MMORPGs, and any game requiring deep combat mechanics. Easily extendable for custom ability types and unique combat systems.</p>
+
+        <p><strong>Includes:</strong> Blueprint & C++ source code, GAS setup, ability library, UMG widgets, documentation, example project, video tutorials</p>
+        <a href="shop.html" class="btn">Back to Shop</a>
+        <a href="templates.html" class="btn">View All Templates</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-itch-io"></i></a>
+        </div>
+        <p>&copy; 2025 KnightGaming. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

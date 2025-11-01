@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game UI/UX Design Masterclass | UE5.6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .purchase-box { background: rgba(0, 174, 239, 0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 2rem 0; border-radius: 8px; text-align: center; }
+      .purchase-box .price { font-size: 2.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="tutorials.html">All Courses</a></li>
+          <li><a href="checkout.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Game UI/UX Design Masterclass</h1>
+        <p>Create beautiful, intuitive game interfaces with UMG and best UX practices</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        <div class="purchase-box">
+          <h2 style="margin-top: 0; border: none;">UI/UX Design Complete Course</h2>
+          <p class="price">$74.99</p>
+          <p style="color: var(--color-light);">Master UMG and create stunning, player-friendly interfaces</p>
+          <div style="text-align: left; margin: 1.5rem auto; max-width: 600px;">
+            <strong style="color: var(--color-accent);">Course Includes:</strong>
+            <ul>
+              <li>20+ hours of UI/UX training</li>
+              <li>50+ widget templates</li>
+              <li>Main menu, pause menu, HUD</li>
+              <li>Health bars, minimaps, quest trackers</li>
+              <li>Dialogue system UI</li>
+              <li>Settings menus with keybinding</li>
+              <li>Mobile-responsive designs</li>
+              <li>Animation and transitions</li>
+            </ul>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="UI/UX Design Course">
+            <input type="hidden" name="amount" value="74.99">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Purchase - $74.99</button>
+          </form>
+        </div>
+
+        <h2><i class="fas fa-desktop"></i> What You'll Create</h2>
+        <ul style="margin-left: 2rem; color: var(--color-gray);">
+          <li>Professional main menu with animated background</li>
+          <li>In-game HUD with health/mana/stamina bars</li>
+          <li>Minimap with icons and fog of war</li>
+          <li>Dialogue system with branching choices</li>
+          <li>Quest log and objective tracker</li>
+          <li>Settings menu (graphics, audio, controls)</li>
+          <li>Character sheet/stats screen</li>
+          <li>Shop/vendor interface</li>
+          <li>Loading screens with progress</li>
+          <li>Notification/toast messages</li>
+        </ul>
+
+        <h2><i class="fas fa-graduation-cap"></i> Module Breakdown</h2>
+
+        <div class="step-box">
+          <h3>Module 1: UMG Fundamentals (4 hours)</h3>
+          <ul>
+            <li>Widget Blueprint basics</li>
+            <li>Canvas Panel vs. Overlay vs. Grid</li>
+            <li>Anchors and alignment</li>
+            <li>Z-order and layering</li>
+            <li>Size boxes and scale boxes</li>
+            <li>Material brushes for effects</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 2: UX Design Principles (3 hours)</h3>
+          <ul>
+            <li>Visual hierarchy and focus</li>
+            <li>Color theory for games</li>
+            <li>Typography and readability</li>
+            <li>Spacing and alignment</li>
+            <li>Feedback and affordance</li>
+            <li>Consistency and patterns</li>
+            <li>Accessibility (colorblind mode, text size)</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 3: Main Menu System (3 hours)</h3>
+          <ul>
+            <li>Start screen with logo animation</li>
+            <li>Button styling and hover effects</li>
+            <li>Menu navigation and focus</li>
+            <li>Sub-menus and back navigation</li>
+            <li>Save slot selection</li>
+            <li>Credits scroll</li>
+            <li>Background video/parallax</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 4: HUD Design (4 hours)</h3>
+          <ul>
+            <li>Circular and linear health bars</li>
+            <li>Resource bars with animations</li>
+            <li>Damage numbers floating text</li>
+            <li>Crosshair system</li>
+            <li>Ammo counter and weapon indicator</li>
+            <li>Buff/debuff icons with timers</li>
+            <li>Boss health bar</li>
+            <li>Combo meter</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 5: Advanced UI (6 hours)</h3>
+          <ul>
+            <li>Minimap with camera capture</li>
+            <li>Quest tracker with waypoints</li>
+            <li>Dialogue system with portraits</li>
+            <li>Crafting interface</li>
+            <li>Skill tree visualization</li>
+            <li>Character equipment paper doll</li>
+            <li>Statistics and achievements</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-magic"></i> Animation & Polish</h2>
+        <div class="step-box">
+          <ul>
+            <li>Widget animations (fade, slide, scale)</li>
+            <li>Button hover and click animations</li>
+            <li>Page transitions</li>
+            <li>Loading spinners</li>
+            <li>Particle effects in UI</li>
+            <li>Sound effects integration</li>
+            <li>Motion design best practices</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-mobile-alt"></i> Responsive Design</h2>
+        <p>Learn to create UIs that work on:</p>
+        <ul style="margin-left: 2rem; color: var(--color-gray);">
+          <li>Desktop (16:9, 21:9 ultrawide)</li>
+          <li>Console (safe zones)</li>
+          <li>Mobile (portrait and landscape)</li>
+          <li>Different resolutions (720p to 4K)</li>
+        </ul>
+
+        <div class="tip-box">
+          <strong><i class="fas fa-gamepad"></i> Controller Support:</strong>
+          Full section on gamepad navigation, button prompts, and console-friendly UX
+        </div>
+
+        <div class="purchase-box" style="margin-top: 3rem;">
+          <h3 style="color: var(--color-accent);">Master Professional UI/UX Design</h3>
+          <p class="price">$74.99</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="UI/UX Design Course">
+            <input type="hidden" name="amount" value="74.99">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Enroll Now</button>
+          </form>
+          <p style="margin-top: 1rem;">30-Day Guarantee | Lifetime Updates</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="shop.html" class="btn">Back to Shop</a>
+          <a href="tutorials.html" class="btn" style="margin-left: 1rem;">All Courses</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

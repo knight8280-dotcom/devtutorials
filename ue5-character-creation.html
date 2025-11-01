@@ -93,12 +93,12 @@
   <body>
     <header>
       <nav>
-        <div class="logo"><i class="fas fa-chess-knight"></i> UE5 Tutorials</div>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="tutorials.html">All Tutorials</a></li>
-          <li><a href="ue5-map-generation.html">Map Generation</a></li>
-          <li><a href="ue5-character-creation.html">Character Creation</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="tutorials.html">All Courses</a></li>
+          <li><a href="checkout.html">Cart</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="mobile-menu"><i class="fas fa-bars"></i></div>
@@ -115,6 +115,37 @@
 
     <section class="tutorial-content">
       <div class="container">
+        
+        <div class="purchase-box" style="background: rgba(0, 174, 239, 0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 2rem 0; border-radius: 8px; text-align: center;">
+          <h2 style="margin-top: 0; border: none; padding: 0;">Character Creation Masterclass</h2>
+          <p class="price" style="font-size: 2.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0;">$84.99</p>
+          <p style="color: var(--color-light); font-size: 1.1rem;">Complete character pipeline from modeling to AI behaviors</p>
+          <div style="text-align: left; margin: 1.5rem auto; max-width: 600px;">
+            <strong style="font-size: 1.2rem; color: var(--color-accent);">What's Included:</strong>
+            <ul>
+              <li>24+ hours of comprehensive training</li>
+              <li>Character Blueprint templates</li>
+              <li>Animation Blueprint starter pack</li>
+              <li>MetaHuman integration guide</li>
+              <li>50+ animation examples (Mixamo)</li>
+              <li>AI Behavior Tree templates</li>
+              <li>IK setup project files</li>
+              <li>Lifetime updates</li>
+            </ul>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Character Creation Masterclass">
+            <input type="hidden" name="amount" value="84.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">
+              <i class="fas fa-shopping-cart"></i> Purchase Course - $84.99
+            </button>
+          </form>
+          <p style="margin-top: 1rem; font-size: 0.9rem;">30-Day Money Back Guarantee</p>
+        </div>
+
         <h2><i class="fas fa-user"></i> Introduction to Character Creation in UE5.6</h2>
         <p>
           This comprehensive guide covers the complete character creation pipeline in Unreal Engine 5.6. 
@@ -308,7 +339,7 @@
         <div class="step-box">
           <h4>5.2 Add Movement Input</h4>
           <ol>
-            <li>Go to <strong>Edit → Project Settings → Input</strong></li>
+            <li>Go to <strong>Edit ? Project Settings ? Input</strong></li>
             <li>Under <strong>"Bindings"</strong>, add:
               <ul>
                 <li><strong>Action Mappings:</strong>
@@ -336,12 +367,12 @@
           
           <h4>Forward/Backward Movement:</h4>
           <ol>
-            <li>Right-click → search "MoveForward"</li>
+            <li>Right-click ? search "MoveForward"</li>
             <li>Select <strong>"InputAxis MoveForward"</strong> event</li>
             <li>From the execution pin, add <strong>"Add Movement Input"</strong> node</li>
             <li>Connect:
               <ul>
-                <li><strong>World Direction:</strong> Get Control Rotation → Get Forward Vector</li>
+                <li><strong>World Direction:</strong> Get Control Rotation ? Get Forward Vector</li>
                 <li><strong>Scale Value:</strong> Connect from MoveForward's Axis Value</li>
               </ul>
             </li>
@@ -353,7 +384,7 @@
             <li>Add <strong>"Add Movement Input"</strong> node</li>
             <li>Connect:
               <ul>
-                <li><strong>World Direction:</strong> Get Control Rotation → Get Right Vector</li>
+                <li><strong>World Direction:</strong> Get Control Rotation ? Get Right Vector</li>
                 <li><strong>Scale Value:</strong> Connect from MoveRight's Axis Value</li>
               </ul>
             </li>
@@ -488,7 +519,7 @@
           <h4>8.1 Create Animation Blueprint Asset</h4>
           <ol>
             <li>Right-click in Content/Characters/Animations folder</li>
-            <li>Select <strong>"Animation → Animation Blueprint"</strong></li>
+            <li>Select <strong>"Animation ? Animation Blueprint"</strong></li>
             <li>Choose your character's <strong>Skeleton</strong></li>
             <li>Choose <strong>UAnimInstance</strong> as parent class</li>
             <li>Name it "ABP_PlayerCharacter"</li>
@@ -517,9 +548,9 @@
                 <li>Cast to your character (BP_PlayerCharacter)</li>
                 <li>From character reference:
                   <ul>
-                    <li>Get Velocity → Vector Length → Set Speed</li>
-                    <li>Get Movement Component → Is Falling → Set IsInAir</li>
-                    <li>Get Movement Component → Is Crouching → Set IsCrouching</li>
+                    <li>Get Velocity ? Vector Length ? Set Speed</li>
+                    <li>Get Movement Component ? Is Falling ? Set IsInAir</li>
+                    <li>Get Movement Component ? Is Crouching ? Set IsCrouching</li>
                   </ul>
                 </li>
               </ul>
@@ -532,7 +563,7 @@
           <h4>9.1 Create State Machine</h4>
           <ol>
             <li>Go to <strong>"AnimGraph"</strong> tab</li>
-            <li>Right-click → <strong>"Add New State Machine"</strong></li>
+            <li>Right-click ? <strong>"Add New State Machine"</strong></li>
             <li>Name it "Locomotion"</li>
             <li>Connect to <strong>"Output Pose"</strong></li>
             <li>Double-click the State Machine to open</li>
@@ -554,23 +585,23 @@
           <h4>9.3 Create Transitions</h4>
           <p>Connect states with transitions (drag from one state to another):</p>
           <ul>
-            <li><strong>Entry → Idle/Walk/Run</strong> (default state)</li>
-            <li><strong>Idle/Walk/Run → Jump_Start</strong>
+            <li><strong>Entry ? Idle/Walk/Run</strong> (default state)</li>
+            <li><strong>Idle/Walk/Run ? Jump_Start</strong>
               <ul>
                 <li>Condition: IsInAir == true</li>
               </ul>
             </li>
-            <li><strong>Jump_Start → Jump_Loop</strong>
+            <li><strong>Jump_Start ? Jump_Loop</strong>
               <ul>
                 <li>Automatic (check "Automatic Rule Based on Sequence Player")</li>
               </ul>
             </li>
-            <li><strong>Jump_Loop → Jump_Land</strong>
+            <li><strong>Jump_Loop ? Jump_Land</strong>
               <ul>
                 <li>Condition: IsInAir == false</li>
               </ul>
             </li>
-            <li><strong>Jump_Land → Idle/Walk/Run</strong>
+            <li><strong>Jump_Land ? Idle/Walk/Run</strong>
               <ul>
                 <li>Automatic</li>
               </ul>
@@ -583,7 +614,7 @@
           <h4>10.1 Create Blend Space 1D</h4>
           <ol>
             <li>In Content/Characters/Animations, right-click</li>
-            <li>Select <strong>"Animation → Blend Space 1D"</strong></li>
+            <li>Select <strong>"Animation ? Blend Space 1D"</strong></li>
             <li>Choose your Skeleton</li>
             <li>Name it "BS_Locomotion"</li>
             <li>Double-click to open</li>
@@ -615,7 +646,7 @@
         <div class="step-box">
           <h4>10.3 Use Blend Space in State Machine</h4>
           <ol>
-            <li>Go back to your Animation Blueprint → AnimGraph → State Machine</li>
+            <li>Go back to your Animation Blueprint ? AnimGraph ? State Machine</li>
             <li>Double-click the <strong>"Idle/Walk/Run"</strong> state</li>
             <li>Drag in your <strong>BS_Locomotion</strong> blend space</li>
             <li>Connect <strong>Speed</strong> variable to the Speed input</li>
@@ -651,7 +682,7 @@
           <h4>12.1 Add IK Rig</h4>
           <ol>
             <li>Right-click on your Skeleton asset</li>
-            <li>Select <strong>"Create → IK Rig"</strong></li>
+            <li>Select <strong>"Create ? IK Rig"</strong></li>
             <li>Name it "IK_Character"</li>
             <li>Open the IK Rig</li>
             <li>Add IK goals:
@@ -717,7 +748,7 @@
         <div class="step-box">
           <h4>14.1 Create AI Controller</h4>
           <ol>
-            <li>Right-click → Blueprint Class → <strong>AIController</strong></li>
+            <li>Right-click ? Blueprint Class ? <strong>AIController</strong></li>
             <li>Name it "AIC_Enemy"</li>
           </ol>
         </div>
@@ -740,7 +771,7 @@
         <div class="step-box">
           <h4>15.1 Create Behavior Tree Asset</h4>
           <ol>
-            <li>Right-click → Artificial Intelligence → <strong>Behavior Tree</strong></li>
+            <li>Right-click ? Artificial Intelligence ? <strong>Behavior Tree</strong></li>
             <li>Name it "BT_Enemy"</li>
             <li>Create associated Blackboard (BB_Enemy)</li>
           </ol>
@@ -769,7 +800,7 @@
               <ul>
                 <li><strong>Sequence 1: Chase Player</strong>
                   <ul>
-                    <li>Decorator: Blackboard Based Condition → CanSeePlayer == true</li>
+                    <li>Decorator: Blackboard Based Condition ? CanSeePlayer == true</li>
                     <li>Task: Move To (Target: TargetActor)</li>
                   </ul>
                 </li>
@@ -789,7 +820,7 @@
           <h4>15.4 Run Behavior Tree</h4>
           <ol>
             <li>In AIC_Enemy, Event Graph</li>
-            <li>On Begin Play: <strong>"Run Behavior Tree"</strong> → Select BT_Enemy</li>
+            <li>On Begin Play: <strong>"Run Behavior Tree"</strong> ? Select BT_Enemy</li>
           </ol>
         </div>
 
@@ -836,18 +867,18 @@
         <h2><i class="fas fa-check-circle"></i> Final Checklist</h2>
         <div class="step-box">
           <ul>
-            <li>✓ Character model imported or created</li>
-            <li>✓ Character Blueprint with mesh assigned</li>
-            <li>✓ Movement input configured and working</li>
-            <li>✓ Camera setup with Spring Arm</li>
-            <li>✓ Animations imported for idle, walk, run, jump</li>
-            <li>✓ Animation Blueprint created with State Machine</li>
-            <li>✓ Blend Space for smooth locomotion</li>
-            <li>✓ Jump animations working</li>
-            <li>✓ Optional: IK for feet</li>
-            <li>✓ Optional: Advanced moves (sprint, crouch, dodge)</li>
-            <li>✓ Optional: AI characters with Behavior Tree</li>
-            <li>✓ Optional: Health system</li>
+            <li>? Character model imported or created</li>
+            <li>? Character Blueprint with mesh assigned</li>
+            <li>? Movement input configured and working</li>
+            <li>? Camera setup with Spring Arm</li>
+            <li>? Animations imported for idle, walk, run, jump</li>
+            <li>? Animation Blueprint created with State Machine</li>
+            <li>? Blend Space for smooth locomotion</li>
+            <li>? Jump animations working</li>
+            <li>? Optional: IK for feet</li>
+            <li>? Optional: Advanced moves (sprint, crouch, dodge)</li>
+            <li>? Optional: AI characters with Behavior Tree</li>
+            <li>? Optional: Health system</li>
           </ul>
         </div>
 
@@ -870,9 +901,23 @@
           <li><strong>Animation Retargeting:</strong> Use UE5's IK Retargeter to share animations between different skeletons</li>
         </ul>
 
+        <div class="purchase-box" style="background: rgba(0, 174, 239, 0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 3rem 0; border-radius: 8px; text-align: center;">
+          <h3 style="color: var(--color-accent);">Start Creating Amazing Characters Today</h3>
+          <p class="price" style="font-size: 2.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0;">$84.99</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Character Creation Masterclass">
+            <input type="hidden" name="amount" value="84.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Enroll Now</button>
+          </form>
+          <p style="margin-top: 1rem;">30-Day Money Back Guarantee | Lifetime Access</p>
+        </div>
+        
         <div class="nav-buttons">
-          <a href="ue5-map-generation.html" class="btn"><i class="fas fa-arrow-left"></i> Previous: Map Generation</a>
-          <a href="tutorials.html" class="btn">Back to All Tutorials <i class="fas fa-list"></i></a>
+          <a href="ue5-map-generation.html" class="btn"><i class="fas fa-arrow-left"></i> View: Map Generation</a>
+          <a href="shop.html" class="btn">Back to Shop <i class="fas fa-store"></i></a>
         </div>
       </div>
     </section>
@@ -884,7 +929,7 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2025 Unreal Engine 5.6 Tutorials. All rights reserved.</p>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
       </div>
     </footer>
 

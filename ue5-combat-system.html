@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Combat System | UE5.6 Premium Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .purchase-box { background: rgba(0, 174, 239, 0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 2rem 0; border-radius: 8px; text-align: center; }
+      .purchase-box .price { font-size: 2.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="tutorials.html">All Courses</a></li>
+          <li><a href="checkout.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Complete Combat System</h1>
+        <p>Build professional melee, ranged, and magic combat with combos, blocking, and enemy AI</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        <div class="purchase-box">
+          <h2 style="margin-top: 0; border: none;">Complete Combat System Course</h2>
+          <p class="price">$89.99</p>
+          <p style="color: var(--color-light); font-size: 1.1rem;">Build AAA-quality combat systems with combos, blocking, and multiple weapon types</p>
+          <div style="text-align: left; margin: 1.5rem auto; max-width: 600px;">
+            <strong style="font-size: 1.2rem; color: var(--color-accent);">Course Includes:</strong>
+            <ul>
+              <li>22+ hours of video content</li>
+              <li>Complete combat system Blueprint files</li>
+              <li>3 weapon types: Melee, Ranged, Magic</li>
+              <li>Enemy AI with combat behaviors</li>
+              <li>Combo system with canceling</li>
+              <li>Lock-on targeting system</li>
+              <li>Damage numbers and VFX</li>
+              <li>Lifetime updates</li>
+            </ul>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Complete Combat System Course">
+            <input type="hidden" name="amount" value="89.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Purchase - $89.99</button>
+          </form>
+        </div>
+
+        <h2><i class="fas fa-sword"></i> Course Overview</h2>
+        <p>Master professional combat system development in UE5.6. This course covers everything from basic attack systems to advanced combo mechanics, multiple weapon types, blocking/parrying, enemy AI combat, and polished VFX. Perfect for action RPGs, hack-and-slash, and third-person action games.</p>
+
+        <h2><i class="fas fa-list"></i> Complete Module Breakdown</h2>
+
+        <div class="step-box">
+          <h3>Module 1: Combat Fundamentals (4 hours)</h3>
+          <ul>
+            <li>Setting up the combat character controller</li>
+            <li>Animation montages for attacks</li>
+            <li>Input buffering for smooth combos</li>
+            <li>Hit detection methods: Sphere trace, box collision, animation notifies</li>
+            <li>Basic damage calculation and application</li>
+            <li>Hit reactions and stagger system</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 2: Melee Combat System (5 hours)</h3>
+          <ul>
+            <li>Light and heavy attack systems</li>
+            <li>3-5 hit combo chains</li>
+            <li>Combo timing windows</li>
+            <li>Directional attacks (forward, left, right)</li>
+            <li>Charge attacks with hold input</li>
+            <li>Aerial combat and juggling</li>
+            <li>Weapon trails and impact VFX</li>
+            <li>Hit-stop and camera shake</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 3: Defensive Mechanics (3 hours)</h3>
+          <ul>
+            <li>Block system with stamina cost</li>
+            <li>Perfect parry/counter system</li>
+            <li>Dodge roll with i-frames</li>
+            <li>Directional blocking (shield positioning)</li>
+            <li>Block-break mechanic for heavy attacks</li>
+            <li>Guard damage and chip damage</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 4: Ranged Combat (3 hours)</h3>
+          <ul>
+            <li>Bow and arrow system with aiming</li>
+            <li>Projectile Blueprint with physics</li>
+            <li>Arrow trajectory and gravity</li>
+            <li>Charge system for power shots</li>
+            <li>Headshot detection and bonus damage</li>
+            <li>Crosshair and aiming reticle</li>
+            <li>Ammo management</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 5: Magic System (3 hours)</h3>
+          <ul>
+            <li>Spell casting animations and timing</li>
+            <li>Fireball, lightning bolt, ice shard spells</li>
+            <li>Area of effect (AOE) spells</li>
+            <li>Mana resource system</li>
+            <li>Spell cooldowns</li>
+            <li>Niagara particle effects for spells</li>
+            <li>Elemental damage types and resistances</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 6: Advanced Combat Features (4 hours)</h3>
+          <ul>
+            <li>Lock-on targeting system</li>
+            <li>Target switching</li>
+            <li>Execution/finishing moves</li>
+            <li>Weapon switching mid-combat</li>
+            <li>Combo canceling into dodge/block</li>
+            <li>Super meter and ultimate abilities</li>
+            <li>Critical hits and damage multipliers</li>
+            <li>Status effects (burn, freeze, poison)</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-robot"></i> Enemy Combat AI Module</h2>
+        <div class="step-box">
+          <h3>Creating Combat-Ready Enemies</h3>
+          <ul>
+            <li>Behavior Tree for combat states: Idle, Alert, Chase, Attack, Defend, Flee</li>
+            <li>Attack patterns with variety (3+ attack types)</li>
+            <li>Enemy blocking and dodging</li>
+            <li>Group combat coordination</li>
+            <li>Boss fight mechanics (phases, weak points)</li>
+            <li>Enemy telegraphing and attack warnings</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-chart-line"></i> Polish & Feedback Systems</h2>
+        <div class="step-box">
+          <ul>
+            <li>Floating damage numbers with color coding</li>
+            <li>Hit markers and UI feedback</li>
+            <li>Screen blood splatter effects</li>
+            <li>Low health warning systems</li>
+            <li>Kill streak tracking and rewards</li>
+            <li>Combat music dynamic mixing</li>
+            <li>Sound effect layering for impacts</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-code"></i> Code Architecture Best Practices</h2>
+        <div class="step-box">
+          <ul>
+            <li>Component-based weapon system</li>
+            <li>Data-driven weapon stats (Data Tables)</li>
+            <li>Interface for damageable objects</li>
+            <li>Event dispatcher for combat events</li>
+            <li>Clean Blueprint organization</li>
+            <li>Performance optimization techniques</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-project-diagram"></i> Example Project: Boss Battle</h2>
+        <p>Build a complete boss fight with:</p>
+        <ul style="margin-left: 2rem; color: var(--color-gray);">
+          <li>3-phase fight with changing mechanics</li>
+          <li>Minion spawning</li>
+          <li>Area denial attacks</li>
+          <li>Quick-time event counter opportunities</li>
+          <li>Boss health bar UI</li>
+          <li>Victory/defeat conditions</li>
+        </ul>
+
+        <div class="purchase-box" style="margin-top: 3rem;">
+          <h3 style="color: var(--color-accent);">Start Building Professional Combat</h3>
+          <p class="price">$89.99</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Complete Combat System Course">
+            <input type="hidden" name="amount" value="89.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Enroll Now</button>
+          </form>
+          <p style="margin-top: 1rem;">30-Day Money Back Guarantee</p>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="shop.html" class="btn">Back to Shop</a>
+          <a href="tutorials.html" class="btn" style="margin-left: 1rem;">All Courses</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -2,35 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KnightGaming | Shop</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <title>Shop - UE5 Academy | Premium Game Development Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
       <nav>
-        <div class="logo">
-          <i class="fas fa-chess-knight"></i> KnightGaming
-        </div>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
-          <li><a href="checkout.html">Checkout</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="tutorials.html">All Courses</a></li>
+          <li><a href="checkout.html">Cart</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="btn" href="community.html">Join Community</a></li>
         </ul>
         <div class="mobile-menu"><i class="fas fa-bars"></i></div>
       </nav>
@@ -39,211 +27,300 @@
     <section class="hero">
       <div class="overlay"></div>
       <div class="hero-content">
-        <h1>Shop All Products</h1>
-        <p>Everything you need to build amazing games in one place.</p>
-        <a class="btn" href="#products">Browse Products</a>
+        <h1>Premium UE5.6 Courses</h1>
+        <p>Everything you need to master Unreal Engine 5.6 game development</p>
+        <a class="btn" href="#courses">Browse Courses</a>
       </div>
     </section>
 
-    <section id="products" class="store-list">
+    <!-- Bundle Offer Banner -->
+    <section style="background: linear-gradient(135deg, #A020F0, #00AEEF); padding: 3rem 1rem; text-align: center;">
       <div class="container">
-        <h2>Browse By Category</h2>
+        <h2 style="color: white; margin-bottom: 1rem;"><i class="fas fa-fire"></i> Complete Game Dev Bundle</h2>
+        <p style="color: white; font-size: 1.2rem; margin-bottom: 1rem;">Get ALL 8 premium courses and save $200!</p>
+        <p style="font-size: 2.5rem; font-weight: 700; color: #39FF14; text-decoration: line-through; opacity: 0.7;">$626.93</p>
+        <p style="font-size: 3rem; font-weight: 700; color: white; margin: 1rem 0;">$399.99</p>
+        <a href="#bundle" class="btn" style="background: white; color: #A020F0; font-size: 1.3rem; padding: 1rem 2rem;">
+          <i class="fas fa-box-open"></i> Get Complete Bundle - Save $227
+        </a>
+      </div>
+    </section>
+
+    <section id="courses" class="tutorial-list" style="padding: 4rem 0;">
+      <div class="container">
+        <h2><i class="fas fa-graduation-cap"></i> All Premium Courses</h2>
+        <p style="text-align: center; color: var(--color-gray); margin-bottom: 2rem;">
+          Professional, comprehensive training for serious game developers
+        </p>
         
-        <div class="categories-nav">
-          <a href="assets.html" class="btn">View All Asset Packs</a>
-          <a href="templates.html" class="btn">View All System Templates</a>
-          <a href="tutorials.html" class="btn">View All Tutorial Courses</a>
-          <a href="bundles.html" class="btn">View All Bundles</a>
-        </div>
-
-        <h3>Featured Asset Packs</h3>
         <div class="grid">
-          <div class="pack-card">
-            <img src="img/env_grassland.png" alt="Grasslands Biome"/>
-            <h3>Grasslands Biome Pack</h3>
-            <p>Rocks, trees, foliage and modular terrain for lush grasslands.</p>
-            <p class="code">Code: ENV-GL-001</p>
-            <p class="price">$19.99</p>
-            <a href="env-gl-001.html" class="btn small">Learn More</a>
+          <!-- Map Generation -->
+          <div class="tutorial-card">
+            <i class="fas fa-map" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Complete Map Generation</h3>
+            <p>Master landscape creation, terrain sculpting, foliage systems, and build massive open worlds with UE5.6's latest tools.</p>
+            <p class="code">15+ hours | 13 modules | Beginner-Advanced</p>
+            <p class="price">$64.99</p>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>Material pack (20+ terrains)</li>
+                <li>Foliage library</li>
+                <li>PCG examples</li>
+                <li>200+ page PDF guide</li>
+              </ul>
+            </div>
+            <a href="ue5-map-generation.html" class="btn small">View Details</a>
           </div>
-          <div class="pack-card">
-            <img src="img/armor_light.png" alt="Light Armor Set"/>
-            <h3>Light Armor Set</h3>
-            <p>Three variations of lightweight armor for agile characters.</p>
-            <p class="code">Code: CHR-LA-001</p>
-            <p class="price">$24.99</p>
-            <a href="chr-la-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="pack-card">
-            <img src="img/weapon_melee.png" alt="Melee Weapon Set"/>
-            <h3>Melee Weapon Set</h3>
-            <p>Swords, axes and shields with detailed PBR materials.</p>
-            <p class="code">Code: WPN-ML-001</p>
-            <p class="price">$14.99</p>
-            <a href="wpn-ml-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="pack-card">
-            <img src="img/hud_overlay.png" alt="Basic HUD Elements"/>
-            <h3>Basic HUD Elements</h3>
-            <p>Health and mana bars, experience bars and status widgets.</p>
-            <p class="code">Code: UI-HUD-001</p>
-            <p class="price">$9.99</p>
-            <a href="ui-hud-001.html" class="btn small">Learn More</a>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 20px;"><a href="assets.html" class="btn">View All 16 Asset Packs</a></p>
 
-        <h3>System Templates</h3>
-        <p>Production-ready code templates to accelerate your development.</p>
-        <div class="grid">
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>Inventory System</h3>
-            <p>Complete grid-based inventory with drag-and-drop management.</p>
-            <p class="code">Code: SYS-INV-001</p>
-            <p class="price">$24.99</p>
-            <a href="sys-inv-001.html" class="btn small">Learn More</a>
+          <!-- Character Creation -->
+          <div class="tutorial-card">
+            <i class="fas fa-user" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Character Creation Masterclass</h3>
+            <p>Complete character pipeline: modeling, rigging, animation blueprints, IK systems, and AI behaviors from scratch.</p>
+            <p class="code">24+ hours | 16 modules | Intermediate</p>
+            <p class="price">$84.99</p>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>Blueprint templates</li>
+                <li>Animation starter pack</li>
+                <li>MetaHuman guide</li>
+                <li>AI Behavior Trees</li>
+              </ul>
+            </div>
+            <a href="ue5-character-creation.html" class="btn small">View Details</a>
           </div>
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>Quest System</h3>
-            <p>Full-featured quest management with objectives and rewards.</p>
-            <p class="code">Code: SYS-QUE-001</p>
-            <p class="price">$19.99</p>
-            <a href="sys-que-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>Dialogue System</h3>
-            <p>Advanced branching dialogue with NPC conversation trees.</p>
-            <p class="code">Code: SYS-DLG-001</p>
-            <p class="price">$29.99</p>
-            <a href="sys-dlg-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>Combat System</h3>
-            <p>Complete combat framework using Gameplay Ability System.</p>
-            <p class="code">Code: SYS-CMB-001</p>
-            <p class="price">$34.99</p>
-            <a href="sys-cmb-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>Crafting System</h3>
-            <p>Recipe-based crafting with resource gathering and stations.</p>
-            <p class="code">Code: SYS-CRF-001</p>
-            <p class="price">$22.99</p>
-            <a href="sys-crf-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>Save/Load System</h3>
-            <p>Robust game state persistence with multiple save slots.</p>
-            <p class="code">Code: SYS-SAV-001</p>
-            <p class="price">$14.99</p>
-            <a href="sys-sav-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>AI Behavior System</h3>
-            <p>Advanced NPC AI with behavior trees and tactics.</p>
-            <p class="code">Code: SYS-AIB-001</p>
-            <p class="price">$39.99</p>
-            <a href="sys-aib-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="template-card">
-            <i class="fas fa-code"></i>
-            <h3>Multiplayer Framework</h3>
-            <p>Complete multiplayer solution with networking and lobbies.</p>
-            <p class="code">Code: SYS-MPF-001</p>
-            <p class="price">$44.99</p>
-            <a href="sys-mpf-001.html" class="btn small">Learn More</a>
-          </div>
-        </div>
 
-        <h3>Tutorial Courses</h3>
-        <p>Comprehensive video courses from beginner to advanced topics.</p>
-        <div class="grid">
+          <!-- Blueprint Basics -->
           <div class="tutorial-card">
-            <i class="fas fa-video"></i>
-            <h3>Game Development Fundamentals</h3>
-            <p>Complete beginner course from zero to your first game.</p>
-            <p class="code">Code: TUT-FUN-001</p>
-            <p class="price">$49.99</p>
-            <a href="tut-fun-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="tutorial-card">
-            <i class="fas fa-video"></i>
-            <h3>2D Game Creation</h3>
-            <p>Master 2D game development with sprites and Paper2D.</p>
-            <p class="code">Code: TUT-2DG-001</p>
-            <p class="price">$39.99</p>
-            <a href="tut-2dg-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="tutorial-card">
-            <i class="fas fa-video"></i>
-            <h3>3D Game Basics</h3>
-            <p>Learn 3D game development from modeling to gameplay.</p>
-            <p class="code">Code: TUT-3DG-001</p>
-            <p class="price">$44.99</p>
-            <a href="tut-3dg-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="tutorial-card">
-            <i class="fas fa-video"></i>
-            <h3>Character Controller Development</h3>
-            <p>Build responsive character controllers with advanced movement.</p>
-            <p class="code">Code: TUT-CHC-001</p>
-            <p class="price">$29.99</p>
-            <a href="tut-chc-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="tutorial-card">
-            <i class="fas fa-video"></i>
-            <h3>Enemy AI Programming</h3>
-            <p>Create intelligent enemies with behavior trees.</p>
-            <p class="code">Code: TUT-EAI-001</p>
-            <p class="price">$34.99</p>
-            <a href="tut-eai-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="tutorial-card">
-            <i class="fas fa-video"></i>
-            <h3>Level Design Principles</h3>
-            <p>Learn professional level design and environment creation.</p>
-            <p class="code">Code: TUT-LVL-001</p>
-            <p class="price">$34.99</p>
-            <a href="tut-lvl-001.html" class="btn small">Learn More</a>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 20px;"><a href="tutorials.html" class="btn">View All 12 Tutorial Courses</a></p>
-
-        <h3>Value Bundles</h3>
-        <div class="grid">
-          <div class="bundle-card">
-            <i class="fas fa-rocket"></i>
-            <h3>Starter Bundle</h3>
-            <p class="code">Code: BUN-START-001</p>
-            <p>Kick-start your project with essential assets and beginner tutorials.</p>
-            <p class="price">$49.99</p>
-            <a href="bun-start-001.html" class="btn small">Learn More</a>
-          </div>
-          <div class="bundle-card">
-            <i class="fas fa-bolt"></i>
-            <h3>Action Bundle</h3>
-            <p class="code">Code: BUN-ACT-002</p>
-            <p>Build an action RPG with weapons, characters and combat systems.</p>
+            <i class="fas fa-project-diagram" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Blueprint Visual Scripting</h3>
+            <p>Master Blueprints from fundamentals to advanced gameplay systems. Create games without writing code!</p>
+            <p class="code">18+ hours | 8 modules | Beginner-Intermediate</p>
             <p class="price">$79.99</p>
-            <a href="bun-act-002.html" class="btn small">Learn More</a>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>50+ example Blueprints</li>
+                <li>250+ page reference guide</li>
+                <li>7 practice projects</li>
+                <li>Certificate of completion</li>
+              </ul>
+            </div>
+            <a href="ue5-blueprint-basics.html" class="btn small">View Details</a>
           </div>
-          <div class="bundle-card">
-            <i class="fas fa-globe"></i>
-            <h3>MMO Bundle</h3>
-            <p class="code">Code: BUN-MMO-003</p>
-            <p>Everything for building a multiplayer RPG with complete systems.</p>
-            <p class="price">$149.99</p>
-            <a href="bun-mmo-003.html" class="btn small">Learn More</a>
+
+          <!-- Combat System -->
+          <div class="tutorial-card">
+            <i class="fas fa-fist-raised" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Complete Combat System</h3>
+            <p>Build AAA-quality combat with melee, ranged, magic, combos, blocking, parrying, and enemy AI behaviors.</p>
+            <p class="code">22+ hours | 6 modules | Advanced</p>
+            <p class="price">$89.99</p>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>3 weapon type systems</li>
+                <li>Combo system templates</li>
+                <li>Lock-on targeting</li>
+                <li>Boss fight example</li>
+              </ul>
+            </div>
+            <a href="ue5-combat-system.html" class="btn small">View Details</a>
+          </div>
+
+          <!-- Inventory System -->
+          <div class="tutorial-card">
+            <i class="fas fa-box-open" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Inventory & Item System</h3>
+            <p>Create professional drag-and-drop inventory with equipment, crafting, storage, and shop systems.</p>
+            <p class="code">16+ hours | 5 modules | Intermediate</p>
+            <p class="price">$69.99</p>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>Complete UI widgets</li>
+                <li>50+ example items</li>
+                <li>Crafting system</li>
+                <li>Save/load integration</li>
+              </ul>
+            </div>
+            <a href="ue5-inventory-system.html" class="btn small">View Details</a>
+          </div>
+
+          <!-- UI/UX Design -->
+          <div class="tutorial-card">
+            <i class="fas fa-paint-brush" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Game UI/UX Design</h3>
+            <p>Master UMG and create stunning, player-friendly interfaces. Main menus, HUDs, minimaps, and more.</p>
+            <p class="code">20+ hours | 5 modules | Intermediate</p>
+            <p class="price">$74.99</p>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>50+ widget templates</li>
+                <li>Responsive designs</li>
+                <li>Animation library</li>
+                <li>Mobile UI examples</li>
+              </ul>
+            </div>
+            <a href="ue5-ui-ux-design.html" class="btn small">View Details</a>
+          </div>
+
+          <!-- Materials & Lighting -->
+          <div class="tutorial-card">
+            <i class="fas fa-lightbulb" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Materials & Lighting Mastery</h3>
+            <p>Master Nanite, Lumen, material creation, shaders, and lighting for photorealistic visuals in UE5.6.</p>
+            <p class="code">18+ hours | 6 modules | Intermediate</p>
+            <p class="price">$79.99</p>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>Master material pack</li>
+                <li>Shader examples</li>
+                <li>Lighting presets</li>
+                <li>VFX integration</li>
+              </ul>
+            </div>
+            <a href="tutorials.html#graphics" class="btn small">View Details</a>
+          </div>
+
+          <!-- Audio System -->
+          <div class="tutorial-card">
+            <i class="fas fa-music" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+            <h3>Game Audio System</h3>
+            <p>Master sound effects, music integration, MetaSounds, audio mixing, and dynamic audio systems.</p>
+            <p class="code">12+ hours | 4 modules | Intermediate</p>
+            <p class="price">$59.99</p>
+            <div style="margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 4px; text-align: left; font-size: 0.9rem;">
+              <strong>Includes:</strong>
+              <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>MetaSound examples</li>
+                <li>Audio Blueprint library</li>
+                <li>SFX integration guide</li>
+                <li>Music system template</li>
+              </ul>
+            </div>
+            <a href="tutorials.html#systems" class="btn small">View Details</a>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- Complete Bundle Section -->
+    <section id="bundle" class="featured" style="background: rgba(160, 32, 240, 0.1); padding: 4rem 0;">
+      <div class="container">
+        <h2 style="text-align: center;"><i class="fas fa-star"></i> Complete Game Development Bundle</h2>
+        <div style="max-width: 800px; margin: 2rem auto; padding: 2rem; background: rgba(0,0,0,0.4); border-radius: 12px; border: 3px solid var(--color-accent);">
+          <h3 style="color: var(--color-accent); text-align: center; margin-bottom: 1.5rem;">
+            Get ALL 8 Premium Courses - Save $227!
+          </h3>
+          
+          <div style="text-align: center; margin: 2rem 0;">
+            <p style="font-size: 1.5rem; color: var(--color-gray); text-decoration: line-through;">
+              Regular Price: $626.93
+            </p>
+            <p style="font-size: 3.5rem; font-weight: 700; color: var(--color-accent); margin: 1rem 0;">
+              Bundle Price: $399.99
+            </p>
+            <p style="font-size: 1.3rem; color: var(--color-accent);">
+              <i class="fas fa-piggy-bank"></i> You Save: $226.94 (36% OFF)
+            </p>
+          </div>
+
+          <div style="text-align: left; margin: 2rem 0;">
+            <h4 style="color: var(--color-light); margin-bottom: 1rem;">Bundle Includes:</h4>
+            <ul style="color: var(--color-gray); line-height: 2;">
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Complete Map Generation ($64.99)</li>
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Character Creation Masterclass ($84.99)</li>
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Blueprint Visual Scripting ($79.99)</li>
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Complete Combat System ($89.99)</li>
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Inventory & Item System ($69.99)</li>
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Game UI/UX Design ($74.99)</li>
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Materials & Lighting Mastery ($79.99)</li>
+              <li><i class="fas fa-check" style="color: var(--color-accent);"></i> Game Audio System ($59.99)</li>
+            </ul>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_xclick">
+              <input type="hidden" name="business" value="your-paypal@email.com">
+              <input type="hidden" name="item_name" value="Complete Game Development Bundle">
+              <input type="hidden" name="amount" value="399.99">
+              <input type="hidden" name="currency_code" value="USD">
+              <button type="submit" class="btn" style="font-size: 1.5rem; padding: 1.5rem 3rem; background: var(--color-accent); color: var(--color-dark);">
+                <i class="fas fa-shopping-cart"></i> Get Complete Bundle - $399.99
+              </button>
+            </form>
+            <p style="margin-top: 1rem; color: var(--color-light);">
+              <i class="fas fa-shield-alt"></i> 30-Day Money Back Guarantee | 
+              <i class="fas fa-infinity"></i> Lifetime Access to All Courses
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="categories" style="padding: 4rem 0;">
+      <div class="container">
+        <h2>Why Choose UE5 Academy?</h2>
+        <div class="grid">
+          <div class="card">
+            <i class="fas fa-video"></i>
+            <h3>HD Video Content</h3>
+            <p>Crystal-clear 1080p+ video tutorials with professional narration and on-screen annotations.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-download"></i>
+            <h3>Downloadable Files</h3>
+            <p>All project files, Blueprints, materials, and assets included for hands-on practice.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-infinity"></i>
+            <h3>Lifetime Access</h3>
+            <p>Buy once, access forever. All future updates and new content added free.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-comments"></i>
+            <h3>Community Support</h3>
+            <p>Join our Discord community with 10,000+ students and get help from instructors.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-certificate"></i>
+            <h3>Certificates</h3>
+            <p>Earn certificates of completion to showcase your skills to employers.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-undo"></i>
+            <h3>Money-Back Guarantee</h3>
+            <p>Not satisfied? Get a full refund within 30 days, no questions asked.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="community-cta">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+          <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+            <h3 style="color: var(--color-primary);">Do I need prior experience?</h3>
+            <p style="color: var(--color-gray);">Our courses range from beginner to advanced. Most assume basic UE5 knowledge, but we have beginner-friendly courses to get you started.</p>
+          </div>
+          <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+            <h3 style="color: var(--color-primary);">What format are the courses?</h3>
+            <p style="color: var(--color-gray);">HD video lessons with downloadable project files, PDFs, and assets. Learn at your own pace with lifetime access.</p>
+          </div>
+          <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+            <h3 style="color: var(--color-primary);">Can I use this for commercial projects?</h3>
+            <p style="color: var(--color-gray);">Yes! All assets and code included can be used in your commercial games without additional licensing.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -255,7 +332,7 @@
           <a href="#"><i class="fab fa-twitter"></i></a>
           <a href="#"><i class="fab fa-itch-io"></i></a>
         </div>
-        <p>&copy; 2025 KnightGaming. All rights reserved.</p>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
       </div>
     </footer>
 

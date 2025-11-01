@@ -93,12 +93,12 @@
   <body>
     <header>
       <nav>
-        <div class="logo"><i class="fas fa-chess-knight"></i> UE5 Tutorials</div>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="tutorials.html">All Tutorials</a></li>
-          <li><a href="ue5-map-generation.html">Map Generation</a></li>
-          <li><a href="ue5-character-creation.html">Character Creation</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="tutorials.html">All Courses</a></li>
+          <li><a href="checkout.html">Cart</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="mobile-menu"><i class="fas fa-bars"></i></div>
@@ -115,6 +115,36 @@
 
     <section class="tutorial-content">
       <div class="container">
+        
+        <div class="purchase-box" style="background: rgba(0, 174, 239, 0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 2rem 0; border-radius: 8px; text-align: center;">
+          <h2 style="margin-top: 0; border: none; padding: 0;">Complete Map Generation Course</h2>
+          <p class="price" style="font-size: 2.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0;">$64.99</p>
+          <p style="color: var(--color-light); font-size: 1.1rem;">Master landscape creation, terrain tools, and build massive open worlds</p>
+          <div style="text-align: left; margin: 1.5rem auto; max-width: 600px;">
+            <strong style="font-size: 1.2rem; color: var(--color-accent);">What's Included:</strong>
+            <ul>
+              <li>15+ hours of comprehensive video tutorials</li>
+              <li>Landscape example projects</li>
+              <li>Material pack with 20+ terrain materials</li>
+              <li>Foliage library (trees, grass, rocks)</li>
+              <li>PDF guide (200+ pages)</li>
+              <li>PCG (Procedural Content Generation) examples</li>
+              <li>Lifetime updates</li>
+            </ul>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Complete Map Generation Course">
+            <input type="hidden" name="amount" value="64.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">
+              <i class="fas fa-shopping-cart"></i> Purchase Course - $64.99
+            </button>
+          </form>
+          <p style="margin-top: 1rem; font-size: 0.9rem;">30-Day Money Back Guarantee</p>
+        </div>
+
         <h2><i class="fas fa-map"></i> Introduction to Map Generation in UE5.6</h2>
         <p>
           This comprehensive guide will walk you through creating stunning game maps in Unreal Engine 5.6. 
@@ -428,7 +458,7 @@
           <p>For each foliage type, configure these important settings:</p>
           
           <ul>
-            <li><strong>Density / 1Kuu²:</strong> How many instances (start with 1.0-5.0 for trees, 50+ for grass)</li>
+            <li><strong>Density / 1Kuu?:</strong> How many instances (start with 1.0-5.0 for trees, 50+ for grass)</li>
             <li><strong>Scale (Min/Max):</strong> Random size variation (e.g., 0.8 to 1.2)</li>
             <li><strong>Random Yaw:</strong> Check to randomize rotation</li>
             <li><strong>Align to Normal:</strong> Check to follow ground slope</li>
@@ -460,7 +490,7 @@
         <div class="step-box">
           <h4>7.1 Enable World Composition</h4>
           <ol>
-            <li>Go to <strong>Window → World Settings</strong></li>
+            <li>Go to <strong>Window ? World Settings</strong></li>
             <li>Check <strong>"Enable World Composition"</strong></li>
             <li>This allows streaming of landscape tiles</li>
           </ol>
@@ -469,7 +499,7 @@
         <div class="step-box">
           <h4>7.2 Create Multiple Landscape Tiles</h4>
           <ol>
-            <li>In Landscape Mode → Manage tab</li>
+            <li>In Landscape Mode ? Manage tab</li>
             <li>Use <strong>"Add"</strong> to create new landscape sections</li>
             <li>Arrange them in the World Composition window</li>
             <li>Set streaming distances</li>
@@ -480,7 +510,7 @@
         <div class="step-box">
           <h4>8.1 Enable PCG Plugin</h4>
           <ol>
-            <li>Go to <strong>Edit → Plugins</strong></li>
+            <li>Go to <strong>Edit ? Plugins</strong></li>
             <li>Search for "Procedural Content Generation"</li>
             <li>Check to enable</li>
             <li>Restart the editor</li>
@@ -510,7 +540,7 @@
                 <li><strong>Static Mesh Spawner:</strong> Places your meshes</li>
               </ul>
             </li>
-            <li>Connect: Input → Surface Sampler → Density Filter → Static Mesh Spawner → Output</li>
+            <li>Connect: Input ? Surface Sampler ? Density Filter ? Static Mesh Spawner ? Output</li>
             <li>Configure Static Mesh Spawner with your foliage meshes</li>
             <li>Back in the level, click <strong>"Generate"</strong> on the PCG Volume</li>
           </ol>
@@ -526,7 +556,7 @@
         <div class="step-box">
           <h4>9.1 Enable Water Plugin</h4>
           <ol>
-            <li>Go to <strong>Edit → Plugins</strong></li>
+            <li>Go to <strong>Edit ? Plugins</strong></li>
             <li>Search for "Water"</li>
             <li>Enable the Water plugin</li>
             <li>Restart editor</li>
@@ -576,7 +606,7 @@
         <div class="step-box">
           <h4>10.2 Landscape Streaming</h4>
           <ol>
-            <li>In Landscape Mode → Manage tab</li>
+            <li>In Landscape Mode ? Manage tab</li>
             <li>Enable <strong>"Level Streaming"</strong></li>
             <li>Set streaming distances appropriate for your world size</li>
           </ol>
@@ -633,7 +663,7 @@
           <h4>Importing Heightmaps from External Tools</h4>
           <ol>
             <li>Create heightmap in World Machine, Gaia, or similar (16-bit PNG or RAW)</li>
-            <li>In UE5, Landscape Mode → New Landscape</li>
+            <li>In UE5, Landscape Mode ? New Landscape</li>
             <li>Click <strong>"Import from File"</strong></li>
             <li>Select your heightmap file</li>
             <li>Set scale and dimensions</li>
@@ -644,15 +674,15 @@
         <h2><i class="fas fa-check-circle"></i> Final Checklist</h2>
         <div class="step-box">
           <ul>
-            <li>✓ Landscape created with appropriate resolution</li>
-            <li>✓ Terrain sculpted with mountains, valleys, plateaus</li>
-            <li>✓ Material with multiple layers applied</li>
-            <li>✓ Layers painted realistically</li>
-            <li>✓ Foliage added (grass, trees, rocks)</li>
-            <li>✓ Water bodies if needed</li>
-            <li>✓ LODs and culling configured</li>
-            <li>✓ Lighting built or Lumen enabled</li>
-            <li>✓ Performance tested</li>
+            <li>? Landscape created with appropriate resolution</li>
+            <li>? Terrain sculpted with mountains, valleys, plateaus</li>
+            <li>? Material with multiple layers applied</li>
+            <li>? Layers painted realistically</li>
+            <li>? Foliage added (grass, trees, rocks)</li>
+            <li>? Water bodies if needed</li>
+            <li>? LODs and culling configured</li>
+            <li>? Lighting built or Lumen enabled</li>
+            <li>? Performance tested</li>
           </ul>
         </div>
 
@@ -674,9 +704,23 @@
           <li><strong>World Machine:</strong> External tool for advanced heightmap generation</li>
         </ul>
 
+        <div class="purchase-box" style="background: rgba(0, 174, 239, 0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 3rem 0; border-radius: 8px; text-align: center;">
+          <h3 style="color: var(--color-accent);">Start Building Amazing Worlds Today</h3>
+          <p class="price" style="font-size: 2.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0;">$64.99</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Complete Map Generation Course">
+            <input type="hidden" name="amount" value="64.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Enroll Now</button>
+          </form>
+          <p style="margin-top: 1rem;">30-Day Money Back Guarantee | Lifetime Access</p>
+        </div>
+        
         <div class="nav-buttons">
-          <a href="tutorials.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Tutorials</a>
-          <a href="ue5-character-creation.html" class="btn">Next: Character Creation <i class="fas fa-arrow-right"></i></a>
+          <a href="shop.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Shop</a>
+          <a href="ue5-character-creation.html" class="btn">View: Character Creation <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -688,7 +732,7 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2025 Unreal Engine 5.6 Tutorials. All rights reserved.</p>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
       </div>
     </footer>
 

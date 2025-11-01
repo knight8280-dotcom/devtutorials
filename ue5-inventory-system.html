@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Inventory & Item System | UE5.6 Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .purchase-box { background: rgba(0, 174, 239, 0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 2rem 0; border-radius: 8px; text-align: center; }
+      .purchase-box .price { font-size: 2.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="tutorials.html">All Courses</a></li>
+          <li><a href="checkout.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Complete Inventory & Item System</h1>
+        <p>Build drag-and-drop inventory with items, equipment, crafting, and storage</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        <div class="purchase-box">
+          <h2 style="margin-top: 0; border: none;">Inventory & Item System Masterclass</h2>
+          <p class="price">$69.99</p>
+          <p style="color: var(--color-light);">Create professional RPG inventory systems with drag-and-drop UI, crafting, and equipment</p>
+          <div style="text-align: left; margin: 1.5rem auto; max-width: 600px;">
+            <strong style="color: var(--color-accent);">What You Get:</strong>
+            <ul>
+              <li>16+ hours comprehensive training</li>
+              <li>Complete inventory system Blueprints</li>
+              <li>Drag-and-drop UMG widgets</li>
+              <li>Item database with 50+ example items</li>
+              <li>Crafting system</li>
+              <li>Equipment slots & stat bonuses</li>
+              <li>Stackable items & weight system</li>
+              <li>Save/load integration</li>
+            </ul>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="Inventory System Course">
+            <input type="hidden" name="amount" value="69.99">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Purchase - $69.99</button>
+          </form>
+        </div>
+
+        <h2><i class="fas fa-box"></i> What You'll Build</h2>
+        <p>A complete, production-ready inventory system with:</p>
+        <ul style="margin-left: 2rem; color: var(--color-gray);">
+          <li>Grid-based inventory UI (customizable size)</li>
+          <li>Drag-and-drop between slots</li>
+          <li>Item tooltips with stats</li>
+          <li>Equipment system (head, chest, legs, weapons, accessories)</li>
+          <li>Item categories: Consumables, Weapons, Armor, Materials, Quest Items</li>
+          <li>Stackable items with max stack size</li>
+          <li>Weight and capacity system</li>
+          <li>Quick slots/hotbar</li>
+          <li>Loot containers and pickups</li>
+          <li>Shop/vendor system</li>
+          <li>Crafting with recipes</li>
+        </ul>
+
+        <h2><i class="fas fa-database"></i> Module Breakdown</h2>
+
+        <div class="step-box">
+          <h3>Module 1: Item Data Structure (2 hours)</h3>
+          <ul>
+            <li>Creating Item Struct with all properties</li>
+            <li>Item Data Table setup</li>
+            <li>Item rarity system (Common, Uncommon, Rare, Epic, Legendary)</li>
+            <li>Icon and mesh references</li>
+            <li>Item properties: Weight, value, stackable, max stack</li>
+            <li>Equipment slots and stat modifiers</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 2: Inventory Component (3 hours)</h3>
+          <ul>
+            <li>Creating reusable Inventory Component</li>
+            <li>Add item function with overflow handling</li>
+            <li>Remove item function</li>
+            <li>Stack splitting and merging</li>
+            <li>Finding items by ID or name</li>
+            <li>Weight calculation system</li>
+            <li>Inventory event dispatchers for UI updates</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 3: Inventory UI (5 hours)</h3>
+          <ul>
+            <li>Creating slot widget with icon, quantity, rarity border</li>
+            <li>Grid container for inventory slots</li>
+            <li>Drag-and-drop implementation</li>
+            <li>Hover tooltips with item details</li>
+            <li>Right-click context menu (use, drop, split)</li>
+            <li>Visual feedback (highlight valid drops)</li>
+            <li>Sorting functions (by name, type, value)</li>
+            <li>Search/filter system</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 4: Equipment System (3 hours)</h3>
+          <ul>
+            <li>Equipment slots UI (6+ slots)</li>
+            <li>Equip/unequip functionality</li>
+            <li>Equipment restrictions (class-specific, level requirements)</li>
+            <li>Stat calculation from equipped items</li>
+            <li>Visual representation on character</li>
+            <li>Weapon switching</li>
+            <li>Set bonuses for matching equipment</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 5: Crafting System (3 hours)</h3>
+          <ul>
+            <li>Recipe data structure</li>
+            <li>Crafting UI with material requirements</li>
+            <li>Material checking and consumption</li>
+            <li>Crafting time/progress bar</li>
+            <li>Quality/success rate system</li>
+            <li>Blueprint discovery/unlocking</li>
+            <li>Crafting stations</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-tools"></i> Advanced Features</h2>
+        <div class="step-box">
+          <ul>
+            <li><strong>Quick Slots:</strong> Hotbar with number key binding</li>
+            <li><strong>Storage Chests:</strong> Transfer items to/from containers</li>
+            <li><strong>Loot Window:</strong> Pick up multiple items at once</li>
+            <li><strong>Shop System:</strong> Buy/sell with dynamic pricing</li>
+            <li><strong>Item Comparison:</strong> Compare stats when hovering over equipment</li>
+            <li><strong>Auto-sort:</strong> One-click inventory organization</li>
+            <li><strong>Item Filters:</strong> Show only weapons, consumables, etc.</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-save"></i> Persistence & Save System</h2>
+        <p>Learn to save and load:</p>
+        <ul style="margin-left: 2rem; color: var(--color-gray);">
+          <li>Inventory contents</li>
+          <li>Equipped items</li>
+          <li>Chest/container states</li>
+          <li>Discovered crafting recipes</li>
+        </ul>
+
+        <div class="tip-box">
+          <strong><i class="fas fa-star"></i> Bonus Content:</strong>
+          <ul>
+            <li>Item durability and repair system</li>
+            <li>Item enchanting/upgrading</li>
+            <li>Random loot generation</li>
+            <li>Legendary item proc chance</li>
+          </ul>
+        </div>
+
+        <div class="purchase-box" style="margin-top: 3rem;">
+          <h3 style="color: var(--color-accent);">Build Your Inventory System Today</h3>
+          <p class="price">$69.99</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="Inventory System Course">
+            <input type="hidden" name="amount" value="69.99">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Enroll Now</button>
+          </form>
+          <p style="margin-top: 1rem;">30-Day Money Back Guarantee | Lifetime Access</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="shop.html" class="btn">Back to Shop</a>
+          <a href="tutorials.html" class="btn" style="margin-left: 1rem;">All Courses</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blueprint Visual Scripting Mastery | UE5.6 Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .tutorial-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        text-align: left;
+      }
+      .tutorial-content h2 {
+        color: var(--color-primary);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--color-accent);
+        padding-bottom: 0.5rem;
+      }
+      .tutorial-content h3 {
+        color: var(--color-accent);
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+      .tutorial-content h4 {
+        color: var(--color-light);
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .tutorial-content p {
+        margin-bottom: 1rem;
+        line-height: 1.8;
+        color: var(--color-gray);
+      }
+      .tutorial-content ul, .tutorial-content ol {
+        margin: 1rem 0 1rem 2rem;
+        color: var(--color-gray);
+      }
+      .tutorial-content li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      .tutorial-content strong {
+        color: var(--color-light);
+      }
+      .step-box {
+        background: rgba(0, 174, 239, 0.1);
+        border-left: 4px solid var(--color-primary);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+      }
+      .tip-box {
+        background: rgba(57, 255, 20, 0.1);
+        border-left: 4px solid var(--color-accent);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+      .warning-box {
+        background: rgba(255, 165, 0, 0.1);
+        border-left: 4px solid orange;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+      .purchase-box {
+        background: rgba(0, 174, 239, 0.15);
+        border: 2px solid var(--color-primary);
+        padding: 2rem;
+        margin: 2rem 0;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .purchase-box .price {
+        font-size: 2.5rem;
+        color: var(--color-accent);
+        font-weight: 700;
+        margin: 1rem 0;
+      }
+      .purchase-box .includes {
+        text-align: left;
+        margin: 1.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="tutorials.html">All Courses</a></li>
+          <li><a href="checkout.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Blueprint Visual Scripting Mastery</h1>
+        <p>Master Blueprints from fundamentals to advanced gameplay systems - No coding required!</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        
+        <div class="purchase-box">
+          <h2 style="margin-top: 0; border: none; padding: 0;">Blueprint Visual Scripting Complete Course</h2>
+          <p class="price">$79.99</p>
+          <p style="color: var(--color-light); font-size: 1.1rem;">Master Blueprint visual scripting and create gameplay systems without writing code</p>
+          <div class="includes">
+            <strong style="font-size: 1.2rem; color: var(--color-accent);">What's Included:</strong>
+            <ul>
+              <li>18+ hours of comprehensive video tutorials</li>
+              <li>50+ Blueprint example files</li>
+              <li>Downloadable project files</li>
+              <li>PDF reference guide (250+ pages)</li>
+              <li>Lifetime updates and support</li>
+              <li>Certificate of completion</li>
+            </ul>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Blueprint Visual Scripting Complete Course">
+            <input type="hidden" name="amount" value="79.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">
+              <i class="fas fa-shopping-cart"></i> Purchase Course - $79.99
+            </button>
+          </form>
+          <p style="margin-top: 1rem; font-size: 0.9rem;">30-Day Money Back Guarantee</p>
+        </div>
+
+        <h2><i class="fas fa-project-diagram"></i> Course Overview</h2>
+        <p>
+          This comprehensive Blueprint course takes you from absolute beginner to advanced Blueprint developer.
+          Learn to create complex gameplay systems, interactive mechanics, and professional game features
+          entirely through visual scripting - no C++ required!
+        </p>
+
+        <h2><i class="fas fa-list-check"></i> What You'll Learn</h2>
+        <div class="step-box">
+          <h3>Module 1: Blueprint Fundamentals (4 hours)</h3>
+          <ul>
+            <li>Understanding the Blueprint interface and navigation</li>
+            <li>Variables: Boolean, Integer, Float, String, Vector, Transform</li>
+            <li>Functions and Custom Events</li>
+            <li>Flow control: Branch, Sequence, Switch, ForEach Loop</li>
+            <li>Blueprint communication methods</li>
+            <li>Event dispatchers and delegates</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 2: Blueprint Classes & Components (3 hours)</h3>
+          <ul>
+            <li>Blueprint Class types: Actor, Pawn, Character, GameMode</li>
+            <li>Components: Static Mesh, Skeletal Mesh, Collision, Audio</li>
+            <li>Parent-child relationships and inheritance</li>
+            <li>Interfaces for clean communication</li>
+            <li>Blueprint Function Libraries</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 3: Input & Interaction Systems (2 hours)</h3>
+          <ul>
+            <li>Enhanced Input System (UE5.6)</li>
+            <li>Input Actions and Input Mapping Contexts</li>
+            <li>Interaction system with raycast detection</li>
+            <li>Pick up and drop mechanics</li>
+            <li>Door, lever, and button interactions</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 4: Game Systems Development (4 hours)</h3>
+          <ul>
+            <li>Health and damage system</li>
+            <li>Stamina and resource management</li>
+            <li>Experience and leveling system</li>
+            <li>Stat system with modifiers</li>
+            <li>Status effects (buffs/debuffs)</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 5: Advanced Blueprint Techniques (3 hours)</h3>
+          <ul>
+            <li>Macros for reusable node groups</li>
+            <li>Blueprint nativization for performance</li>
+            <li>Debugging with breakpoints and watches</li>
+            <li>Optimization best practices</li>
+            <li>Event Tick alternatives for performance</li>
+            <li>Working with Timers and Delays</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Module 6: Data Management (2 hours)</h3>
+          <ul>
+            <li>Data Tables for game content</li>
+            <li>Structs for complex data</li>
+            <li>Enums for state management</li>
+            <li>Arrays, Sets, and Maps</li>
+            <li>Serialization and data validation</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-book-open"></i> Detailed Chapter Breakdown</h2>
+
+        <h3>Chapter 1: Your First Blueprint</h3>
+        <div class="step-box">
+          <h4>1.1 Creating a Blueprint Class</h4>
+          <ol>
+            <li>Open Unreal Engine 5.6 and create/open your project</li>
+            <li>In Content Browser, right-click → <strong>Blueprint Class</strong></li>
+            <li>Select <strong>Actor</strong> as parent class</li>
+            <li>Name it "BP_RotatingCube"</li>
+            <li>Double-click to open Blueprint Editor</li>
+          </ol>
+
+          <h4>1.2 Understanding the Blueprint Interface</h4>
+          <ul>
+            <li><strong>Viewport:</strong> Visual preview of your Blueprint</li>
+            <li><strong>Components Panel:</strong> Add/manage components</li>
+            <li><strong>My Blueprint Panel:</strong> Variables, functions, graphs</li>
+            <li><strong>Details Panel:</strong> Properties of selected item</li>
+            <li><strong>Event Graph:</strong> Where logic happens</li>
+          </ul>
+
+          <h4>1.3 Adding a Component</h4>
+          <ol>
+            <li>Click <strong>"Add"</strong> in Components panel</li>
+            <li>Select <strong>"Static Mesh"</strong></li>
+            <li>In Details, set Static Mesh to <strong>"Cube"</strong> (from Engine Content)</li>
+            <li>The cube appears in viewport</li>
+          </ol>
+        </div>
+
+        <h3>Chapter 2: Making It Move</h3>
+        <div class="step-box">
+          <h4>2.1 Event Tick Basics</h4>
+          <ol>
+            <li>Go to <strong>Event Graph</strong> tab</li>
+            <li>You'll see <strong>"Event BeginPlay"</strong> and <strong>"Event Tick"</strong></li>
+            <li>Event Tick runs every frame (~60 times per second)</li>
+          </ol>
+
+          <h4>2.2 Rotate the Cube</h4>
+          <ol>
+            <li>From Event Tick's execution pin, drag out</li>
+            <li>Search for "Add Actor Local Rotation"</li>
+            <li>Connect Delta Seconds (from Event Tick) to a <strong>Multiply</strong> node</li>
+            <li>Set multiplier to 50.0</li>
+            <li>Connect result to Z (Yaw) rotation input</li>
+            <li>This rotates at 50 degrees per second</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-lightbulb"></i> Pro Tip:</strong> 
+            Always multiply rotations by Delta Seconds to ensure frame-rate independent movement!
+          </div>
+
+          <h4>2.3 Test Your Blueprint</h4>
+          <ol>
+            <li>Click <strong>Compile</strong> (checkmark icon)</li>
+            <li>Click <strong>Save</strong></li>
+            <li>Drag BP_RotatingCube from Content Browser into your level</li>
+            <li>Press <strong>Play</strong> - your cube rotates!</li>
+          </ol>
+        </div>
+
+        <h3>Chapter 3: Variables & User Input</h3>
+        <div class="step-box">
+          <h4>3.1 Creating Variables</h4>
+          <ol>
+            <li>In My Blueprint panel, click <strong>"+ Variable"</strong></li>
+            <li>Name it "RotationSpeed"</li>
+            <li>Set type to <strong>Float</strong></li>
+            <li>In Details, check <strong>"Instance Editable"</strong> and <strong>"Expose on Spawn"</strong></li>
+            <li>Set Default Value to 50.0</li>
+            <li>Click <strong>Compile</strong> to confirm</li>
+          </ol>
+
+          <h4>3.2 Using Variables</h4>
+          <ol>
+            <li>In Event Graph, drag RotationSpeed variable in</li>
+            <li>Choose <strong>GET</strong> (blue node)</li>
+            <li>Replace the hardcoded 50.0 with this variable</li>
+            <li>Now you can change rotation speed per-instance in the level!</li>
+          </ol>
+
+          <h4>3.3 Variable Types Reference</h4>
+          <ul>
+            <li><strong>Boolean:</strong> True/False (checkboxes, toggles)</li>
+            <li><strong>Integer:</strong> Whole numbers (score, ammo count)</li>
+            <li><strong>Float:</strong> Decimal numbers (speed, health, damage)</li>
+            <li><strong>String:</strong> Text (player name, dialogue)</li>
+            <li><strong>Vector:</strong> 3D coordinates (location, direction)</li>
+            <li><strong>Rotator:</strong> Rotation values (pitch, yaw, roll)</li>
+            <li><strong>Transform:</strong> Location + Rotation + Scale combined</li>
+            <li><strong>Object Reference:</strong> Reference to another actor/component</li>
+          </ul>
+        </div>
+
+        <h3>Chapter 4: Functions for Reusable Logic</h3>
+        <div class="step-box">
+          <h4>4.1 Creating a Custom Function</h4>
+          <ol>
+            <li>In My Blueprint panel, click <strong>"+ Function"</strong></li>
+            <li>Name it "DealDamage"</li>
+            <li>Opens the function graph</li>
+          </ol>
+
+          <h4>4.2 Adding Inputs and Outputs</h4>
+          <ol>
+            <li>Select the function entry node</li>
+            <li>In Details, under <strong>Inputs</strong>, click <strong>"+"</strong></li>
+            <li>Add input: "DamageAmount" (Float)</li>
+            <li>Add input: "DamageType" (String)</li>
+            <li>Add output: "WasFatal" (Boolean)</li>
+          </ol>
+
+          <h4>4.3 Function Logic Example</h4>
+          <ol>
+            <li>Get player's current Health variable</li>
+            <li>Subtract DamageAmount from Health</li>
+            <li>Set Health to new value</li>
+            <li>Branch: If Health <= 0, return WasFatal = true, else false</li>
+            <li>Connect to Return Node</li>
+          </ol>
+
+          <h4>4.4 Calling Your Function</h4>
+          <ol>
+            <li>In Event Graph, right-click and search for "DealDamage"</li>
+            <li>Your custom function appears!</li>
+            <li>Connect it after any event</li>
+            <li>Set DamageAmount and read WasFatal output</li>
+          </ol>
+        </div>
+
+        <h3>Chapter 5: Flow Control</h3>
+        <div class="step-box">
+          <h4>5.1 Branch (If/Else)</h4>
+          <pre style="background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 4px;">
+Example: Check if player has enough mana
+1. Add node: "Branch"
+2. Condition: CurrentMana >= SpellCost
+3. True pin: Cast spell, subtract mana
+4. False pin: Show "Not enough mana" message</pre>
+
+          <h4>5.2 Sequence (Do Multiple Things)</h4>
+          <pre style="background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 4px;">
+Example: Player dies
+1. Add node: "Sequence"
+2. Then 0: Play death animation
+3. Then 1: Drop all items
+4. Then 2: Ragdoll physics
+5. Then 3: Show respawn UI</pre>
+
+          <h4>5.3 For Loop (Repeat Actions)</h4>
+          <pre style="background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 4px;">
+Example: Damage all enemies in range
+1. Add node: "For Loop"
+2. First Index: 0
+3. Last Index: Length of EnemyArray - 1
+4. Loop Body: Call DealDamage on Array[Index]</pre>
+
+          <h4>5.4 Switch on String/Int</h4>
+          <pre style="background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 4px;">
+Example: Different behavior per weapon type
+1. Add node: "Switch on String"
+2. Add pin for each weapon: "Sword", "Bow", "Staff"
+3. Connect different logic to each pin</pre>
+        </div>
+
+        <h3>Chapter 6: Blueprint Communication</h3>
+        <div class="step-box">
+          <h4>6.1 Direct Reference (Fastest)</h4>
+          <ol>
+            <li>Create variable of type "Actor" or specific class</li>
+            <li>Drag reference into level, select the actor you want</li>
+            <li>In Blueprint, GET the reference and call functions on it</li>
+            <li><strong>Use when:</strong> You know exactly which actor at design time</li>
+          </ol>
+
+          <h4>6.2 Cast To (Type Checking)</h4>
+          <ol>
+            <li>When you have a generic Actor reference</li>
+            <li>Use "Cast to BP_PlayerCharacter" node</li>
+            <li>Success pin: It was that type, access its functions</li>
+            <li>Fail pin: It wasn't, do something else</li>
+          </ol>
+
+          <h4>6.3 Event Dispatchers (Broadcasting)</h4>
+          <ol>
+            <li>Create Event Dispatcher: "OnHealthChanged"</li>
+            <li>When health changes, call "OnHealthChanged" dispatcher</li>
+            <li>Other Blueprints bind to this event</li>
+            <li><strong>Use when:</strong> Multiple things need to react to one event</li>
+          </ol>
+
+          <h4>6.4 Blueprint Interfaces (Clean Communication)</h4>
+          <ol>
+            <li>Create Blueprint Interface: "BPI_Damageable"</li>
+            <li>Add function: "TakeDamage"</li>
+            <li>Implement interface on any Blueprint that can take damage</li>
+            <li>Call interface without casting - it just works!</li>
+          </ol>
+        </div>
+
+        <h3>Chapter 7: Practical Example - Door System</h3>
+        <div class="step-box">
+          <h4>Complete Interactive Door Blueprint</h4>
+          
+          <p><strong>Components:</strong></p>
+          <ul>
+            <li>Static Mesh: Door frame and door</li>
+            <li>Box Collision: Trigger for "Press E to Open"</li>
+          </ul>
+
+          <p><strong>Variables:</strong></p>
+          <ul>
+            <li>bIsOpen (Boolean) - Is door currently open?</li>
+            <li>bIsLocked (Boolean) - Is door locked?</li>
+            <li>RequiredKey (String) - Key name needed to unlock</li>
+            <li>OpenRotation (Rotator) - Door's open position</li>
+            <li>ClosedRotation (Rotator) - Door's closed position</li>
+            <li>OpenSpeed (Float) - How fast door moves</li>
+          </ul>
+
+          <p><strong>Logic:</strong></p>
+          <ol>
+            <li><strong>Event BeginPlay:</strong>
+              <ul>
+                <li>Store initial rotation as ClosedRotation</li>
+                <li>Calculate OpenRotation (add 90° to Yaw)</li>
+              </ul>
+            </li>
+            
+            <li><strong>On Player Presses E:</strong>
+              <ul>
+                <li>Branch: Is bIsLocked?</li>
+                <li>True: Check if player has RequiredKey
+                  <ul>
+                    <li>Yes: Set bIsLocked = false, proceed to open</li>
+                    <li>No: Display "Locked - need [KeyName]"</li>
+                  </ul>
+                </li>
+                <li>False: Toggle bIsOpen</li>
+                <li>Start Timeline for smooth rotation</li>
+              </ul>
+            </li>
+            
+            <li><strong>Timeline (0 to 1 over 1 second):</strong>
+              <ul>
+                <li>Lerp between ClosedRotation and OpenRotation</li>
+                <li>Set door's rotation to lerped value</li>
+                <li>Play door sound effect</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <h3>Chapter 8: Debugging Your Blueprints</h3>
+        <div class="step-box">
+          <h4>8.1 Print String</h4>
+          <ul>
+            <li>Add "Print String" node anywhere</li>
+            <li>Shows text on screen during play</li>
+            <li>Perfect for checking variable values</li>
+          </ul>
+
+          <h4>8.2 Breakpoints</h4>
+          <ul>
+            <li>Right-click any node → <strong>"Add Breakpoint"</strong></li>
+            <li>Red dot appears</li>
+            <li>During play, execution pauses at breakpoint</li>
+            <li>Inspect all variable values at that moment</li>
+            <li>Step through execution one node at a time</li>
+          </ul>
+
+          <h4>8.3 Watch Values</h4>
+          <ul>
+            <li>Right-click variable → <strong>"Watch This Value"</strong></li>
+            <li>Shows live value during gameplay</li>
+            <li>No need to print</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-trophy"></i> Practice Projects Included</h2>
+        <div class="step-box">
+          <ol>
+            <li><strong>Health Pickup System:</strong> Create health packs that restore player HP with visual feedback</li>
+            <li><strong>Button Puzzle:</strong> 4 buttons that must be pressed in correct order to open door</li>
+            <li><strong>Treasure Chest:</strong> Lootable container with random item generation</li>
+            <li><strong>Jump Pad:</strong> Launch players high into the air with particle effects</li>
+            <li><strong>Patrol Guard:</strong> AI that walks between waypoints and chases player when spotted</li>
+            <li><strong>Weapon Switching:</strong> Equip different weapons with unique stats and effects</li>
+            <li><strong>Mini Boss:</strong> Enemy with multiple phases and attack patterns</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-graduation-cap"></i> Certification Project</h2>
+        <p>
+          Complete a final capstone project: <strong>"The Escape Room"</strong> - 
+          Create a fully functional escape room with at least 5 different puzzle types,
+          inventory system, hint system, and timer. Submit for review to earn your certificate!
+        </p>
+
+        <div class="purchase-box" style="margin-top: 3rem;">
+          <h3 style="color: var(--color-accent);">Ready to Master Blueprints?</h3>
+          <p style="color: var(--color-light);">Join 10,000+ students who have transformed their game development skills</p>
+          <p class="price">$79.99</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="your-paypal@email.com">
+            <input type="hidden" name="item_name" value="Blueprint Visual Scripting Complete Course">
+            <input type="hidden" name="amount" value="79.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">
+              <i class="fas fa-shopping-cart"></i> Enroll Now - $79.99
+            </button>
+          </form>
+          <p style="margin-top: 1rem; font-size: 0.9rem;">
+            <i class="fas fa-shield-alt"></i> 30-Day Money Back Guarantee | 
+            <i class="fas fa-infinity"></i> Lifetime Access | 
+            <i class="fas fa-certificate"></i> Certificate Included
+          </p>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+          <a href="shop.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Shop</a>
+          <a href="tutorials.html" class="btn" style="margin-left: 1rem;">View All Courses</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

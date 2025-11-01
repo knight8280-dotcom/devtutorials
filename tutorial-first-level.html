@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Your First Level in UE5.6 | Complete Beginner Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="free-resources.html">Free Resources</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Create Your First Level</h1>
+        <p>Complete beginner tutorial - Build a playable game level in 30 minutes!</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        
+        <div style="background: rgba(57,255,20,0.1); border-left: 4px solid var(--color-accent); padding: 1.5rem; margin: 2rem 0; border-radius: 4px;">
+          <p style="color: var(--color-light); font-size: 1.1rem;">
+            <strong><i class="fas fa-gift"></i> FREE Complete Beginner Tutorial</strong><br>
+            No experience required! We'll build a simple level from scratch.
+          </p>
+        </div>
+
+        <h2>What You'll Build</h2>
+        <p>By the end of this tutorial, you'll have:</p>
+        <ul>
+          <li>✓ A playable 3D level with platforms</li>
+          <li>✓ A third-person character you can control</li>
+          <li>✓ Basic lighting and atmosphere</li>
+          <li>✓ A goal object to reach</li>
+          <li>✓ Understanding of UE5 basics</li>
+        </ul>
+
+        <h2>Step 1: Create a New Project</h2>
+        
+        <div class="step-box">
+          <h3>1.1 Launch Unreal Engine 5.6</h3>
+          <ol>
+            <li>Open Epic Games Launcher</li>
+            <li>Go to <strong>Library</strong> tab</li>
+            <li>Find Unreal Engine 5.6</li>
+            <li>Click <strong>Launch</strong></li>
+          </ol>
+
+          <h3>1.2 Select Project Template</h3>
+          <ol>
+            <li>Click <strong>Games</strong> category</li>
+            <li>Select <strong>Third Person</strong> template</li>
+            <li>This gives us a character ready to use!</li>
+          </ol>
+
+          <h3>1.3 Configure Project Settings</h3>
+          <ul>
+            <li><strong>Blueprint or C++:</strong> Choose <strong>Blueprint</strong> (easier for beginners)</li>
+            <li><strong>Target Platform:</strong> Desktop</li>
+            <li><strong>Quality Preset:</strong> Maximum (we want it to look good!)</li>
+            <li><strong>Ray Tracing:</strong> Enabled (if your GPU supports it)</li>
+            <li><strong>Starter Content:</strong> ✓ With Starter Content (gives us free assets)</li>
+          </ul>
+
+          <h3>1.4 Name and Create</h3>
+          <ol>
+            <li>Project Name: "MyFirstLevel"</li>
+            <li>Project Location: Choose where to save</li>
+            <li>Click <strong>Create</strong></li>
+            <li>Wait 1-2 minutes for project to load</li>
+          </ol>
+        </div>
+
+        <h2>Step 2: Understanding the Interface</h2>
+
+        <div class="step-box">
+          <h3>Main Viewport (Center)</h3>
+          <p>This is your 3D world view. You'll build everything here.</p>
+          <ul>
+            <li><strong>Controls:</strong> Right-click + WASD to fly around</li>
+            <li><strong>Speed:</strong> Right-click + Mouse Wheel to go faster/slower</li>
+            <li><strong>Look:</strong> Right-click + Move mouse to look around</li>
+          </ul>
+
+          <h3>Content Browser (Bottom)</h3>
+          <p>Your file system. All your assets live here.</p>
+          
+          <h3>World Outliner (Right)</h3>
+          <p>Lists everything in your level.</p>
+
+          <h3>Details Panel (Right)</h3>
+          <p>Shows properties of selected object.</p>
+
+          <div class="tip-box">
+            <strong>Pro Tip:</strong> Press <span class="shortcut-key" style="background: rgba(0,174,239,0.3); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace; color: var(--color-accent);">F</span> to focus camera on selected object!
+          </div>
+        </div>
+
+        <h2>Step 3: Delete the Default Level</h2>
+
+        <div class="step-box">
+          <p>The Third Person template comes with a demo level. Let's start fresh!</p>
+          <ol>
+            <li>Go to <strong>File → New Level</strong></li>
+            <li>Choose <strong>Empty Level</strong></li>
+            <li>Click <strong>Create</strong></li>
+          </ol>
+          <p>You now have a completely black, empty world. Perfect!</p>
+        </div>
+
+        <h2>Step 4: Add Essential Components</h2>
+
+        <div class="step-box">
+          <h3>4.1 Add Lighting (Make it Visible!)</h3>
+          <ol>
+            <li>In toolbar, click <strong>Window → Environment Light Mixer</strong></li>
+            <li>Click <strong>Create Sky and Atmosphere</strong></li>
+            <li>This adds:
+              <ul>
+                <li>Directional Light (sun)</li>
+                <li>Sky Atmosphere</li>
+                <li>Sky Light</li>
+                <li>Volumetric Clouds</li>
+              </ul>
+            </li>
+            <li>Your world now has a sky and sunlight!</li>
+          </ol>
+
+          <h3>4.2 Add a Floor</h3>
+          <ol>
+            <li>In <strong>Place Actors</strong> panel (left), find <strong>Basic</strong> category</li>
+            <li>Drag <strong>Plane</strong> into viewport</li>
+            <li>Select the plane</li>
+            <li>In <strong>Details</strong> panel, set:
+              <ul>
+                <li>Location: X=0, Y=0, Z=0</li>
+                <li>Scale: X=10, Y=10, Z=1</li>
+              </ul>
+            </li>
+            <li>You now have a huge floor!</li>
+          </ol>
+
+          <h3>4.3 Add a Player Start</h3>
+          <ol>
+            <li>In <strong>Place Actors</strong>, search for "Player Start"</li>
+            <li>Drag it into the level</li>
+            <li>Position it above the floor (Z = 200)</li>
+            <li>This is where your character spawns</li>
+          </ol>
+        </div>
+
+        <h2>Step 5: Build Some Platforms</h2>
+
+        <div class="step-box">
+          <h3>5.1 Create First Platform</h3>
+          <ol>
+            <li>Place Actors → Basic → <strong>Cube</strong></li>
+            <li>Drag cube into level</li>
+            <li>In Details panel:
+              <ul>
+                <li>Location: X=500, Y=0, Z=50</li>
+                <li>Scale: X=3, Y=3, Z=0.5</li>
+              </ul>
+            </li>
+            <li>You have a flat platform!</li>
+          </ol>
+
+          <h3>5.2 Duplicate Platforms</h3>
+          <ol>
+            <li>Select your platform</li>
+            <li>Press <strong>Ctrl + D</strong> to duplicate</li>
+            <li>Move the new platform: X=1000, Y=300, Z=150</li>
+            <li>Duplicate again: X=1500, Y=-300, Z=250</li>
+            <li>Keep duplicating to create a jumping puzzle!</li>
+          </ol>
+
+          <div class="tip-box">
+            <strong>Quick Duplicate:</strong> Select object → Hold <strong>Alt</strong> → Drag = Instant duplicate!
+          </div>
+        </div>
+
+        <h2>Step 6: Add Materials (Make it Pretty!)</h2>
+
+        <div class="step-box">
+          <h3>6.1 Apply Material to Floor</h3>
+          <ol>
+            <li>Select your floor plane</li>
+            <li>In <strong>Content Browser</strong>, navigate to:
+              <ul>
+                <li>Content → StarterContent → Materials</li>
+              </ul>
+            </li>
+            <li>Find <strong>M_Ground_Grass</strong></li>
+            <li>Drag it onto your floor in the viewport</li>
+            <li>Your floor is now grass!</li>
+          </ol>
+
+          <h3>6.2 Apply Material to Platforms</h3>
+          <ol>
+            <li>Select all your platforms (Ctrl + Click each one)</li>
+            <li>In Materials, find <strong>M_Metal_Steel</strong></li>
+            <li>Drag onto the selected platforms</li>
+            <li>Shiny metal platforms!</li>
+          </ol>
+        </div>
+
+        <h2>Step 7: Add a Goal</h2>
+
+        <div class="step-box">
+          <h3>7.1 Create Goal Object</h3>
+          <ol>
+            <li>Place Actors → Basic → <strong>Sphere</strong></li>
+            <li>Place on your highest platform</li>
+            <li>Scale: X=2, Y=2, Z=2</li>
+            <li>Apply material: <strong>M_Metal_Gold</strong></li>
+          </ol>
+
+          <h3>7.2 Make it Spin (Optional but Cool!)</h3>
+          <ol>
+            <li>Select the sphere</li>
+            <li>In Details, scroll to <strong>Rendering</strong></li>
+            <li>Check <strong>Visible</strong> ✓</li>
+            <li>Add <strong>Rotating Movement Component</strong>:
+              <ul>
+                <li>Click <strong>+Add</strong> button</li>
+                <li>Search "Rotating Movement"</li>
+                <li>Add it</li>
+              </ul>
+            </li>
+            <li>Your goal now spins automatically!</li>
+          </ol>
+        </div>
+
+        <h2>Step 8: Test Your Level!</h2>
+
+        <div class="step-box">
+          <h3>8.1 Play</h3>
+          <ol>
+            <li>Click the green <strong>Play</strong> button in toolbar</li>
+            <li>OR press <strong>Alt + P</strong></li>
+            <li>Your character spawns!</li>
+          </ol>
+
+          <h3>8.2 Controls</h3>
+          <ul>
+            <li><strong>WASD:</strong> Move</li>
+            <li><strong>Mouse:</strong> Look around</li>
+            <li><strong>Space:</strong> Jump</li>
+            <li><strong>Escape:</strong> Stop playing</li>
+          </ul>
+
+          <h3>8.3 Try to Reach the Goal!</h3>
+          <p>Jump from platform to platform. If you fall, press Escape and Play again!</p>
+        </div>
+
+        <h2>Step 9: Polish & Improve</h2>
+
+        <div class="step-box">
+          <h3>9.1 Add More Platforms</h3>
+          <p>Make the jumping puzzle more interesting:</p>
+          <ul>
+            <li>Some platforms close together (easy jumps)</li>
+            <li>Some far apart (hard jumps)</li>
+            <li>Some higher, some lower</li>
+            <li>Try different shapes (cubes, cylinders)</li>
+          </ul>
+
+          <h3>9.2 Add Obstacles</h3>
+          <ol>
+            <li>Place some cubes as walls</li>
+            <li>Scale them tall: Z=5</li>
+            <li>Apply dark materials</li>
+            <li>Force player to navigate around them</li>
+          </ol>
+
+          <h3>9.3 Adjust Lighting</h3>
+          <ol>
+            <li>Select Directional Light in World Outliner</li>
+            <li>In Details → Transform, change Rotation</li>
+            <li>Try different angles for different times of day</li>
+            <li>Experiment with <strong>Light Color</strong> for mood</li>
+          </ol>
+        </div>
+
+        <h2>Step 10: Save Your Work!</h2>
+
+        <div class="step-box">
+          <h3>10.1 Save Level</h3>
+          <ol>
+            <li>Press <strong>Ctrl + S</strong></li>
+            <li>OR go to File → Save Current Level</li>
+            <li>Name it "Level_01"</li>
+            <li>Click <strong>Save</strong></li>
+          </ol>
+
+          <h3>10.2 Save Everything</h3>
+          <ol>
+            <li>Press <strong>Ctrl + Shift + S</strong></li>
+            <li>OR go to File → Save All</li>
+            <li>This saves the entire project</li>
+          </ol>
+
+          <div class="warning-box">
+            <strong>Important:</strong> Save frequently! UE5 can crash. Get in the habit of pressing Ctrl + S often!
+          </div>
+        </div>
+
+        <h2>Troubleshooting Common Issues</h2>
+
+        <div class="warning-box">
+          <h3>Problem: Character Falls Through Floor</h3>
+          <p><strong>Solution:</strong> Select floor → Details → Collision → Set Collision Complexity to "Use Complex Collision"</p>
+        </div>
+
+        <div class="warning-box">
+          <h3>Problem: Can't See Anything (All Black)</h3>
+          <p><strong>Solution:</strong> You forgot to add lights! Go back to Step 4.1</p>
+        </div>
+
+        <div class="warning-box">
+          <h3>Problem: Character Doesn't Spawn</h3>
+          <p><strong>Solution:</strong> Make sure Player Start is in the level and above the floor (Z = 200 or higher)</p>
+        </div>
+
+        <h2>🎉 Congratulations!</h2>
+
+        <div class="tip-box">
+          <h3>You Built Your First UE5 Level!</h3>
+          <p>You now understand:</p>
+          <ul>
+            <li>✓ Project creation</li>
+            <li>✓ Basic navigation</li>
+            <li>✓ Placing and moving objects</li>
+            <li>✓ Applying materials</li>
+            <li>✓ Testing your game</li>
+          </ul>
+          <p style="margin-top: 1rem;"><strong>You're ready to learn more!</strong></p>
+        </div>
+
+        <h2>Next Steps</h2>
+
+        <div class="step-box">
+          <h3>Want to Learn More?</h3>
+          <p><strong>Recommended next tutorials:</strong></p>
+          <ul>
+            <li><a href="tutorial-blueprint-variables.html" style="color: var(--color-primary);">Blueprint Variables Tutorial</a> - Add interactive elements</li>
+            <li><a href="quick-reference-ue5-shortcuts.html" style="color: var(--color-primary);">Keyboard Shortcuts Guide</a> - Work faster</li>
+            <li><a href="ue5-blueprint-basics.html" style="color: var(--color-primary);">Complete Blueprint Course</a> - Master visual scripting ($79.99)</li>
+          </ul>
+        </div>
+
+        <div style="background: rgba(0,174,239,0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 3rem 0; border-radius: 8px; text-align: center;">
+          <h3 style="color: var(--color-accent); margin-bottom: 1rem;">Ready for Professional Training?</h3>
+          <p style="color: var(--color-light); margin-bottom: 1rem;">
+            This free tutorial just scratches the surface. Our premium courses go 100x deeper with:
+          </p>
+          <ul style="text-align: left; max-width: 600px; margin: 1rem auto; color: var(--color-gray);">
+            <li>140+ hours of HD video content</li>
+            <li>Downloadable project files</li>
+            <li>Complete game systems</li>
+            <li>Lifetime access & updates</li>
+            <li>Certificate of completion</li>
+          </ul>
+          <p style="font-size: 1.5rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0;">
+            Complete Bundle: $399.99 <span style="font-size: 1rem; color: var(--color-gray);">(Save $227!)</span>
+          </p>
+          <a href="shop.html#bundle" class="btn" style="font-size: 1.2rem; padding: 1rem 2rem;">
+            <i class="fas fa-shopping-cart"></i> View All Courses
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="free-resources.html" class="btn">More Free Tutorials</a>
+          <a href="tutorials.html" class="btn" style="margin-left: 1rem;">Browse Courses</a>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

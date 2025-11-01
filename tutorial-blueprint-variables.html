@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blueprint Variables Complete Guide | UE5 Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="tutorials.html">Courses</a></li>
+          <li><a href="free-resources.html">Free</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Blueprint Variables - Complete Guide</h1>
+        <p>Master variables to store and manipulate data in your games</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        
+        <div style="background: rgba(57,255,20,0.1); border-left: 4px solid var(--color-accent); padding: 1.5rem; margin: 2rem 0; border-radius: 4px;">
+          <p style="color: var(--color-light); font-size: 1.1rem;">
+            <strong><i class="fas fa-gift"></i> FREE Tutorial Chapter</strong><br>
+            This is a free preview from our Blueprint Visual Scripting course. Want the complete 18-hour course with 50+ examples?
+          </p>
+          <a href="ue5-blueprint-basics.html" class="btn" style="margin-top: 1rem;">Get Full Course - $79.99</a>
+        </div>
+
+        <h2>Understanding Variables</h2>
+        <p>
+          Variables are containers that store information in your game. Think of them like labeled boxes where you can put data 
+          and retrieve it later. Every variable has a <strong>name</strong>, a <strong>type</strong> (what kind of data it holds), 
+          and a <strong>value</strong> (the actual data).
+        </p>
+
+        <h2>Variable Types Reference</h2>
+        
+        <div class="step-box">
+          <h3>Boolean (True/False)</h3>
+          <p><strong>Use for:</strong> On/off states, yes/no conditions, flags</p>
+          <p><strong>Examples:</strong></p>
+          <ul>
+            <li><code>bIsDead</code> - Is the character dead?</li>
+            <li><code>bDoorIsLocked</code> - Is the door locked?</li>
+            <li><code>bHasKey</code> - Does player have the key?</li>
+            <li><code>bIsInCombat</code> - Is player fighting?</li>
+          </ul>
+          <div class="tip-box">
+            <strong>Naming Convention:</strong> Boolean variables start with "b" (e.g., bIsOpen, not IsOpen)
+          </div>
+        </div>
+
+        <div class="step-box">
+          <h3>Integer (Whole Numbers)</h3>
+          <p><strong>Use for:</strong> Counts, IDs, whole number values</p>
+          <p><strong>Range:</strong> -2,147,483,648 to 2,147,483,647</p>
+          <p><strong>Examples:</strong></p>
+          <ul>
+            <li><code>AmmoCount</code> - Number of bullets (0, 1, 2, 3...)</li>
+            <li><code>PlayerLevel</code> - Character level (1, 2, 3...)</li>
+            <li><code>EnemyCount</code> - How many enemies alive</li>
+            <li><code>Score</code> - Player score (1000, 2500, etc.)</li>
+          </ul>
+          <div class="warning-box">
+            <strong>Warning:</strong> Integers can't store decimals. 10.5 becomes 10. Use Float for decimals.
+          </div>
+        </div>
+
+        <div class="step-box">
+          <h3>Float (Decimal Numbers)</h3>
+          <p><strong>Use for:</strong> Measurements, percentages, any decimal value</p>
+          <p><strong>Precision:</strong> ~7 decimal places</p>
+          <p><strong>Examples:</strong></p>
+          <ul>
+            <li><code>Health</code> - 100.0, 75.5, 32.8</li>
+            <li><code>Speed</code> - 600.0, 450.25</li>
+            <li><code>DamageMultiplier</code> - 1.5, 2.0, 0.75</li>
+            <li><code>CooldownTimer</code> - 3.5 seconds, 1.2 seconds</li>
+          </ul>
+          <div class="tip-box">
+            <strong>Best Practice:</strong> Use Floats for anything that needs decimals - health, speed, timers, distances.
+          </div>
+        </div>
+
+        <div class="step-box">
+          <h3>String (Text)</h3>
+          <p><strong>Use for:</strong> Names, messages, any text</p>
+          <p><strong>Examples:</strong></p>
+          <ul>
+            <li><code>PlayerName</code> - "John", "Sarah", "Hero123"</li>
+            <li><code>QuestDescription</code> - "Find the lost sword"</li>
+            <li><code>DialogueText</code> - "Hello, traveler!"</li>
+            <li><code>ItemName</code> - "Health Potion", "Iron Sword"</li>
+          </ul>
+          <div class="warning-box">
+            <strong>Performance:</strong> Strings use more memory than numbers. Don't use for data that could be numbers/booleans.
+          </div>
+        </div>
+
+        <div class="step-box">
+          <h3>Vector (3D Coordinates)</h3>
+          <p><strong>Use for:</strong> Positions, directions, velocities in 3D space</p>
+          <p><strong>Components:</strong> X (forward/back), Y (left/right), Z (up/down)</p>
+          <p><strong>Examples:</strong></p>
+          <ul>
+            <li><code>SpawnLocation</code> - (1000, 500, 200)</li>
+            <li><code>MoveDirection</code> - (1, 0, 0) = forward</li>
+            <li><code>PlayerVelocity</code> - Current movement speed in 3D</li>
+            <li><code>TargetPosition</code> - Where to move to</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h3>Rotator (Rotation)</h3>
+          <p><strong>Use for:</strong> Rotation angles</p>
+          <p><strong>Components:</strong> Pitch (up/down), Yaw (left/right), Roll (tilt)</p>
+          <p><strong>Examples:</strong></p>
+          <ul>
+            <li><code>PlayerRotation</code> - Which way character faces</li>
+            <li><code>CameraRotation</code> - Camera angle</li>
+            <li><code>DoorRotation</code> - Open/closed angle</li>
+          </ul>
+        </div>
+
+        <h2>Step-by-Step: Creating Your First Variable</h2>
+
+        <div class="step-box">
+          <h3>Exercise 1: Player Health Variable</h3>
+          <p>Let's create a health system from scratch.</p>
+          
+          <h4>Step 1: Create Blueprint</h4>
+          <ol>
+            <li>Content Browser → Right-click → Blueprint Class → Actor</li>
+            <li>Name it "BP_HealthTest"</li>
+            <li>Double-click to open</li>
+          </ol>
+
+          <h4>Step 2: Add Health Variable</h4>
+          <ol>
+            <li>In <strong>My Blueprint</strong> panel, click <strong>+ Variable</strong></li>
+            <li>Name it "Health"</li>
+            <li>Click the variable to select it</li>
+            <li>In <strong>Details panel</strong>:
+              <ul>
+                <li>Variable Type: Float (click dropdown)</li>
+                <li>Category: "Stats" (organize your variables)</li>
+                <li>Instance Editable: ✓ Check (can edit per instance)</li>
+                <li>Default Value: 100.0</li>
+              </ul>
+            </li>
+            <li>Click <strong>Compile</strong> to save</li>
+          </ol>
+
+          <h4>Step 3: Add Max Health Variable</h4>
+          <ol>
+            <li>Create another variable: "MaxHealth"</li>
+            <li>Type: Float</li>
+            <li>Category: "Stats"</li>
+            <li>Instance Editable: ✓ Check</li>
+            <li>Default Value: 100.0</li>
+            <li>Compile</li>
+          </ol>
+
+          <h4>Step 4: Display Health on Screen</h4>
+          <ol>
+            <li>Go to <strong>Event Graph</strong></li>
+            <li>Find "Event BeginPlay" node</li>
+            <li>Drag from execution pin → search "Print String"</li>
+            <li>Drag <strong>Health</strong> variable into graph (hold Ctrl for GET)</li>
+            <li>Drag from Health pin → "Append" node</li>
+            <li>Set Append A: "Current Health: "</li>
+            <li>Connect Append output to Print String "In String"</li>
+          </ol>
+
+          <h4>Step 5: Test It</h4>
+          <ol>
+            <li>Click <strong>Compile</strong> and <strong>Save</strong></li>
+            <li>Drag BP_HealthTest into your level</li>
+            <li>Select it → Details panel shows Health and MaxHealth</li>
+            <li>Try changing Health to 75</li>
+            <li>Press <strong>Play</strong></li>
+            <li>See "Current Health: 75.0" on screen!</li>
+          </ol>
+        </div>
+
+        <h2>Variable Scope & Access</h2>
+
+        <div class="step-box">
+          <h3>Instance Editable</h3>
+          <p>When checked, you can set different values for each copy of the Blueprint.</p>
+          <p><strong>Example:</strong> 3 enemies with different health values:</p>
+          <ul>
+            <li>Enemy1: Health = 100</li>
+            <li>Enemy2: Health = 150</li>
+            <li>Enemy3: Health = 50</li>
+          </ul>
+          <p><strong>Use when:</strong> Each instance needs unique values</p>
+        </div>
+
+        <div class="step-box">
+          <h3>Expose on Spawn</h3>
+          <p>When checked, you must provide a value when creating the Blueprint via code.</p>
+          <p><strong>Use when:</strong> Value is required and shouldn't use default</p>
+        </div>
+
+        <div class="step-box">
+          <h3>Blueprint Read Only</h3>
+          <p>Can read the value but not change it in Blueprints (only C++ can change).</p>
+          <p><strong>Use when:</strong> Displaying data that shouldn't be modified</p>
+        </div>
+
+        <h2>Practical Examples</h2>
+
+        <div class="step-box">
+          <h3>Example 1: Ammo System</h3>
+          <p><strong>Variables needed:</strong></p>
+          <ul>
+            <li><code>CurrentAmmo</code> (Integer) - Bullets in magazine</li>
+            <li><code>MaxAmmo</code> (Integer) - Magazine capacity</li>
+            <li><code>ReserveAmmo</code> (Integer) - Extra bullets</li>
+          </ul>
+          
+          <p><strong>Logic:</strong></p>
+          <pre style="background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 4px; color: #eee;">
+When player shoots:
+  - CurrentAmmo = CurrentAmmo - 1
+  - If CurrentAmmo <= 0:
+    - Can't shoot (play click sound)
+
+When player reloads:
+  - If ReserveAmmo > 0:
+    - BulletsToReload = MaxAmmo - CurrentAmmo
+    - If ReserveAmmo >= BulletsToReload:
+      - CurrentAmmo = MaxAmmo
+      - ReserveAmmo = ReserveAmmo - BulletsToReload
+    - Else:
+      - CurrentAmmo = CurrentAmmo + ReserveAmmo
+      - ReserveAmmo = 0
+          </pre>
+        </div>
+
+        <div class="step-box">
+          <h3>Example 2: Door System</h3>
+          <p><strong>Variables needed:</strong></p>
+          <ul>
+            <li><code>bIsOpen</code> (Boolean) - Door state</li>
+            <li><code>bIsLocked</code> (Boolean) - Can it be opened?</li>
+            <li><code>RequiredKeyName</code> (String) - Which key needed</li>
+            <li><code>OpenRotation</code> (Rotator) - Door open angle</li>
+            <li><code>ClosedRotation</code> (Rotator) - Door closed angle</li>
+            <li><code>OpenSpeed</code> (Float) - How fast it opens</li>
+          </ul>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div class="warning-box">
+          <h3>1. Using Float for Counts</h3>
+          <p><strong>Wrong:</strong> <code>EnemyCount</code> (Float) = 5.0</p>
+          <p><strong>Right:</strong> <code>EnemyCount</code> (Integer) = 5</p>
+          <p><strong>Why:</strong> You can't have 5.5 enemies. Use Integer for countable things.</p>
+        </div>
+
+        <div class="warning-box">
+          <h3>2. Not Using Default Values</h3>
+          <p><strong>Problem:</strong> Variables start at 0 or empty by default</p>
+          <p><strong>Solution:</strong> Always set sensible defaults (Health = 100, not 0)</p>
+        </div>
+
+        <div class="warning-box">
+          <h3>3. Poor Naming</h3>
+          <p><strong>Bad:</strong> <code>x</code>, <code>temp</code>, <code>var1</code></p>
+          <p><strong>Good:</strong> <code>PlayerHealth</code>, <code>MaxSpeed</code>, <code>JumpHeight</code></p>
+          <p><strong>Why:</strong> Clear names make code readable and maintainable</p>
+        </div>
+
+        <h2>Quick Reference: Choosing Variable Types</h2>
+
+        <table style="width: 100%; margin: 2rem 0; border-collapse: collapse; color: var(--color-light);">
+          <thead style="background: rgba(0,174,239,0.2);">
+            <tr>
+              <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">If you need to store...</th>
+              <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Use this type</th>
+              <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Example</th>
+            </tr>
+          </thead>
+          <tbody style="color: var(--color-gray);">
+            <tr style="background: rgba(0,0,0,0.3);">
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">Yes/No, True/False</td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);"><strong>Boolean</strong></td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">bIsAlive, bHasKey</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">Whole numbers, counts</td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);"><strong>Integer</strong></td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">AmmoCount, Score</td>
+            </tr>
+            <tr style="background: rgba(0,0,0,0.3);">
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">Decimals, measurements</td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);"><strong>Float</strong></td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">Health, Speed, Time</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">Text, names, messages</td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);"><strong>String</strong></td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">PlayerName, ItemName</td>
+            </tr>
+            <tr style="background: rgba(0,0,0,0.3);">
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">3D position, direction</td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);"><strong>Vector</strong></td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">SpawnPoint, Velocity</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">Rotation angles</td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);"><strong>Rotator</strong></td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">CameraRotation</td>
+            </tr>
+            <tr style="background: rgba(0,0,0,0.3);">
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">Reference to object</td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);"><strong>Object Reference</strong></td>
+              <td style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">TargetEnemy, DoorRef</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Practice Exercises</h2>
+
+        <div class="tip-box">
+          <h3>Exercise 1: Create a Speed Boost Pickup</h3>
+          <p>Variables you'll need:</p>
+          <ul>
+            <li><code>SpeedMultiplier</code> (Float) - How much faster (1.5 = 50% faster)</li>
+            <li><code>BoostDuration</code> (Float) - How many seconds it lasts</li>
+            <li><code>bIsActive</code> (Boolean) - Is boost currently active?</li>
+          </ul>
+          <p><strong>Challenge:</strong> Make it so the boost automatically deactivates after duration expires.</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>Exercise 2: Create a Coin Collector</h3>
+          <p>Variables you'll need:</p>
+          <ul>
+            <li><code>CoinsCollected</code> (Integer)</li>
+            <li><code>CoinsToWin</code> (Integer) - How many needed to win</li>
+            <li><code>bHasWon</code> (Boolean)</li>
+          </ul>
+          <p><strong>Challenge:</strong> Display coin count on screen and show "You Win!" message when goal reached.</p>
+        </div>
+
+        <div style="background: rgba(0,174,239,0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 3rem 0; border-radius: 8px; text-align: center;">
+          <h3 style="color: var(--color-accent); margin-bottom: 1rem;">Want to Master Blueprints?</h3>
+          <p style="color: var(--color-light); margin-bottom: 1rem;">
+            This is just one lesson from our 18-hour Blueprint Visual Scripting course.<br>
+            Get 50+ example Blueprints, 7 practice projects, and a certificate!
+          </p>
+          <p style="font-size: 2rem; color: var(--color-accent); font-weight: 700; margin: 1rem 0;">$79.99</p>
+          <a href="ue5-blueprint-basics.html" class="btn" style="font-size: 1.2rem; padding: 1rem 2rem;">
+            Get Complete Course
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="free-resources.html" class="btn">More Free Tutorials</a>
+          <a href="shop.html" class="btn" style="margin-left: 1rem;">View All Courses</a>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

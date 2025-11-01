@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UE5.6 Keyboard Shortcuts - Complete Reference | UE5 Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .shortcut-table { width: 100%; margin: 1rem 0; border-collapse: collapse; }
+      .shortcut-table th { background: rgba(0,174,239,0.2); padding: 0.75rem; text-align: left; color: var(--color-primary); border: 1px solid rgba(255,255,255,0.1); }
+      .shortcut-table td { padding: 0.75rem; border: 1px solid rgba(255,255,255,0.1); color: var(--color-gray); }
+      .shortcut-table tr:nth-child(even) { background: rgba(0,0,0,0.3); }
+      .shortcut-key { display: inline-block; background: rgba(0,174,239,0.3); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: 'Courier New', monospace; color: var(--color-accent); font-weight: 700; margin: 0 0.2rem; }
+      .category-header { background: linear-gradient(135deg, #A020F0, #00AEEF); color: white; padding: 1rem; margin: 2rem 0 1rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-gamepad"></i> UE5 Academy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="free-resources.html">Free Resources</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>UE5.6 Keyboard Shortcuts</h1>
+        <p>Complete reference guide - Speed up your workflow 10x!</p>
+      </div>
+    </section>
+
+    <section style="padding: 4rem 0;">
+      <div class="container" style="max-width: 1000px;">
+        
+        <div style="background: rgba(57,255,20,0.1); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; text-align: center;">
+          <p style="color: var(--color-light); font-size: 1.1rem;">
+            <i class="fas fa-download"></i> <strong>Download PDF Version</strong> - Print this and keep it next to your desk!
+          </p>
+          <button class="btn" style="margin-top: 1rem;" onclick="window.print()">
+            <i class="fas fa-print"></i> Print / Save as PDF
+          </button>
+        </div>
+
+        <h2 class="category-header">
+          <i class="fas fa-mouse"></i> Viewport Navigation
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rotate Camera</td>
+              <td><span class="shortcut-key">Right Mouse</span> + Drag</td>
+              <td>Look around (hold and move mouse)</td>
+            </tr>
+            <tr>
+              <td>Pan Camera</td>
+              <td><span class="shortcut-key">Middle Mouse</span> + Drag</td>
+              <td>Move camera up/down/left/right</td>
+            </tr>
+            <tr>
+              <td>Zoom Camera</td>
+              <td><span class="shortcut-key">Right Mouse</span> + <span class="shortcut-key">Mouse Wheel</span></td>
+              <td>Move camera forward/backward</td>
+            </tr>
+            <tr>
+              <td>Fly Camera (WASD)</td>
+              <td><span class="shortcut-key">Right Mouse</span> + <span class="shortcut-key">W/A/S/D</span></td>
+              <td>Fly around like FPS game</td>
+            </tr>
+            <tr>
+              <td>Fly Up/Down</td>
+              <td><span class="shortcut-key">Right Mouse</span> + <span class="shortcut-key">E/Q</span></td>
+              <td>Ascend (E) or Descend (Q)</td>
+            </tr>
+            <tr>
+              <td>Speed Up Movement</td>
+              <td><span class="shortcut-key">Right Mouse</span> + <span class="shortcut-key">Mouse Wheel Up</span></td>
+              <td>Fly faster (scroll up repeatedly)</td>
+            </tr>
+            <tr>
+              <td>Slow Down Movement</td>
+              <td><span class="shortcut-key">Right Mouse</span> + <span class="shortcut-key">Mouse Wheel Down</span></td>
+              <td>Fly slower (scroll down repeatedly)</td>
+            </tr>
+            <tr>
+              <td>Focus on Object</td>
+              <td><span class="shortcut-key">F</span></td>
+              <td>Center camera on selected object</td>
+            </tr>
+            <tr>
+              <td>Orbit Around Object</td>
+              <td><span class="shortcut-key">Alt</span> + <span class="shortcut-key">Left Mouse</span></td>
+              <td>Rotate camera around selected object</td>
+            </tr>
+            <tr>
+              <td>Zoom to Object</td>
+              <td><span class="shortcut-key">Alt</span> + <span class="shortcut-key">Right Mouse</span></td>
+              <td>Zoom in/out on selected object</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-cubes"></i> Object Manipulation
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Move Tool</td>
+              <td><span class="shortcut-key">W</span></td>
+              <td>Switch to translate (move) gizmo</td>
+            </tr>
+            <tr>
+              <td>Rotate Tool</td>
+              <td><span class="shortcut-key">E</span></td>
+              <td>Switch to rotate gizmo</td>
+            </tr>
+            <tr>
+              <td>Scale Tool</td>
+              <td><span class="shortcut-key">R</span></td>
+              <td>Switch to scale gizmo</td>
+            </tr>
+            <tr>
+              <td>Duplicate Object</td>
+              <td><span class="shortcut-key">Alt</span> + Drag</td>
+              <td>Hold Alt while dragging to duplicate</td>
+            </tr>
+            <tr>
+              <td>Snap to Grid (Move)</td>
+              <td><span class="shortcut-key">Ctrl</span> + Drag</td>
+              <td>Hold Ctrl while moving to snap</td>
+            </tr>
+            <tr>
+              <td>Snap to Rotation</td>
+              <td><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">E</span></td>
+              <td>Snap rotation to 10° increments</td>
+            </tr>
+            <tr>
+              <td>Drop to Floor</td>
+              <td><span class="shortcut-key">End</span></td>
+              <td>Snap object to ground</td>
+            </tr>
+            <tr>
+              <td>Move to Origin</td>
+              <td><span class="shortcut-key">Home</span></td>
+              <td>Reset object to 0,0,0</td>
+            </tr>
+            <tr>
+              <td>Toggle World/Local Space</td>
+              <td><span class="shortcut-key">Ctrl + `</span></td>
+              <td>Switch between world and local coordinates</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-clipboard"></i> Edit Operations
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Copy</td>
+              <td><span class="shortcut-key">Ctrl + C</span></td>
+              <td>Copy selected objects</td>
+            </tr>
+            <tr>
+              <td>Paste</td>
+              <td><span class="shortcut-key">Ctrl + V</span></td>
+              <td>Paste copied objects</td>
+            </tr>
+            <tr>
+              <td>Cut</td>
+              <td><span class="shortcut-key">Ctrl + X</span></td>
+              <td>Cut selected objects</td>
+            </tr>
+            <tr>
+              <td>Duplicate</td>
+              <td><span class="shortcut-key">Ctrl + D</span></td>
+              <td>Duplicate selected objects</td>
+            </tr>
+            <tr>
+              <td>Delete</td>
+              <td><span class="shortcut-key">Delete</span></td>
+              <td>Delete selected objects</td>
+            </tr>
+            <tr>
+              <td>Undo</td>
+              <td><span class="shortcut-key">Ctrl + Z</span></td>
+              <td>Undo last action</td>
+            </tr>
+            <tr>
+              <td>Redo</td>
+              <td><span class="shortcut-key">Ctrl + Y</span></td>
+              <td>Redo undone action</td>
+            </tr>
+            <tr>
+              <td>Select All</td>
+              <td><span class="shortcut-key">Ctrl + A</span></td>
+              <td>Select all objects in level</td>
+            </tr>
+            <tr>
+              <td>Deselect All</td>
+              <td><span class="shortcut-key">Escape</span></td>
+              <td>Clear selection</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-play"></i> Play & Simulation
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Play (PIE)</td>
+              <td><span class="shortcut-key">Alt + P</span></td>
+              <td>Play in Editor</td>
+            </tr>
+            <tr>
+              <td>Stop Play</td>
+              <td><span class="shortcut-key">Escape</span></td>
+              <td>Stop playing</td>
+            </tr>
+            <tr>
+              <td>Pause</td>
+              <td><span class="shortcut-key">Pause</span></td>
+              <td>Pause game</td>
+            </tr>
+            <tr>
+              <td>Eject from Player</td>
+              <td><span class="shortcut-key">F8</span></td>
+              <td>Free camera while playing</td>
+            </tr>
+            <tr>
+              <td>Possess Player</td>
+              <td><span class="shortcut-key">F8</span></td>
+              <td>Return to player control</td>
+            </tr>
+            <tr>
+              <td>Simulate Physics</td>
+              <td><span class="shortcut-key">Ctrl + P</span></td>
+              <td>Simulate without possessing player</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-folder-open"></i> Project & File
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Save Current Level</td>
+              <td><span class="shortcut-key">Ctrl + S</span></td>
+              <td>Save current level/map</td>
+            </tr>
+            <tr>
+              <td>Save All</td>
+              <td><span class="shortcut-key">Ctrl + Shift + S</span></td>
+              <td>Save all modified assets</td>
+            </tr>
+            <tr>
+              <td>Open Level</td>
+              <td><span class="shortcut-key">Ctrl + O</span></td>
+              <td>Open existing level</td>
+            </tr>
+            <tr>
+              <td>New Level</td>
+              <td><span class="shortcut-key">Ctrl + N</span></td>
+              <td>Create new level</td>
+            </tr>
+            <tr>
+              <td>Content Browser</td>
+              <td><span class="shortcut-key">Ctrl + Space</span></td>
+              <td>Open/focus Content Browser</td>
+            </tr>
+            <tr>
+              <td>Quick Search</td>
+              <td><span class="shortcut-key">Ctrl + P</span></td>
+              <td>Quick asset search</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-eye"></i> Viewport Display
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wireframe</td>
+              <td><span class="shortcut-key">Alt + 2</span></td>
+              <td>Show wireframe view</td>
+            </tr>
+            <tr>
+              <td>Unlit</td>
+              <td><span class="shortcut-key">Alt + 3</span></td>
+              <td>Show without lighting</td>
+            </tr>
+            <tr>
+              <td>Lit</td>
+              <td><span class="shortcut-key">Alt + 4</span></td>
+              <td>Show with lighting (default)</td>
+            </tr>
+            <tr>
+              <td>Detail Lighting</td>
+              <td><span class="shortcut-key">Alt + 5</span></td>
+              <td>Show lighting complexity</td>
+            </tr>
+            <tr>
+              <td>Lighting Only</td>
+              <td><span class="shortcut-key">Alt + 6</span></td>
+              <td>Show only lighting (no textures)</td>
+            </tr>
+            <tr>
+              <td>Show/Hide Grid</td>
+              <td><span class="shortcut-key">G</span></td>
+              <td>Toggle floor grid</td>
+            </tr>
+            <tr>
+              <td>Show/Hide Collision</td>
+              <td><span class="shortcut-key">Alt + C</span></td>
+              <td>Show collision meshes</td>
+            </tr>
+            <tr>
+              <td>Show FPS</td>
+              <td><span class="shortcut-key">Ctrl + Shift + H</span></td>
+              <td>Show framerate stats</td>
+            </tr>
+            <tr>
+              <td>Shader Complexity</td>
+              <td><span class="shortcut-key">Alt + 8</span></td>
+              <td>Show performance heatmap</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-code"></i> Blueprint Editor
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Compile Blueprint</td>
+              <td><span class="shortcut-key">F7</span></td>
+              <td>Compile current Blueprint</td>
+            </tr>
+            <tr>
+              <td>Comment Box</td>
+              <td><span class="shortcut-key">C</span></td>
+              <td>Create comment around selection</td>
+            </tr>
+            <tr>
+              <td>Find in Blueprint</td>
+              <td><span class="shortcut-key">Ctrl + F</span></td>
+              <td>Search nodes/variables</td>
+            </tr>
+            <tr>
+              <td>Find References</td>
+              <td><span class="shortcut-key">Shift + F</span></td>
+              <td>Find all references to selected</td>
+            </tr>
+            <tr>
+              <td>Toggle Breakpoint</td>
+              <td><span class="shortcut-key">F9</span></td>
+              <td>Add/remove debug breakpoint</td>
+            </tr>
+            <tr>
+              <td>Delete Node</td>
+              <td><span class="shortcut-key">Delete</span></td>
+              <td>Delete selected nodes</td>
+            </tr>
+            <tr>
+              <td>Cut Wires</td>
+              <td><span class="shortcut-key">Alt + Click</span></td>
+              <td>Click wire to disconnect</td>
+            </tr>
+            <tr>
+              <td>Straighten Connection</td>
+              <td><span class="shortcut-key">Q</span></td>
+              <td>Straighten wire between nodes</td>
+            </tr>
+            <tr>
+              <td>Align Nodes</td>
+              <td><span class="shortcut-key">Shift + W/E</span></td>
+              <td>Align selected nodes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-camera"></i> Camera Bookmarks
+        </h2>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Shortcut</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Set Bookmark 0-9</td>
+              <td><span class="shortcut-key">Ctrl + 0-9</span></td>
+              <td>Save camera position</td>
+            </tr>
+            <tr>
+              <td>Jump to Bookmark 0-9</td>
+              <td><span class="shortcut-key">0-9</span></td>
+              <td>Jump to saved position</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="category-header">
+          <i class="fas fa-wrench"></i> Advanced Tips
+        </h2>
+        
+        <div class="step-box">
+          <h3>Speed Boost Combo</h3>
+          <p>Hold <span class="shortcut-key">Right Mouse</span> + <span class="shortcut-key">W</span> + scroll <span class="shortcut-key">Mouse Wheel Up</span> repeatedly = Fly at super speed through huge levels!</p>
+        </div>
+
+        <div class="step-box">
+          <h3>Quick Duplicate Line</h3>
+          <p>Select object → <span class="shortcut-key">Alt</span> + Drag → <span class="shortcut-key">Shift</span> (hold both) = Duplicate in a perfect line</p>
+        </div>
+
+        <div class="step-box">
+          <h3>Precision Movement</h3>
+          <p>While moving object, tap <span class="shortcut-key">Ctrl</span> repeatedly to nudge in small grid increments</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>Pro Tip: Customize Your Shortcuts!</h3>
+          <p>Go to <strong>Edit → Editor Preferences → Keyboard Shortcuts</strong> to customize any shortcut to your liking!</p>
+        </div>
+
+        <div style="background: rgba(0,174,239,0.15); border: 2px solid var(--color-primary); padding: 2rem; margin: 3rem 0; border-radius: 8px; text-align: center;">
+          <h3 style="color: var(--color-accent); margin-bottom: 1rem;">Want More Free Resources?</h3>
+          <p style="color: var(--color-light); margin-bottom: 1rem;">
+            Get free tutorials, PDF guides, and downloadable assets!
+          </p>
+          <a href="free-resources.html" class="btn">
+            <i class="fas fa-gift"></i> View Free Resources
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 UE5 Academy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

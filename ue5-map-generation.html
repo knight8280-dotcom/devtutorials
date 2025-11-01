@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Map Generation Guide | Unreal Engine 5.6 Tutorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .tutorial-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        text-align: left;
+      }
+      .tutorial-content h2 {
+        color: var(--color-primary);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--color-accent);
+        padding-bottom: 0.5rem;
+      }
+      .tutorial-content h3 {
+        color: var(--color-accent);
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+      .tutorial-content h4 {
+        color: var(--color-light);
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .tutorial-content p {
+        margin-bottom: 1rem;
+        line-height: 1.8;
+        color: var(--color-gray);
+      }
+      .tutorial-content ul, .tutorial-content ol {
+        margin: 1rem 0 1rem 2rem;
+        color: var(--color-gray);
+      }
+      .tutorial-content li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      .tutorial-content strong {
+        color: var(--color-light);
+      }
+      .step-box {
+        background: rgba(0, 174, 239, 0.1);
+        border-left: 4px solid var(--color-primary);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+      }
+      .tip-box {
+        background: rgba(57, 255, 20, 0.1);
+        border-left: 4px solid var(--color-accent);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+      .warning-box {
+        background: rgba(255, 165, 0, 0.1);
+        border-left: 4px solid orange;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+      .code-snippet {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        color: #eee;
+        margin: 1rem 0;
+      }
+      .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-chess-knight"></i> UE5 Tutorials</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tutorials.html">All Tutorials</a></li>
+          <li><a href="ue5-map-generation.html">Map Generation</a></li>
+          <li><a href="ue5-character-creation.html">Character Creation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Complete Map Generation Guide</h1>
+        <p>Master landscape creation, terrain sculpting, and environment design in Unreal Engine 5.6</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        <h2><i class="fas fa-map"></i> Introduction to Map Generation in UE5.6</h2>
+        <p>
+          This comprehensive guide will walk you through creating stunning game maps in Unreal Engine 5.6. 
+          You'll learn everything from basic landscape creation to advanced procedural generation techniques, 
+          world composition, and optimization strategies.
+        </p>
+
+        <div class="tip-box">
+          <strong><i class="fas fa-lightbulb"></i> Prerequisites:</strong> Basic understanding of UE5 interface. 
+          Recommended system: 16GB RAM, dedicated GPU with 6GB+ VRAM.
+        </div>
+
+        <h2><i class="fas fa-layer-group"></i> Part 1: Creating Your First Landscape</h2>
+
+        <h3>Step 1: Setting Up Your Project</h3>
+        <div class="step-box">
+          <h4>1.1 Create a New Project</h4>
+          <ol>
+            <li>Launch Unreal Engine 5.6</li>
+            <li>Click on <strong>"Games"</strong> category</li>
+            <li>Select <strong>"Blank"</strong> template</li>
+            <li>Choose your project settings:
+              <ul>
+                <li>Blueprint or C++ (Blueprint recommended for beginners)</li>
+                <li>Maximum Quality preset</li>
+                <li>Ray Tracing: Enabled (if your GPU supports it)</li>
+                <li>Desktop / Console target platform</li>
+              </ul>
+            </li>
+            <li>Name your project (e.g., "MyFirstMap")</li>
+            <li>Click <strong>"Create"</strong></li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>1.2 Understanding the Landscape System</h4>
+          <p>Unreal Engine 5.6 uses a height-based landscape system that offers:</p>
+          <ul>
+            <li><strong>Non-destructive editing:</strong> Sculpt and paint without losing data</li>
+            <li><strong>Level of Detail (LOD):</strong> Automatic optimization for distance</li>
+            <li><strong>Streaming:</strong> Load large worlds efficiently</li>
+            <li><strong>Nanite support:</strong> Use Nanite meshes with landscapes</li>
+          </ul>
+        </div>
+
+        <h3>Step 2: Creating the Landscape</h3>
+        <div class="step-box">
+          <h4>2.1 Access Landscape Mode</h4>
+          <ol>
+            <li>In the main toolbar, click on the <strong>"Selection Mode"</strong> dropdown</li>
+            <li>Select <strong>"Landscape"</strong> mode (or press Shift+2)</li>
+            <li>The Landscape panel will appear on the left side</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>2.2 Configure Landscape Settings</h4>
+          <p>In the Landscape Mode panel, under the <strong>"New Landscape"</strong> section:</p>
+          <ol>
+            <li><strong>Section Size:</strong> Set to 63x63 quads (good balance of performance/quality)</li>
+            <li><strong>Sections Per Component:</strong> 1x1 (for beginners)</li>
+            <li><strong>Number of Components:</strong> 8x8 (creates a 2km x 2km landscape)</li>
+            <li><strong>Overall Resolution:</strong> Will show calculated value (e.g., 505x505)</li>
+            <li><strong>Total Components:</strong> Shows total landscape patches (64 for 8x8)</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-info-circle"></i> Tip:</strong> For open-world games, use 16x16 or larger. 
+            For focused levels, 4x4 or 8x8 is sufficient. You can always expand later.
+          </div>
+        </div>
+
+        <div class="step-box">
+          <h4>2.3 Material Setup (Initial)</h4>
+          <ol>
+            <li>Under <strong>"Material"</strong>, leave as default for now</li>
+            <li>We'll create a custom material later</li>
+            <li>Click the green <strong>"Create"</strong> button at the bottom</li>
+          </ol>
+          <p>Your landscape will appear in the viewport! It will be flat initially.</p>
+        </div>
+
+        <h3>Step 3: Sculpting Your Terrain</h3>
+        <div class="step-box">
+          <h4>3.1 Understanding Sculpt Tools</h4>
+          <p>With Landscape Mode active, you'll see the <strong>"Sculpt"</strong> tab. Key tools include:</p>
+          <ul>
+            <li><strong>Sculpt:</strong> Raise or lower terrain (hold Shift to lower)</li>
+            <li><strong>Smooth:</strong> Smooth out rough areas</li>
+            <li><strong>Flatten:</strong> Create flat plateaus</li>
+            <li><strong>Ramp:</strong> Create smooth slopes between two points</li>
+            <li><strong>Erosion:</strong> Natural weathering effects</li>
+            <li><strong>Hydro Erosion:</strong> Simulate water erosion</li>
+            <li><strong>Noise:</strong> Add random variation</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h4>3.2 Basic Sculpting Exercise</h4>
+          <ol>
+            <li>Select the <strong>"Sculpt"</strong> tool (first icon)</li>
+            <li>Adjust <strong>"Brush Size"</strong> to 2048 for large features</li>
+            <li>Set <strong>"Tool Strength"</strong> to 0.3 (gentle changes)</li>
+            <li>Left-click and drag in the viewport to raise terrain</li>
+            <li>Hold <strong>Shift</strong> and drag to lower terrain</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-magic"></i> Pro Tip:</strong> Use larger brushes for overall shape, 
+            then smaller brushes (512-1024) for details. Always work from large to small.
+          </div>
+        </div>
+
+        <div class="step-box">
+          <h4>3.3 Creating Mountains</h4>
+          <ol>
+            <li>Set Brush Size to 4096</li>
+            <li>Tool Strength to 0.5</li>
+            <li>Click and hold in one area to build up a mountain base</li>
+            <li>Reduce brush size to 2048 and add peaks</li>
+            <li>Use the <strong>"Smooth"</strong> tool to soften harsh edges</li>
+            <li>Apply <strong>"Erosion"</strong> tool at low strength (0.2) for realistic weathering</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>3.4 Creating Valleys and Rivers</h4>
+          <ol>
+            <li>Select <strong>"Sculpt"</strong> tool and hold Shift (lower mode)</li>
+            <li>Brush Size: 2048</li>
+            <li>Drag a path where you want the valley</li>
+            <li>For rivers, reduce brush to 512-1024</li>
+            <li>Use <strong>"Smooth"</strong> to create gentle slopes</li>
+            <li>Apply <strong>"Hydro Erosion"</strong> along the river path</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-palette"></i> Part 2: Landscape Materials and Texturing</h2>
+
+        <h3>Step 4: Creating a Landscape Material</h3>
+        <div class="step-box">
+          <h4>4.1 Create Material Asset</h4>
+          <ol>
+            <li>In the Content Browser, right-click in your Content folder</li>
+            <li>Select <strong>"Material"</strong></li>
+            <li>Name it "M_Landscape_Master"</li>
+            <li>Double-click to open the Material Editor</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>4.2 Set Up Landscape Material Properties</h4>
+          <ol>
+            <li>In the Material Editor, select the main material node (M_Landscape_Master)</li>
+            <li>In the Details panel, set:
+              <ul>
+                <li><strong>Material Domain:</strong> Surface</li>
+                <li><strong>Blend Mode:</strong> Opaque</li>
+                <li><strong>Shading Model:</strong> Default Lit</li>
+                <li>Enable <strong>"Used with Landscape"</strong> (IMPORTANT!)</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>4.3 Import Textures</h4>
+          <p>You'll need texture sets for different terrain types. Each set should include:</p>
+          <ul>
+            <li>Base Color (Albedo)</li>
+            <li>Normal Map</li>
+            <li>Roughness Map</li>
+            <li>Ambient Occlusion (optional)</li>
+          </ul>
+          
+          <p>Recommended free texture sources:</p>
+          <ul>
+            <li><strong>Quixel Megascans</strong> (built into UE5) - Press Ctrl+Space and search for surfaces</li>
+            <li><strong>Polyhaven.com</strong> - Free PBR textures</li>
+          </ul>
+          
+          <ol>
+            <li>Press <strong>Ctrl+Space</strong> to open Quixel Bridge</li>
+            <li>Search for "grass", "rock", "dirt", "cliff"</li>
+            <li>Download 3-4 surface types (e.g., grass, rock, dirt, sand)</li>
+            <li>Textures will appear in Content/Megascans folder</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>4.4 Build the Landscape Material - Basic Setup</h4>
+          <p>We'll create a simple 4-layer material with automatic height-based blending:</p>
+          
+          <ol>
+            <li><strong>Create Landscape Layer Blend Node:</strong>
+              <ul>
+                <li>Right-click in Material Editor</li>
+                <li>Search for "LandscapeLayerBlend"</li>
+                <li>Place the node</li>
+                <li>Select it and in Details panel, add 4 layers:
+                  <ul>
+                    <li>Layer 1: "Grass" - Blend type: Weight-Blend</li>
+                    <li>Layer 2: "Rock" - Blend type: Weight-Blend</li>
+                    <li>Layer 3: "Dirt" - Blend type: Weight-Blend</li>
+                    <li>Layer 4: "Cliff" - Blend type: Weight-Blend</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            
+            <li><strong>Add Texture Samples:</strong>
+              <ul>
+                <li>For each layer, drag the Base Color texture from Content Browser</li>
+                <li>This creates TextureSample nodes</li>
+                <li>Connect each texture to its corresponding layer input</li>
+              </ul>
+            </li>
+            
+            <li><strong>Connect to Material Output:</strong>
+              <ul>
+                <li>Connect LandscapeLayerBlend output to <strong>Base Color</strong></li>
+              </ul>
+            </li>
+            
+            <li><strong>Add Normal Maps:</strong>
+              <ul>
+                <li>Create another LandscapeLayerBlend for normals</li>
+                <li>Add same 4 layers</li>
+                <li>Connect normal map textures</li>
+                <li>Connect output to <strong>Normal</strong> input</li>
+              </ul>
+            </li>
+            
+            <li>Click <strong>"Apply"</strong> and <strong>"Save"</strong></li>
+          </ol>
+        </div>
+
+        <h3>Step 5: Painting Landscape Layers</h3>
+        <div class="step-box">
+          <h4>5.1 Assign Material to Landscape</h4>
+          <ol>
+            <li>Exit Material Editor</li>
+            <li>In the viewport, select your Landscape</li>
+            <li>In the Details panel, find <strong>"Landscape Material"</strong></li>
+            <li>Set it to your M_Landscape_Master material</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>5.2 Paint Landscape Layers</h4>
+          <ol>
+            <li>Enter <strong>Landscape Mode</strong> (Shift+2)</li>
+            <li>Click the <strong>"Paint"</strong> tab</li>
+            <li>You'll see your layer names (Grass, Rock, Dirt, Cliff)</li>
+            <li>The first time, click <strong>"+"</strong> next to each layer to create layer info</li>
+            <li>Save each as Weight-Blended (not Height-Blended for now)</li>
+          </ol>
+          
+          <ol start="6">
+            <li>Select a layer (e.g., "Grass")</li>
+            <li>Adjust brush size and strength</li>
+            <li>Left-click to paint the selected layer</li>
+            <li>Hold Shift to erase</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-paint-brush"></i> Painting Tips:</strong>
+            <ul>
+              <li>Paint grass on flat areas and lower elevations</li>
+              <li>Paint rock on steep slopes and mountain tops</li>
+              <li>Use dirt for transition areas</li>
+              <li>Cliff textures work best on near-vertical surfaces</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2><i class="fas fa-tree"></i> Part 3: Adding Foliage and Details</h2>
+
+        <h3>Step 6: Foliage System</h3>
+        <div class="step-box">
+          <h4>6.1 Access Foliage Mode</h4>
+          <ol>
+            <li>In the main toolbar, switch to <strong>"Foliage"</strong> mode (Shift+4)</li>
+            <li>The Foliage panel appears on the left</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>6.2 Add Foliage Types</h4>
+          <ol>
+            <li>Click <strong>"+ Add Foliage Type"</strong> dropdown</li>
+            <li>Browse to Content/Megascans or use starter content</li>
+            <li>Add various foliage:
+              <ul>
+                <li>Grass meshes</li>
+                <li>Trees (broadleaf and coniferous)</li>
+                <li>Bushes and shrubs</li>
+                <li>Rocks and boulders</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-download"></i> Tip:</strong> Press Ctrl+Space for Quixel Bridge, 
+            search for "tree", "grass", "bush", and download 3D plants. They're free!
+          </div>
+        </div>
+
+        <div class="step-box">
+          <h4>6.3 Configure Foliage Settings</h4>
+          <p>For each foliage type, configure these important settings:</p>
+          
+          <ul>
+            <li><strong>Density / 1Kuu²:</strong> How many instances (start with 1.0-5.0 for trees, 50+ for grass)</li>
+            <li><strong>Scale (Min/Max):</strong> Random size variation (e.g., 0.8 to 1.2)</li>
+            <li><strong>Random Yaw:</strong> Check to randomize rotation</li>
+            <li><strong>Align to Normal:</strong> Check to follow ground slope</li>
+            <li><strong>Random Pitch:</strong> Slight variation for natural look</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h4>6.4 Paint Foliage</h4>
+          <ol>
+            <li>Select a foliage type from the list</li>
+            <li>Adjust brush size (2048-8192 for large areas)</li>
+            <li>Paint density (0.5-1.0 is usually good)</li>
+            <li>Left-click and drag to paint foliage onto landscape</li>
+            <li>Hold Shift to erase</li>
+            <li>Ctrl+Click to place single instance</li>
+          </ol>
+          
+          <div class="warning-box">
+            <strong><i class="fas fa-exclamation-triangle"></i> Performance Warning:</strong> 
+            Too much foliage can kill performance. Use Culling Distance and LODs. 
+            Test frequently on your target hardware.
+          </div>
+        </div>
+
+        <h2><i class="fas fa-cogs"></i> Part 4: Advanced Landscape Techniques</h2>
+
+        <h3>Step 7: World Composition (For Large Worlds)</h3>
+        <div class="step-box">
+          <h4>7.1 Enable World Composition</h4>
+          <ol>
+            <li>Go to <strong>Window → World Settings</strong></li>
+            <li>Check <strong>"Enable World Composition"</strong></li>
+            <li>This allows streaming of landscape tiles</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>7.2 Create Multiple Landscape Tiles</h4>
+          <ol>
+            <li>In Landscape Mode → Manage tab</li>
+            <li>Use <strong>"Add"</strong> to create new landscape sections</li>
+            <li>Arrange them in the World Composition window</li>
+            <li>Set streaming distances</li>
+          </ol>
+        </div>
+
+        <h3>Step 8: Procedural Content Generation (PCG)</h3>
+        <div class="step-box">
+          <h4>8.1 Enable PCG Plugin</h4>
+          <ol>
+            <li>Go to <strong>Edit → Plugins</strong></li>
+            <li>Search for "Procedural Content Generation"</li>
+            <li>Check to enable</li>
+            <li>Restart the editor</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>8.2 Create PCG Volume</h4>
+          <ol>
+            <li>In the Place Actors panel, search for <strong>"PCG Volume"</strong></li>
+            <li>Drag it into your scene</li>
+            <li>Scale it to cover your landscape area</li>
+            <li>Select the volume</li>
+            <li>In Details, click <strong>"PCG Component"</strong></li>
+            <li>Create a new PCG Graph asset</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>8.3 Basic PCG Graph for Random Foliage</h4>
+          <ol>
+            <li>Open the PCG Graph</li>
+            <li>Add nodes:
+              <ul>
+                <li><strong>Surface Sampler:</strong> Samples points on landscape</li>
+                <li><strong>Density Filter:</strong> Controls how many points</li>
+                <li><strong>Static Mesh Spawner:</strong> Places your meshes</li>
+              </ul>
+            </li>
+            <li>Connect: Input → Surface Sampler → Density Filter → Static Mesh Spawner → Output</li>
+            <li>Configure Static Mesh Spawner with your foliage meshes</li>
+            <li>Back in the level, click <strong>"Generate"</strong> on the PCG Volume</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-rocket"></i> PCG Advantage:</strong> 
+            Procedural generation is non-destructive and faster than manual foliage painting 
+            for large worlds. You can regenerate at any time.
+          </div>
+        </div>
+
+        <h3>Step 9: Water System (UE5.6 Water Plugin)</h3>
+        <div class="step-box">
+          <h4>9.1 Enable Water Plugin</h4>
+          <ol>
+            <li>Go to <strong>Edit → Plugins</strong></li>
+            <li>Search for "Water"</li>
+            <li>Enable the Water plugin</li>
+            <li>Restart editor</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>9.2 Add Water Bodies</h4>
+          <ol>
+            <li>In Place Actors panel, find <strong>"Water"</strong> category</li>
+            <li>Types available:
+              <ul>
+                <li><strong>Lake:</strong> For ponds and lakes</li>
+                <li><strong>River:</strong> For flowing water</li>
+                <li><strong>Ocean:</strong> For large bodies of water</li>
+              </ul>
+            </li>
+            <li>Drag your choice into the level</li>
+            <li>For rivers: Click and drag to add spline points</li>
+            <li>Adjust water properties in Details panel</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>9.3 Water Material Settings</h4>
+          <ul>
+            <li><strong>Wave Height:</strong> Adjust for calm/rough water</li>
+            <li><strong>Water Velocity:</strong> For river flow speed</li>
+            <li><strong>Absorption:</strong> Water color depth</li>
+            <li><strong>Scattering:</strong> Underwater light scatter</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-tachometer-alt"></i> Part 5: Optimization</h2>
+
+        <h3>Step 10: Landscape Optimization</h3>
+        <div class="step-box">
+          <h4>10.1 LOD Settings</h4>
+          <ol>
+            <li>Select your Landscape</li>
+            <li>In Details panel, find <strong>"LOD"</strong> section</li>
+            <li>Set <strong>"LOD Distribution Setting"</strong> to 1.5-2.0</li>
+            <li>Increase <strong>"LOD 0 Screen Size"</strong> if performance is low</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>10.2 Landscape Streaming</h4>
+          <ol>
+            <li>In Landscape Mode → Manage tab</li>
+            <li>Enable <strong>"Level Streaming"</strong></li>
+            <li>Set streaming distances appropriate for your world size</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>10.3 Foliage Optimization</h4>
+          <ul>
+            <li>Set <strong>Cull Distance</strong> for each foliage type (5000-15000 for grass, 20000+ for trees)</li>
+            <li>Enable <strong>"Use LOD"</strong> and ensure meshes have LODs</li>
+            <li>Use <strong>Hierarchical Instanced Static Meshes (HISM)</strong> - enabled by default</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h4>10.4 Material Optimization</h4>
+          <ul>
+            <li>Use texture compression (DXT1/DXT5)</li>
+            <li>Limit texture resolution (2K for most landscape textures)</li>
+            <li>Use <strong>Virtual Textures</strong> for large landscapes</li>
+            <li>Minimize material complexity (check shader complexity view: Alt+8)</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-star"></i> Part 6: Advanced Topics</h2>
+
+        <h3>Step 11: Landscape Splines (Roads & Paths)</h3>
+        <div class="step-box">
+          <ol>
+            <li>In Landscape Mode, go to <strong>"Manage"</strong> tab</li>
+            <li>Click <strong>"Splines"</strong> section</li>
+            <li>Ctrl+Click on landscape to add spline points</li>
+            <li>Create a path/road</li>
+            <li>Select spline segments</li>
+            <li>Assign spline meshes (road meshes) in Details panel</li>
+            <li>Enable <strong>"Raise/Lower Terrain"</strong> to automatically conform landscape</li>
+          </ol>
+        </div>
+
+        <h3>Step 12: Landscape Grass Output</h3>
+        <div class="step-box">
+          <p>Make grass appear automatically based on material layers:</p>
+          <ol>
+            <li>Open your landscape material</li>
+            <li>Add <strong>"LandscapeGrassOutput"</strong> node</li>
+            <li>Configure grass types</li>
+            <li>Connect from your grass layer</li>
+            <li>Grass will automatically populate where you paint that layer!</li>
+          </ol>
+        </div>
+
+        <h3>Step 13: Heightmap Import/Export</h3>
+        <div class="step-box">
+          <h4>Importing Heightmaps from External Tools</h4>
+          <ol>
+            <li>Create heightmap in World Machine, Gaia, or similar (16-bit PNG or RAW)</li>
+            <li>In UE5, Landscape Mode → New Landscape</li>
+            <li>Click <strong>"Import from File"</strong></li>
+            <li>Select your heightmap file</li>
+            <li>Set scale and dimensions</li>
+            <li>Click Create</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-check-circle"></i> Final Checklist</h2>
+        <div class="step-box">
+          <ul>
+            <li>✓ Landscape created with appropriate resolution</li>
+            <li>✓ Terrain sculpted with mountains, valleys, plateaus</li>
+            <li>✓ Material with multiple layers applied</li>
+            <li>✓ Layers painted realistically</li>
+            <li>✓ Foliage added (grass, trees, rocks)</li>
+            <li>✓ Water bodies if needed</li>
+            <li>✓ LODs and culling configured</li>
+            <li>✓ Lighting built or Lumen enabled</li>
+            <li>✓ Performance tested</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-graduation-cap"></i> Practice Exercises</h2>
+        <div class="tip-box">
+          <ol>
+            <li><strong>Mountain Valley:</strong> Create a mountain range with a river valley running through it</li>
+            <li><strong>Island Paradise:</strong> Build a tropical island with beaches, palm trees, and rocky cliffs</li>
+            <li><strong>Desert Dunes:</strong> Use noise tools to create rolling sand dunes with scattered rocks</li>
+            <li><strong>Snowy Peaks:</strong> Mountain landscape with snow at high elevations, transition to forest below</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-book"></i> Additional Resources</h2>
+        <ul>
+          <li><a href="https://docs.unrealengine.com/5.6/landscape-in-unreal-engine/" target="_blank" style="color: var(--color-primary)">Official UE5.6 Landscape Documentation</a></li>
+          <li><a href="https://www.youtube.com/unrealengine" target="_blank" style="color: var(--color-primary)">Epic Games YouTube Channel</a></li>
+          <li><strong>Quixel Megascans:</strong> Press Ctrl+Space in UE5 for free assets</li>
+          <li><strong>World Machine:</strong> External tool for advanced heightmap generation</li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="tutorials.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Tutorials</a>
+          <a href="ue5-character-creation.html" class="btn">Next: Character Creation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Unreal Engine 5.6 Tutorials. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

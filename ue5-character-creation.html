@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Character Creation Guide | Unreal Engine 5.6 Tutorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pFhJ7E1NQePXlRwhd4GgKJxQH9UCe2jvxEDCzI+Opr5Ai+HzAXEv6NXJfx2cL5S9k6foK9PTCb5XNVqM+xv4Yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .tutorial-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        text-align: left;
+      }
+      .tutorial-content h2 {
+        color: var(--color-primary);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--color-accent);
+        padding-bottom: 0.5rem;
+      }
+      .tutorial-content h3 {
+        color: var(--color-accent);
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+      .tutorial-content h4 {
+        color: var(--color-light);
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .tutorial-content p {
+        margin-bottom: 1rem;
+        line-height: 1.8;
+        color: var(--color-gray);
+      }
+      .tutorial-content ul, .tutorial-content ol {
+        margin: 1rem 0 1rem 2rem;
+        color: var(--color-gray);
+      }
+      .tutorial-content li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      .tutorial-content strong {
+        color: var(--color-light);
+      }
+      .step-box {
+        background: rgba(0, 174, 239, 0.1);
+        border-left: 4px solid var(--color-primary);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+      }
+      .tip-box {
+        background: rgba(57, 255, 20, 0.1);
+        border-left: 4px solid var(--color-accent);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+      .warning-box {
+        background: rgba(255, 165, 0, 0.1);
+        border-left: 4px solid orange;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+      .code-snippet {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        color: #eee;
+        margin: 1rem 0;
+      }
+      .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><i class="fas fa-chess-knight"></i> UE5 Tutorials</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tutorials.html">All Tutorials</a></li>
+          <li><a href="ue5-map-generation.html">Map Generation</a></li>
+          <li><a href="ue5-character-creation.html">Character Creation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Complete Character Creation Guide</h1>
+        <p>Master character modeling, rigging, animation, and Blueprint setup in Unreal Engine 5.6</p>
+      </div>
+    </section>
+
+    <section class="tutorial-content">
+      <div class="container">
+        <h2><i class="fas fa-user"></i> Introduction to Character Creation in UE5.6</h2>
+        <p>
+          This comprehensive guide covers the complete character creation pipeline in Unreal Engine 5.6. 
+          You'll learn how to import characters, set up skeletal meshes, create animations, build character controllers, 
+          and implement advanced features like IK (Inverse Kinematics), blend spaces, and AI behaviors.
+        </p>
+
+        <div class="tip-box">
+          <strong><i class="fas fa-lightbulb"></i> Prerequisites:</strong> 
+          Basic UE5 knowledge, understanding of Blueprints recommended. 
+          For 3D modeling sections: Blender, Maya, or similar 3D software (optional).
+        </div>
+
+        <h2><i class="fas fa-download"></i> Part 1: Getting a Character Model</h2>
+
+        <h3>Method 1: Using MetaHuman (Easiest)</h3>
+        <div class="step-box">
+          <h4>1.1 Access MetaHuman Creator</h4>
+          <ol>
+            <li>Open Epic Games Launcher</li>
+            <li>Go to <strong>Library</strong> tab</li>
+            <li>Find and launch <strong>"MetaHuman"</strong> (or download if needed)</li>
+            <li>MetaHuman Creator opens in your browser</li>
+            <li>Sign in with your Epic account</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>1.2 Create Your MetaHuman</h4>
+          <ol>
+            <li>Click <strong>"Create MetaHuman"</strong></li>
+            <li>Choose a preset or start from scratch</li>
+            <li>Customize features:
+              <ul>
+                <li><strong>Face:</strong> Eyes, nose, mouth, ears, jaw shape</li>
+                <li><strong>Body:</strong> Height, build, proportions</li>
+                <li><strong>Hair:</strong> Style, color, facial hair</li>
+                <li><strong>Clothing:</strong> Outfits, accessories</li>
+                <li><strong>Skin:</strong> Tone, texture, makeup</li>
+              </ul>
+            </li>
+            <li>Click <strong>"Download"</strong> when finished</li>
+            <li>Select your UE5.6 project</li>
+            <li>MetaHuman appears in Content/MetaHumans folder</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-star"></i> Why MetaHuman?</strong> 
+            Photorealistic humans with full facial rig, body animations, and LODs. 
+            Production-ready in minutes!
+          </div>
+        </div>
+
+        <h3>Method 2: Import Custom Character</h3>
+        <div class="step-box">
+          <h4>2.1 Prepare Your Character Model</h4>
+          <p>If you have a character from Blender, Maya, or other 3D software:</p>
+          <ul>
+            <li><strong>Format:</strong> Export as FBX or USD</li>
+            <li><strong>Scale:</strong> 1 unit = 1cm in UE5 (character should be ~180cm tall)</li>
+            <li><strong>Position:</strong> Character at world origin (0,0,0)</li>
+            <li><strong>Rotation:</strong> Facing +Y axis (forward)</li>
+            <li><strong>Pose:</strong> T-pose or A-pose for rigging</li>
+            <li><strong>Skeleton:</strong> Must be rigged with bones/armature</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h4>2.2 Import FBX into UE5.6</h4>
+          <ol>
+            <li>In UE5 Content Browser, navigate to Content/Characters folder (create if needed)</li>
+            <li>Click <strong>"Import"</strong> button</li>
+            <li>Select your FBX file</li>
+            <li>In the FBX Import Options dialog:
+              <ul>
+                <li><strong>Mesh:</strong>
+                  <ul>
+                    <li>Skeletal Mesh: Enabled</li>
+                    <li>Import Mesh: Enabled</li>
+                    <li>Import Materials: Enabled</li>
+                    <li>Import Textures: Enabled</li>
+                  </ul>
+                </li>
+                <li><strong>Skeleton:</strong>
+                  <ul>
+                    <li>If first import: "None" (creates new skeleton)</li>
+                    <li>If you have existing skeleton: Select it</li>
+                  </ul>
+                </li>
+                <li><strong>Transform:</strong>
+                  <ul>
+                    <li>Import Uniform Scale: 1.0</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Click <strong>"Import All"</strong></li>
+          </ol>
+          
+          <p>This creates:</p>
+          <ul>
+            <li>Skeletal Mesh asset (SK_YourCharacter)</li>
+            <li>Skeleton asset (SK_YourCharacter_Skeleton)</li>
+            <li>Physics Asset (SK_YourCharacter_PhysicsAsset)</li>
+            <li>Materials and Textures</li>
+          </ul>
+        </div>
+
+        <h3>Method 3: Free Character Assets</h3>
+        <div class="step-box">
+          <h4>3.1 Marketplace Characters (Manny & Quinn)</h4>
+          <ol>
+            <li>Create new project with <strong>"Third Person"</strong> template</li>
+            <li>Includes Manny (male) and Quinn (female) characters</li>
+            <li>Located in Content/Characters folder</li>
+            <li>Fully rigged and animated</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>3.2 Mixamo (Free Rigged Characters & Animations)</h4>
+          <ol>
+            <li>Visit <a href="https://www.mixamo.com" target="_blank" style="color: var(--color-primary)">mixamo.com</a></li>
+            <li>Sign in (free Adobe account)</li>
+            <li>Browse <strong>"Characters"</strong> tab</li>
+            <li>Select a character, click <strong>"Download"</strong></li>
+            <li>Settings:
+              <ul>
+                <li>Format: FBX</li>
+                <li>Pose: T-pose</li>
+                <li>No animation (for now)</li>
+              </ul>
+            </li>
+            <li>Import into UE5 as described in Method 2</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-running"></i> Part 2: Setting Up Character Movement</h2>
+
+        <h3>Step 4: Create Character Blueprint</h3>
+        <div class="step-box">
+          <h4>4.1 Create Blueprint Class</h4>
+          <ol>
+            <li>In Content Browser, right-click in Content/Characters folder</li>
+            <li>Select <strong>Blueprint Class</strong></li>
+            <li>Choose <strong>"Character"</strong> as parent class</li>
+            <li>Name it "BP_PlayerCharacter"</li>
+            <li>Double-click to open Blueprint Editor</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>4.2 Assign Skeletal Mesh</h4>
+          <ol>
+            <li>In the Blueprint Editor, select <strong>"Mesh"</strong> component (in Components panel)</li>
+            <li>In Details panel:
+              <ul>
+                <li><strong>Skeletal Mesh:</strong> Select your imported character mesh</li>
+                <li><strong>Location:</strong> Z = -90 (adjust so feet are at capsule bottom)</li>
+                <li><strong>Rotation:</strong> Z = -90 (so character faces forward)</li>
+              </ul>
+            </li>
+            <li>The character should now appear in the viewport facing the right direction</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-info-circle"></i> Tip:</strong> 
+            The CapsuleComponent is the collision shape. The mesh is just visual. 
+            Make sure the capsule fits around your character!
+          </div>
+        </div>
+
+        <h3>Step 5: Configure Character Movement</h3>
+        <div class="step-box">
+          <h4>5.1 Character Movement Component Settings</h4>
+          <ol>
+            <li>Select <strong>"CharacterMovement"</strong> component</li>
+            <li>In Details panel, configure:
+              <ul>
+                <li><strong>Max Walk Speed:</strong> 600 (default running speed)</li>
+                <li><strong>Max Walk Speed Crouched:</strong> 300</li>
+                <li><strong>Jump Z Velocity:</strong> 600 (jump height)</li>
+                <li><strong>Air Control:</strong> 0.2 (movement control while airborne)</li>
+                <li><strong>Ground Friction:</strong> 8.0</li>
+                <li><strong>Braking Deceleration Walking:</strong> 2048</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>5.2 Add Movement Input</h4>
+          <ol>
+            <li>Go to <strong>Edit → Project Settings → Input</strong></li>
+            <li>Under <strong>"Bindings"</strong>, add:
+              <ul>
+                <li><strong>Action Mappings:</strong>
+                  <ul>
+                    <li>Jump - Space Bar</li>
+                    <li>Sprint - Left Shift</li>
+                  </ul>
+                </li>
+                <li><strong>Axis Mappings:</strong>
+                  <ul>
+                    <li>MoveForward - W (Scale: 1.0), S (Scale: -1.0)</li>
+                    <li>MoveRight - D (Scale: 1.0), A (Scale: -1.0)</li>
+                    <li>Turn - Mouse X (Scale: 1.0)</li>
+                    <li>LookUp - Mouse Y (Scale: -1.0)</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>5.3 Implement Movement in Blueprint</h4>
+          <p>In your BP_PlayerCharacter, go to <strong>Event Graph</strong>:</p>
+          
+          <h4>Forward/Backward Movement:</h4>
+          <ol>
+            <li>Right-click → search "MoveForward"</li>
+            <li>Select <strong>"InputAxis MoveForward"</strong> event</li>
+            <li>From the execution pin, add <strong>"Add Movement Input"</strong> node</li>
+            <li>Connect:
+              <ul>
+                <li><strong>World Direction:</strong> Get Control Rotation → Get Forward Vector</li>
+                <li><strong>Scale Value:</strong> Connect from MoveForward's Axis Value</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>Left/Right Movement:</h4>
+          <ol>
+            <li>Add <strong>"InputAxis MoveRight"</strong> event</li>
+            <li>Add <strong>"Add Movement Input"</strong> node</li>
+            <li>Connect:
+              <ul>
+                <li><strong>World Direction:</strong> Get Control Rotation → Get Right Vector</li>
+                <li><strong>Scale Value:</strong> Connect from MoveRight's Axis Value</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h4>Camera Rotation:</h4>
+          <ol>
+            <li>Add <strong>"InputAxis Turn"</strong> event</li>
+            <li>Add <strong>"Add Controller Yaw Input"</strong> node</li>
+            <li>Connect Turn's Axis Value to the input</li>
+            <li>Add <strong>"InputAxis LookUp"</strong> event</li>
+            <li>Add <strong>"Add Controller Pitch Input"</strong> node</li>
+            <li>Connect LookUp's Axis Value to the input</li>
+          </ol>
+
+          <h4>Jumping:</h4>
+          <ol>
+            <li>Add <strong>"InputAction Jump"</strong> event</li>
+            <li>From Pressed: Add <strong>"Jump"</strong> node</li>
+            <li>From Released: Add <strong>"Stop Jumping"</strong> node</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-gamepad"></i> Quick Setup:</strong> 
+            If using Third Person template, these inputs are already configured! 
+            Just assign your mesh to the template character.
+          </div>
+        </div>
+
+        <h3>Step 6: Camera Setup</h3>
+        <div class="step-box">
+          <h4>6.1 Add Camera Components</h4>
+          <ol>
+            <li>In Components panel, click <strong>"Add"</strong></li>
+            <li>Add <strong>"Spring Arm"</strong> component (attach to CapsuleComponent)</li>
+            <li>Add <strong>"Camera"</strong> component (attach to SpringArm)</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>6.2 Configure Spring Arm</h4>
+          <ol>
+            <li>Select SpringArm component</li>
+            <li>In Details:
+              <ul>
+                <li><strong>Target Arm Length:</strong> 300 (camera distance)</li>
+                <li><strong>Socket Offset:</strong> Z = 60 (camera height)</li>
+                <li><strong>Enable Camera Lag:</strong> Checked (smooth camera)</li>
+                <li><strong>Camera Lag Speed:</strong> 10.0</li>
+                <li><strong>Use Pawn Control Rotation:</strong> Checked</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>6.3 Character Rotation Settings</h4>
+          <ol>
+            <li>Select main Character component (BP_PlayerCharacter)</li>
+            <li>In Details, under <strong>"Pawn"</strong>:
+              <ul>
+                <li><strong>Use Controller Rotation Yaw:</strong> Unchecked</li>
+                <li><strong>Use Controller Rotation Pitch:</strong> Unchecked</li>
+                <li><strong>Use Controller Rotation Roll:</strong> Unchecked</li>
+              </ul>
+            </li>
+            <li>Select <strong>CharacterMovement</strong> component</li>
+            <li>Under <strong>"Character Movement (Rotation Settings)"</strong>:
+              <ul>
+                <li><strong>Orient Rotation to Movement:</strong> Checked</li>
+                <li><strong>Rotation Rate:</strong> Z = 540.0</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-running-person"></i> Part 3: Animation Setup</h2>
+
+        <h3>Step 7: Import Animations</h3>
+        <div class="step-box">
+          <h4>7.1 Get Animations from Mixamo</h4>
+          <ol>
+            <li>Go to <a href="https://www.mixamo.com" target="_blank" style="color: var(--color-primary)">mixamo.com</a></li>
+            <li>Select your character (or use default)</li>
+            <li>Click <strong>"Animations"</strong> tab</li>
+            <li>Search and download these essential animations:
+              <ul>
+                <li><strong>Idle:</strong> "Breathing Idle" or "Standing Idle"</li>
+                <li><strong>Walk:</strong> "Walking" or "Walking Forward"</li>
+                <li><strong>Run:</strong> "Fast Run" or "Running"</li>
+                <li><strong>Jump Start:</strong> "Jump"</li>
+                <li><strong>Jump Loop:</strong> "Falling Idle"</li>
+                <li><strong>Jump Land:</strong> "Landing"</li>
+              </ul>
+            </li>
+            <li>Download settings:
+              <ul>
+                <li>Format: FBX</li>
+                <li>Skin: Without Skin (unless it's your character)</li>
+                <li>Frame Rate: 30fps</li>
+                <li>In Place: Checked (for idle/combat), Unchecked (for locomotion)</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>7.2 Import Animation FBX Files</h4>
+          <ol>
+            <li>In UE5 Content Browser, create folder: Content/Characters/Animations</li>
+            <li>Click <strong>"Import"</strong></li>
+            <li>Select all downloaded animation FBX files</li>
+            <li>In Import Options:
+              <ul>
+                <li><strong>Skeleton:</strong> Select your character's skeleton (IMPORTANT!)</li>
+                <li><strong>Import Mesh:</strong> Unchecked (we only want animation)</li>
+                <li><strong>Animation Length:</strong> Exported Time</li>
+              </ul>
+            </li>
+            <li>Click <strong>"Import All"</strong></li>
+          </ol>
+          
+          <div class="warning-box">
+            <strong><i class="fas fa-exclamation-triangle"></i> Critical:</strong> 
+            All animations MUST use the same Skeleton asset as your character mesh! 
+            Mismatched skeletons won't work.
+          </div>
+        </div>
+
+        <h3>Step 8: Create Animation Blueprint</h3>
+        <div class="step-box">
+          <h4>8.1 Create Animation Blueprint Asset</h4>
+          <ol>
+            <li>Right-click in Content/Characters/Animations folder</li>
+            <li>Select <strong>"Animation → Animation Blueprint"</strong></li>
+            <li>Choose your character's <strong>Skeleton</strong></li>
+            <li>Choose <strong>UAnimInstance</strong> as parent class</li>
+            <li>Name it "ABP_PlayerCharacter"</li>
+            <li>Double-click to open</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>8.2 Create Variables</h4>
+          <p>In the Animation Blueprint, go to <strong>"My Blueprint"</strong> panel and add these variables:</p>
+          <ul>
+            <li><strong>Speed</strong> (Float) - character movement speed</li>
+            <li><strong>Direction</strong> (Float) - movement direction</li>
+            <li><strong>IsInAir</strong> (Boolean) - is character falling/jumping</li>
+            <li><strong>IsCrouching</strong> (Boolean) - is character crouched</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h4>8.3 EventGraph - Update Variables</h4>
+          <ol>
+            <li>Go to <strong>"EventGraph"</strong> tab</li>
+            <li>From <strong>"Event Blueprint Update Animation"</strong> event:
+              <ul>
+                <li>Add <strong>"Try Get Pawn Owner"</strong> node</li>
+                <li>Cast to your character (BP_PlayerCharacter)</li>
+                <li>From character reference:
+                  <ul>
+                    <li>Get Velocity → Vector Length → Set Speed</li>
+                    <li>Get Movement Component → Is Falling → Set IsInAir</li>
+                    <li>Get Movement Component → Is Crouching → Set IsCrouching</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <h3>Step 9: Animation State Machine</h3>
+        <div class="step-box">
+          <h4>9.1 Create State Machine</h4>
+          <ol>
+            <li>Go to <strong>"AnimGraph"</strong> tab</li>
+            <li>Right-click → <strong>"Add New State Machine"</strong></li>
+            <li>Name it "Locomotion"</li>
+            <li>Connect to <strong>"Output Pose"</strong></li>
+            <li>Double-click the State Machine to open</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>9.2 Create States</h4>
+          <p>Right-click in the State Machine graph and add these states:</p>
+          <ol>
+            <li><strong>Idle/Walk/Run</strong> - locomotion blend space (we'll create next)</li>
+            <li><strong>Jump_Start</strong> - jump takeoff animation</li>
+            <li><strong>Jump_Loop</strong> - in-air falling animation</li>
+            <li><strong>Jump_Land</strong> - landing animation</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>9.3 Create Transitions</h4>
+          <p>Connect states with transitions (drag from one state to another):</p>
+          <ul>
+            <li><strong>Entry → Idle/Walk/Run</strong> (default state)</li>
+            <li><strong>Idle/Walk/Run → Jump_Start</strong>
+              <ul>
+                <li>Condition: IsInAir == true</li>
+              </ul>
+            </li>
+            <li><strong>Jump_Start → Jump_Loop</strong>
+              <ul>
+                <li>Automatic (check "Automatic Rule Based on Sequence Player")</li>
+              </ul>
+            </li>
+            <li><strong>Jump_Loop → Jump_Land</strong>
+              <ul>
+                <li>Condition: IsInAir == false</li>
+              </ul>
+            </li>
+            <li><strong>Jump_Land → Idle/Walk/Run</strong>
+              <ul>
+                <li>Automatic</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h3>Step 10: Create Blend Space (Idle/Walk/Run)</h3>
+        <div class="step-box">
+          <h4>10.1 Create Blend Space 1D</h4>
+          <ol>
+            <li>In Content/Characters/Animations, right-click</li>
+            <li>Select <strong>"Animation → Blend Space 1D"</strong></li>
+            <li>Choose your Skeleton</li>
+            <li>Name it "BS_Locomotion"</li>
+            <li>Double-click to open</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>10.2 Configure Blend Space</h4>
+          <ol>
+            <li>In the Details panel (Axis Settings):
+              <ul>
+                <li><strong>Name:</strong> Speed</li>
+                <li><strong>Minimum Axis Value:</strong> 0.0</li>
+                <li><strong>Maximum Axis Value:</strong> 600.0 (your max walk speed)</li>
+              </ul>
+            </li>
+            <li>Drag animations from Asset Browser to the blend space grid:
+              <ul>
+                <li><strong>Idle animation</strong> at position 0.0</li>
+                <li><strong>Walk animation</strong> at position 300.0</li>
+                <li><strong>Run animation</strong> at position 600.0</li>
+              </ul>
+            </li>
+            <li>Press play button to preview - drag the slider to see smooth blending!</li>
+            <li>Save</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>10.3 Use Blend Space in State Machine</h4>
+          <ol>
+            <li>Go back to your Animation Blueprint → AnimGraph → State Machine</li>
+            <li>Double-click the <strong>"Idle/Walk/Run"</strong> state</li>
+            <li>Drag in your <strong>BS_Locomotion</strong> blend space</li>
+            <li>Connect <strong>Speed</strong> variable to the Speed input</li>
+            <li>Connect output to Result</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>10.4 Configure Jump States</h4>
+          <p>For each jump state, double-click and add the animation:</p>
+          <ol>
+            <li><strong>Jump_Start state:</strong> Add "Play Jump" animation node</li>
+            <li><strong>Jump_Loop state:</strong> Add "Play Falling" animation node (set to loop)</li>
+            <li><strong>Jump_Land state:</strong> Add "Play Landing" animation node</li>
+          </ol>
+        </div>
+
+        <h3>Step 11: Connect Animation Blueprint to Character</h3>
+        <div class="step-box">
+          <ol>
+            <li>Open your <strong>BP_PlayerCharacter</strong> blueprint</li>
+            <li>Select <strong>Mesh</strong> component</li>
+            <li>In Details panel, find <strong>"Animation"</strong> section</li>
+            <li>Set <strong>"Anim Class"</strong> to your ABP_PlayerCharacter</li>
+            <li>Compile and Save</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-cogs"></i> Part 4: Advanced Character Features</h2>
+
+        <h3>Step 12: IK (Inverse Kinematics) for Feet</h3>
+        <div class="step-box">
+          <h4>12.1 Add IK Rig</h4>
+          <ol>
+            <li>Right-click on your Skeleton asset</li>
+            <li>Select <strong>"Create → IK Rig"</strong></li>
+            <li>Name it "IK_Character"</li>
+            <li>Open the IK Rig</li>
+            <li>Add IK goals:
+              <ul>
+                <li>Left Foot IK Goal (foot_l bone)</li>
+                <li>Right Foot IK Goal (foot_r bone)</li>
+              </ul>
+            </li>
+            <li>Save</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>12.2 Add IK in Animation Blueprint</h4>
+          <ol>
+            <li>In your Animation Blueprint AnimGraph</li>
+            <li>After your State Machine output, add <strong>"Two Bone IK"</strong> nodes</li>
+            <li>Configure one for each foot</li>
+            <li>Use Line Trace to ground to get IK target locations</li>
+          </ol>
+          
+          <div class="tip-box">
+            <strong><i class="fas fa-magic"></i> Result:</strong> 
+            Characters' feet will properly plant on uneven terrain!
+          </div>
+        </div>
+
+        <h3>Step 13: Add Advanced Movements</h3>
+        <div class="step-box">
+          <h4>13.1 Sprinting</h4>
+          <ol>
+            <li>In BP_PlayerCharacter, add variable: <strong>bIsSprinting</strong> (Boolean)</li>
+            <li>Add Sprint input event (Left Shift)</li>
+            <li>On Pressed: Set bIsSprinting = true, Set Max Walk Speed = 1000</li>
+            <li>On Released: Set bIsSprinting = false, Set Max Walk Speed = 600</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>13.2 Crouching</h4>
+          <ol>
+            <li>Add Crouch input (C key)</li>
+            <li>On Pressed: Call <strong>"Crouch"</strong> function</li>
+            <li>On Released: Call <strong>"UnCrouch"</strong> function</li>
+            <li>Add crouch animations to your blend space</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>13.3 Dodge/Roll</h4>
+          <ol>
+            <li>Import dodge/roll animation from Mixamo</li>
+            <li>Create Animation Montage from the animation</li>
+            <li>In character blueprint, add input for dodge (Space while moving)</li>
+            <li>Play montage: <strong>"Play Anim Montage"</strong> node</li>
+            <li>During montage, add forward velocity with <strong>"Launch Character"</strong></li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-brain"></i> Part 5: AI Character Setup</h2>
+
+        <h3>Step 14: Create AI Character</h3>
+        <div class="step-box">
+          <h4>14.1 Create AI Controller</h4>
+          <ol>
+            <li>Right-click → Blueprint Class → <strong>AIController</strong></li>
+            <li>Name it "AIC_Enemy"</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>14.2 Create AI Character Blueprint</h4>
+          <ol>
+            <li>Create new Character blueprint: "BP_EnemyCharacter"</li>
+            <li>Assign mesh and animations</li>
+            <li>In Details, under <strong>"Pawn"</strong>:
+              <ul>
+                <li>AI Controller Class: AIC_Enemy</li>
+                <li>Auto Possess AI: Placed in World or Spawned</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <h3>Step 15: Behavior Tree</h3>
+        <div class="step-box">
+          <h4>15.1 Create Behavior Tree Asset</h4>
+          <ol>
+            <li>Right-click → Artificial Intelligence → <strong>Behavior Tree</strong></li>
+            <li>Name it "BT_Enemy"</li>
+            <li>Create associated Blackboard (BB_Enemy)</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>15.2 Set Up Blackboard</h4>
+          <ol>
+            <li>Open BB_Enemy</li>
+            <li>Add keys:
+              <ul>
+                <li><strong>TargetActor</strong> (Object type: Actor) - player to chase</li>
+                <li><strong>PatrolLocation</strong> (Vector) - where to patrol</li>
+                <li><strong>CanSeePlayer</strong> (Boolean)</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>15.3 Basic Behavior Tree</h4>
+          <ol>
+            <li>Open BT_Enemy</li>
+            <li>Add <strong>Selector</strong> node from Root</li>
+            <li>Add sequences:
+              <ul>
+                <li><strong>Sequence 1: Chase Player</strong>
+                  <ul>
+                    <li>Decorator: Blackboard Based Condition → CanSeePlayer == true</li>
+                    <li>Task: Move To (Target: TargetActor)</li>
+                  </ul>
+                </li>
+                <li><strong>Sequence 2: Patrol</strong>
+                  <ul>
+                    <li>Service: Find Random Location</li>
+                    <li>Task: Move To (Target: PatrolLocation)</li>
+                    <li>Task: Wait (random 2-5 seconds)</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>15.4 Run Behavior Tree</h4>
+          <ol>
+            <li>In AIC_Enemy, Event Graph</li>
+            <li>On Begin Play: <strong>"Run Behavior Tree"</strong> → Select BT_Enemy</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-heartbeat"></i> Part 6: Character Stats & Health</h2>
+
+        <h3>Step 16: Health System</h3>
+        <div class="step-box">
+          <h4>16.1 Add Health Variables</h4>
+          <p>In BP_PlayerCharacter, add variables:</p>
+          <ul>
+            <li><strong>Health</strong> (Float) - Default: 100.0</li>
+            <li><strong>MaxHealth</strong> (Float) - Default: 100.0</li>
+            <li><strong>IsDead</strong> (Boolean) - Default: false</li>
+          </ul>
+        </div>
+
+        <div class="step-box">
+          <h4>16.2 Create TakeDamage Function</h4>
+          <ol>
+            <li>In Functions panel, add new function: "TakeDamage"</li>
+            <li>Add input: <strong>DamageAmount</strong> (Float)</li>
+            <li>Logic:
+              <ul>
+                <li>Health = Health - DamageAmount</li>
+                <li>If Health <= 0: Call Die function</li>
+                <li>Else: Play damage reaction animation</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>16.3 Create Die Function</h4>
+          <ol>
+            <li>Add function: "Die"</li>
+            <li>Set IsDead = true</li>
+            <li>Disable input</li>
+            <li>Play death animation montage</li>
+            <li>Enable ragdoll physics (Set Simulate Physics)</li>
+            <li>Optionally: Respawn after delay</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-check-circle"></i> Final Checklist</h2>
+        <div class="step-box">
+          <ul>
+            <li>✓ Character model imported or created</li>
+            <li>✓ Character Blueprint with mesh assigned</li>
+            <li>✓ Movement input configured and working</li>
+            <li>✓ Camera setup with Spring Arm</li>
+            <li>✓ Animations imported for idle, walk, run, jump</li>
+            <li>✓ Animation Blueprint created with State Machine</li>
+            <li>✓ Blend Space for smooth locomotion</li>
+            <li>✓ Jump animations working</li>
+            <li>✓ Optional: IK for feet</li>
+            <li>✓ Optional: Advanced moves (sprint, crouch, dodge)</li>
+            <li>✓ Optional: AI characters with Behavior Tree</li>
+            <li>✓ Optional: Health system</li>
+          </ul>
+        </div>
+
+        <h2><i class="fas fa-graduation-cap"></i> Practice Exercises</h2>
+        <div class="tip-box">
+          <ol>
+            <li><strong>Customize Your Hero:</strong> Create a unique character in MetaHuman or Mixamo, add custom animations</li>
+            <li><strong>Combat System:</strong> Add attack animations and implement combo system</li>
+            <li><strong>Enemy Variety:</strong> Create 3 different enemy types with unique behaviors</li>
+            <li><strong>Animation Polish:</strong> Add animation notifies for footsteps, weapon sounds, etc.</li>
+            <li><strong>Special Abilities:</strong> Implement 2-3 special moves with cooldowns</li>
+          </ol>
+        </div>
+
+        <h2><i class="fas fa-book"></i> Additional Resources</h2>
+        <ul>
+          <li><a href="https://docs.unrealengine.com/5.6/animation-in-unreal-engine/" target="_blank" style="color: var(--color-primary)">Official UE5.6 Animation Documentation</a></li>
+          <li><a href="https://www.mixamo.com" target="_blank" style="color: var(--color-primary)">Mixamo - Free Characters & Animations</a></li>
+          <li><a href="https://metahuman.unrealengine.com" target="_blank" style="color: var(--color-primary)">MetaHuman Creator</a></li>
+          <li><strong>Animation Retargeting:</strong> Use UE5's IK Retargeter to share animations between different skeletons</li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="ue5-map-generation.html" class="btn"><i class="fas fa-arrow-left"></i> Previous: Map Generation</a>
+          <a href="tutorials.html" class="btn">Back to All Tutorials <i class="fas fa-list"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Unreal Engine 5.6 Tutorials. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

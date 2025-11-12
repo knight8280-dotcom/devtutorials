@@ -1,0 +1,36 @@
+{
+  "name": "knightgaming-portal",
+  "version": "1.0.0",
+  "description": "Full-stack gaming hub with live stats, news, leaderboards, reviews, and AI features",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "test": "cd backend && npm test",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "postinstall": "echo 'Run npm run install:all to install all dependencies'"
+  },
+  "keywords": [
+    "gaming",
+    "portal",
+    "fullstack",
+    "nodejs",
+    "mongodb",
+    "stripe",
+    "openai"
+  ],
+  "author": "KnightGaming Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/knightgaming"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

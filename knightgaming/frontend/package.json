@@ -1,0 +1,19 @@
+{
+  "name": "knightgaming-frontend",
+  "version": "1.0.0",
+  "description": "KnightGaming Portal - Frontend",
+  "scripts": {
+    "start": "npx http-server -p 8080 -c-1",
+    "dev": "npx http-server -p 8080 -c-1"
+  },
+  "keywords": [
+    "gaming",
+    "portal",
+    "frontend"
+  ],
+  "author": "KnightGaming",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KnightGaming - Your ultimate gaming hub with live stats, news, reviews, and community features">
+    <title>KnightGaming - Gaming Portal</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="icon" href="/public/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="navbar-brand">🎮 KnightGaming</a>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/pages/live-stats.html">Live Stats</a></li>
+                <li><a href="/pages/news.html">News</a></li>
+                <li><a href="/pages/leaderboards.html">Leaderboards</a></li>
+                <li><a href="/pages/reviews.html">Reviews</a></li>
+                <li><a href="/pages/community.html">Community</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <div id="authButtons" class="flex gap-2">
+                    <a href="/pages/login.html" class="btn btn-secondary btn-sm">Login</a>
+                    <a href="/pages/register.html" class="btn btn-primary btn-sm">Sign Up</a>
+                </div>
+                <div id="userMenu" class="hidden">
+                    <a href="/pages/account.html" class="btn btn-secondary btn-sm" id="accountBtn">Account</a>
+                    <button class="btn btn-outline btn-sm" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Welcome to KnightGaming</h1>
+            <p class="hero-subtitle">Your ultimate gaming hub with live player stats, news, leaderboards, and more</p>
+            <div class="flex justify-center gap-3">
+                <a href="/pages/live-stats.html" class="btn btn-primary btn-lg">View Live Stats</a>
+                <a href="/pages/subscription.html" class="btn btn-outline btn-lg">Go Premium</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section class="container mt-5">
+        <div class="flex justify-between align-center mb-4">
+            <h2>Featured Games</h2>
+            <a href="/pages/live-stats.html" class="btn btn-secondary">View All</a>
+        </div>
+        <div class="grid grid-4" id="featuredGames">
+            <div class="loading"></div>
+        </div>
+    </section>
+
+    <!-- Trending Now Section -->
+    <section class="container mt-5">
+        <div class="flex justify-between align-center mb-4">
+            <h2>Trending Now</h2>
+            <a href="/pages/live-stats.html" class="btn btn-secondary">See More</a>
+        </div>
+        <div class="grid grid-3" id="trendingGames">
+            <div class="loading"></div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="container mt-5">
+        <div class="flex justify-between align-center mb-4">
+            <h2>Latest News</h2>
+            <a href="/pages/news.html" class="btn btn-secondary">All News</a>
+        </div>
+        <div class="grid grid-3" id="latestNews">
+            <div class="loading"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mt-5 mb-5">
+        <h2 class="text-center mb-4">Why Choose KnightGaming?</h2>
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>📊 Live Stats</h3>
+                    <p class="card-text">Track real-time player counts and trends for your favorite games</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>📰 Latest News</h3>
+                    <p class="card-text">Stay updated with the latest gaming news and announcements</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>🏆 Leaderboards</h3>
+                    <p class="card-text">Compete with players worldwide and climb the rankings</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>⭐ Reviews</h3>
+                    <p class="card-text">Read and write honest reviews from the gaming community</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>🤖 AI Insights</h3>
+                    <p class="card-text">Get AI-powered summaries and trend highlights</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>👥 Community</h3>
+                    <p class="card-text">Connect with gamers and join the conversation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>KnightGaming</h4>
+                    <p>Your ultimate gaming portal for stats, news, and community.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/pages/live-stats.html">Live Stats</a></li>
+                        <li><a href="/pages/news.html">News</a></li>
+                        <li><a href="/pages/leaderboards.html">Leaderboards</a></li>
+                        <li><a href="/pages/reviews.html">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="/pages/login.html">Login</a></li>
+                        <li><a href="/pages/register.html">Register</a></li>
+                        <li><a href="/pages/subscription.html">Premium</a></li>
+                        <li><a href="/pages/account.html">My Account</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/pages/faq.html">FAQ</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/pages/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KnightGaming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/public/js/api.js"></script>
+    <script src="/public/js/auth.js"></script>
+    <script src="/public/js/theme.js"></script>
+    <script src="/public/js/app.js"></script>
+</body>
+</html>
